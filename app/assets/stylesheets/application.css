@@ -60,21 +60,23 @@ a {
 .header-bottom{
   display: flex;
   padding: 20px;
-  background-color: #FAF0E6;
+ 
   align-items: center;
 
 }
 .nav-search{
-  padding: 20px;
+  padding: 10px;
   display: inline-block;
+  display: flex;
+  
 }
 .search-ui{
   width: 300px;
   height: 40px;
-  border-radius: 10px 10px;
-  border: none;
+  border-radius: 10px 0 0 10px;
+  border: 1px solid #5C5470;
   color: #F1F0E8;
-  padding-left: 5px;
+  padding-left: 4px;
 }
  a .nav-items-bar {
   font-weight: 400;
@@ -91,3 +93,46 @@ a {
   text-decoration: underline #5C5470;
   font-size: 12px;
 }
+.btn-nav-search{
+  background-color: #5C5470;
+}
+.fa-magnifying-glass{
+  background-color: #5C5470;
+  padding: 10px;
+  border-radius: 0 10px 10px 0;
+  color: white;
+
+}
+.position{
+  display: flex;
+  margin-left: auto;
+}
+.btn-sale{
+  border: 5px solid transparent;
+  border-radius: 50px;
+  border-image: linear-gradient(to right, #793FDF, #1450A3, #337CCF, #FFC436);
+  border-image-slice: 0.5;
+  padding: 10px;
+  
+}
+.hero-img{
+  background-image: linear-gradient( rgba(121, 63, 233, 0.3), rgba(20, 80, 63, 0.3)), url("car.jpg");
+  height: 50%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+.hero-text{
+  font-size: 24px;
+  font-weight: bold;
+  padding: 75px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+
