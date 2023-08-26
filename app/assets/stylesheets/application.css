@@ -13,12 +13,66 @@
  *= require_tree .
  *= require_self
  */
+
+
+ * {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+ }
+
+ @media only screen and (max-width: 768px) {
+  .header .header-bottom{
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-items-bar,
+  .header-btn {
+    display: inline-block; /* Mostrar elementos en línea */
+    margin: 5px 0; /* Espaciado entre elementos */
+  }
+
+  .logo {
+    margin-bottom: 10px; 
+  }
+}
+@media only screen and (max-width: 768px) {
+  .header-bottom {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-search {
+    align-items: center;
+    margin: 10px;
+  }
+
+  .search-ui {
+    margin: 10px 0;
+  }
+
+  .position {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+  }
+  .btn-sale{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+ /* Primer header */
 .header{
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   background-color: aliceblue;
   width: 100%;
+  
   
 }
 .header-btn{
@@ -47,7 +101,7 @@
   align-items: center;
 }
 .nav-items-bar {
-  display: inline-block;
+  display: flex;
   padding: 10px;
   font-weight: 400;
   margin-right: 10px;
@@ -55,38 +109,44 @@
 a {
   text-decoration: none;
   color: #000;
+  float: left;
+  display: block;
+  text-align: center;
+  font-size: 16px;
   /* text-decoration-color: aquamarine; */
 }
+
+a .nav-items-bar {
+  font-weight: 400;
+ }
+
+/* 2DO HEADER */
 .header-bottom{
   display: flex;
-  padding: 20px;
- 
+  justify-content: space-evenly;
   align-items: center;
+  
 
 }
 .nav-search{
   padding: 10px;
-  display: inline-block;
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
   
 }
 .search-ui{
+  display: flex;
   width: 300px;
   height: 40px;
   border-radius: 10px 0 0 10px;
   border: 1px solid #5C5470;
   color: #F1F0E8;
-  padding-left: 4px;
-}
- a .nav-items-bar {
-  font-weight: 400;
- }
-
-
-* {
- font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
- padding: 0;
- margin: 0;
+  padding-left: 5px;
+  justify-content: space-evenly ;
+  margin-left: auto;
+ 
 }
 
 .btn-deco{
@@ -98,16 +158,19 @@ a {
 }
 .fa-magnifying-glass{
   background-color: #5C5470;
+  height: 20px;
   padding: 10px;
+  
   border-radius: 0 10px 10px 0;
   color: white;
 
 }
 .position{
   display: flex;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 .btn-sale{
+  display: flex;
   border: 5px solid transparent;
   border-radius: 50px;
   border-image: linear-gradient(to right, #793FDF, #1450A3, #337CCF, #FFC436);
@@ -135,4 +198,22 @@ a {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
+/* aca comenzamos la parte responsive del header */
+
+@media only screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .nav-items-bar,
+  .header-btn {
+    display: inline-block; /* Mostrar elementos en línea */
+    margin: 5px 0; /* Espaciado entre elementos */
+  }
+
+  .logo {
+    margin-bottom: 10px; /* Espaciado entre logo y elementos */
+  }
+}
 
