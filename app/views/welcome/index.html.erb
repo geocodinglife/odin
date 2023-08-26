@@ -5,3 +5,16 @@
   
   
 </div>
+
+<div class="product-container">
+  <% @products.each do |p| %>
+  <div class="product">
+  
+  <p class="product-content"><%= p.name %></p>
+  <p class="product-content" ><%= p.description %></p>
+  <p class="product-content"><%= number_to_currency(p.price) %></p>
+  <p class=""><%= link_to 'VER', welcome_path(p), class:"product-button"%></p>
+
+ </div>
+  <% end %>
+</div>

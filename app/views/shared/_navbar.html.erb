@@ -6,19 +6,20 @@
     Odin store
   </div>
   <div class="nav-items-bar">
-    <a href="#">AUTOS</a>
+    <a href="#" class="nav-items-bar">AUTOS</a>
   </div>
-  <div class="nav-items-bar">
+  <%# <div class="nav-items-bar">
     <a href="#">PROPIEDADES</a>
-  </div>
+  </div> %>
   <% if user_signed_in? %>  
   <div class="btn-login">
-    
-    Mis Productos
+  <a href="#" id="myButton" data-controller="my-controller" data-action="click->my-controller#handleClick">Mis Compras</a>
   </div>
+
+ 
   <div class="nav-items-bar">
     <%# <a href="#"><i class="fa-solid fa-power-off"></i> Salir</a> %>
-    <%= button_to 'Salir', destroy_user_session_path, method: :delete,  class:"fa-solid fa-power-off header-btn btn-color"%>
+    <%= button_to ' Salir', destroy_user_session_path, method: :delete,  class:"fa-solid fa-power-off header-btn btn-color"%>
   </div>
   <% else %>
   <div class="nav-items-bar btn-align">

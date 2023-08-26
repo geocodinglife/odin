@@ -234,3 +234,87 @@ a .nav-items-bar {
   }
 }
 
+/* now the wey want the front to show the products pay me more pendejo */
+
+.product-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.product {
+  flex: 1;
+  min-width: calc(25% - 20px);
+  margin: 10px;
+  border: 0.5px solid #ccc;
+  padding: 10px;
+  box-sizing: border-box;
+  border-radius: 15px;
+  
+}
+
+.product-content{
+  display: flex;
+  padding:15px;
+}
+.product-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  background-color: #1450A3;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.product-button:hover {
+  background-color: #ccc;
+  color: #000;
+}
+
+
+@media (max-width: 768px) {
+  .product {
+    min-width: calc(50% - 20px);
+  }
+  
+  .product-button {
+    min-width: calc(100% - 20px);
+  }
+}
+
+/* let see how looks the show view */
+.container-show {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.text-side, .image-side {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.text-side {
+  background-color: #f9f9f9;
+}
+
+.image-side {
+  background-color: #ececec;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
