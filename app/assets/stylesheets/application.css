@@ -76,15 +76,31 @@
   
 }
 .header-btn{
+  
+  width: 100px;
+  border: 2px solid #5C5470;
+  padding: 10px;
+  justify-content: center;
+  text-transform: uppercase;
+  text-transform: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  
+}
+.btn-align{
+  display: flex;
+  flex-direction: row;
+  margin-left: auto;
+  margin-right: 10px;
+  
+}
+.btn-login{
   display: flex;
   margin-left: auto;
   margin-right: 20px;
   width: 100px;
-  border: 2px solid #5C5470;
-  padding: 5px;
-  border-radius: 2px;
-  justify-content: center;
-  text-transform: uppercase;
+  text-decoration: underline #5C5470 1px;
+  cursor: pointer;
 }
 .btn-color{
   color: #5C5470 !important;
@@ -112,12 +128,12 @@ a {
   float: left;
   display: block;
   text-align: center;
-  font-size: 16px;
+  font-size: 12px;
   /* text-decoration-color: aquamarine; */
 }
 
 a .nav-items-bar {
-  font-weight: 400;
+  font-weight: 200;
  }
 
 /* 2DO HEADER */
@@ -152,6 +168,7 @@ a .nav-items-bar {
 .btn-deco{
   text-decoration: underline #5C5470;
   font-size: 12px;
+  background-color: transparent;
 }
 .btn-nav-search{
   background-color: #5C5470;

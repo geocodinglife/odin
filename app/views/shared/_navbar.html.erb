@@ -11,34 +11,42 @@
   <div class="nav-items-bar">
     <a href="#">PROPIEDADES</a>
   </div>
+  <% if user_signed_in? %>  
+  <div class="btn-login">
+    
+    Mis Productos
+  </div>
   <div class="nav-items-bar">
-    <div class="btn-deco">
-      <a href="#">Si aun no tienes cuenta, registrate!</a>
-    </div>
+    <%# <a href="#"><i class="fa-solid fa-power-off"></i> Salir</a> %>
+    <%= button_to 'Salir', destroy_user_session_path, method: :delete,  class:"fa-solid fa-power-off header-btn btn-color"%>
   </div>
-  <div class="header-btn btn-color">
-    <a href="#"><i class="fa-solid fa-right-to-bracket"></i> Ingresa</a>
-  </div>
-  <div class="header-btn btn-color">
-    <a href="#"><i class="fa-solid fa-power-off"></i> Salir</a>
-  </div>
-</nav>
+  <% else %>
+  <div class="nav-items-bar btn-align">
 
+      <%= link_to 'Si no tenes usuario, registrate aca', new_user_registration_path, class:" btn-color"%>
+      
+  </div>
+  <div class="nav-items-bar">
+  
+  <%= link_to ' SIGN IN', new_user_session_path, class:" fa-solid fa-right-to-bracket header-btn btn-color"%>
+  </div>  
+      <%# <%= link_to ' sign in', new_user_session_path, class:"fa-solid fa-right-to-bracket header-btn btn-color"%>
+
+<% end %>
+ 
+</nav>
+ 
 
 
 <div class="header-bottom">
   <div class="nav-search">
-    <b>Que estas buscando hoy </b> 
+    <b>Que estas buscando hoy </b>
   </div>
   <div class="nav-search">
-  <input type="search" class="search-ui" placeholder="ingrese su busqueda"> <i
-      class="fa-solid fa-magnifying-glass"></i>
-  </div>
-  <%# <div class="nav-search">
     <input type="search" class="search-ui" placeholder="ingrese su busqueda"> <i
       class="fa-solid fa-magnifying-glass"></i>
+  </div>
 
-  </div> %>
   <div class="nav-search">
     <i class="fa-regular fa-heart fa-xl"></i>
   </div>
@@ -50,4 +58,3 @@
     <a href="#" class="btn-sale">VENDER</a>
   </div>
 </div>
-
