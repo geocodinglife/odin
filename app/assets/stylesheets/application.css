@@ -46,8 +46,6 @@
   align-items: center;
 }
 
-
-
 a {
   text-decoration: none;
   color: #000;
@@ -66,9 +64,6 @@ a {
 .header-bottom {
   display: inline-block;
   padding-top: 10px;
-
-
-
 }
 
 .selectInput {
@@ -89,12 +84,9 @@ a {
 
 .logo2 {
   width: 60px;
-
-
 }
 
 .fa-magnifying-glass {
-
   background-color: #002f34;
   color: white;
   padding: 12.5px;
@@ -122,14 +114,12 @@ a {
   padding: 20px;
   padding-left: 80px;
   box-shadow: 0 1px 1px #00000041;
-
 }
 
 .li-menu {
   display: inline-block;
   padding-right: 10px;
   font-size: 0.8em;
-
 }
 
 .li-menu:hover {
@@ -144,7 +134,6 @@ a {
 /* for the slider image */
 
 .mySlides {
-
   width: 100%;
   height: 220px;
 }
@@ -154,7 +143,6 @@ a {
 .clasifieds-cards-area {
   padding: 0 80px;
   margin-top: 10px;
-
 }
 
 .cat-card {
@@ -189,7 +177,6 @@ a {
   width: 250px;
   height: 100px;
   object-fit: cover;
-
 }
 
 .pricing {
@@ -218,7 +205,6 @@ a {
 
 .bottom-link-img {
   width: 100%;
-
 }
 
 .footer {
@@ -228,9 +214,6 @@ a {
   text-transform: uppercase;
   font-size: 0.8em;
   display: flex;
-
-
-
 }
 
 .container-fluid {
@@ -240,7 +223,6 @@ a {
 
 .footer-links-head {
   margin-bottom: 10px;
-
 }
 
 .footer-links {
@@ -254,7 +236,6 @@ a {
   margin-right: 20px;
   display: inline-block;
   width: 20%;
-
 }
 
 .social-footer-links {
@@ -264,7 +245,6 @@ a {
 .app-logo .img-footer {
   margin-top: 20px;
   max-width: 50px;
-
 }
 
 .footer-column2 {
@@ -273,14 +253,12 @@ a {
 
 .footer-credit {
   text-align: end;
-
 }
 
 .footer-credit-bg {
   background-color: #002f34;
   padding: 20px;
   padding-right: 80px;
-
 }
 
 .footer-credit-p {
@@ -317,6 +295,4 @@ a {
     padding: 10px;
     font-size: 16px;
   }
-
-
 }
