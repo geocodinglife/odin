@@ -13,3 +13,286 @@
  *= require_tree .
  *= require_self
  */
+
+/* from here we start the css for the page */
+
+/* Este sera el header */
+
+
+* {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+}
+
+.padding-20 {
+  padding: 10px;
+}
+
+.header {
+  background-color: #f7f8f8;
+  padding: 20px;
+  padding-left: 80px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.top-bar-items {
+  padding: 5px;
+  display: inline-flex;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  justify-content: center;
+  grid-row: auto;
+
+}
+
+.header-bottom {
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.selectInput {
+  padding: 10px;
+  width: 200px;
+}
+
+.search {
+  width: 40vw;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.logo2 {
+  width: 60px;
+}
+
+.fa-magnifying-glass {
+  background-color: #002f34;
+  color: white;
+  padding: 12.5px;
+  border-radius: 5px;
+}
+
+.sell-button {
+  background-color: #fff;
+  border-bottom: 3px solid #3a77ff;
+  border-top: 3px solid #3a77ff;
+  border-left: 3px solid #ffce32;
+  border-right: 3px solid #23e5db;
+  padding: 15px;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+.top-bar-icons {
+  padding: 20px;
+  font-size: 20px;
+
+}
+
+.header-bottom-bar {
+  padding: 20px;
+  padding-left: 80px;
+  box-shadow: 0 1px 1px #00000041;
+}
+
+.li-menu {
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 0.8em;
+}
+
+.li-menu:hover {
+  cursor: pointer;
+  color: #46aca9;
+}
+
+.txt-bold {
+  font-weight: bold;
+}
+
+/* for the slider image */
+
+.mySlides {
+  width: 100%;
+  height: 220px;
+}
+
+.header-ad,
+.cat-area,
+.clasifieds-cards-area {
+  padding: 0 80px;
+  margin-top: 10px;
+}
+
+.cat-card {
+  max-width: 200px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px 5px;
+  padding-left: 10px;
+
+}
+
+.cat-card>img {
+  width: 80px;
+}
+
+/* For the categories area */
+
+.ad-card {
+  cursor: pointer;
+  display: inline-block;
+  border: 1px solid #bfbfbf;
+  width: 220px;
+  margin: 20px 15px;
+  border-radius: 5px;
+  overflow: hidden;
+
+}
+
+.ad-card img {
+  width: 250px;
+  height: 100px;
+  object-fit: cover;
+}
+
+.pricing {
+  padding: 10px;
+  font-weight: bold;
+}
+
+.heart-icon {
+  float: right;
+}
+
+.ad-desc,
+.location {
+  padding: 10px;
+}
+
+.small-txt {
+  font-size: 10px;
+  color: #8b8a8a;
+  padding: 10px 0 0 0;
+}
+
+.add {
+  max-width: 250px;
+}
+
+.bottom-link-img {
+  width: 100%;
+}
+
+.footer {
+  background-color: #f7f8f8;
+  padding: 20px;
+  padding-left: 80px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  display: flex;
+}
+
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-head {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style-type: none;
+  margin-bottom: 3px;
+  color: #6c6c6c;
+  cursor: pointer;
+}
+
+.footer-column {
+  margin-right: 20px;
+  display: inline-block;
+  width: 20%;
+}
+
+.social-footer-links {
+  margin-right: 10px;
+}
+
+.app-logo .img-footer {
+  margin-top: 20px;
+  max-width: 50px;
+}
+
+.footer-column2 {
+  width: 20%;
+}
+
+.footer-credit {
+  text-align: end;
+}
+
+.footer-credit-bg {
+  background-color: #002f34;
+  padding: 20px;
+  padding-right: 80px;
+}
+
+.footer-credit-p {
+  color: #fff !important;
+}
+
+/* aca va el codigo para que se vea responsive el header */
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .top-bar-items {
+    padding: 5px;
+  }
+
+  .selectInput {
+    width: 100%;
+  }
+
+  .search {
+    width: 80%;
+  }
+
+  .sell-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .top-bar-icons {
+    padding: 10px;
+    font-size: 16px;
+  }
+}
