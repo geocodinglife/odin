@@ -14,11 +14,6 @@ gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 
-# for styles icons
-
-gem "font-awesome-sass", "~> 6.4.2"
-
-
 group :development, :test do
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
@@ -30,4 +25,3 @@ end
 group :production do
   gem "pg", "~> 1.1"
 end
-
