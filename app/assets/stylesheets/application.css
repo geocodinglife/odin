@@ -162,7 +162,7 @@ a {
 
 /* For the categories area */
 
-.ad-card {
+/* .ad-card {
   cursor: pointer;
   display: inline-block;
   border: 1px solid #bfbfbf;
@@ -177,7 +177,7 @@ a {
   width: 250px;
   height: 100px;
   object-fit: cover;
-}
+} */
 
 .pricing {
   padding: 10px;
