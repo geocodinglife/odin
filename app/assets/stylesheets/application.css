@@ -198,8 +198,8 @@ a {
 .header-ad,
 .cat-area,
 .clasifieds-cards-area {
-  padding: 25px 100px;
-  /* margin-top: 10px; */
+  /*padding: 25px 100px;
+   margin-top: 10px; */
   background-color: #F0F0F0;
   text-align: center;
 }
@@ -246,11 +246,13 @@ a {
 
 }
 
-.ad-card img {
-  max-width: 300px;
-  max-height: 80px;
-  padding: 10px;
+.ad-card::first-child {
+  background-color: white;
+}
 
+.ad-card img {
+  width: 100%;
+  height: auto;
 }
 
 .pricing {
