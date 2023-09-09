@@ -13,9 +13,6 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
-
-#this part is for devise
-
 gem "devise"
 
 group :development, :test do
@@ -24,10 +21,5 @@ end
 
 group :development do
   gem "web-console"
-  # this is only for confirmation purpose 
   gem "letter_opener"
-end
-
-group :production do
-  gem "pg", "~> 1.1"
 end
