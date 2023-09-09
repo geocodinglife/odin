@@ -4,12 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable
   
-  has_many :role_users
-  has_many :roles, through: :role_users
-
- 
-
-  def has_role?(role_name)
-    roles.exist?(name: role_name)
-  end
+  has_many :user_roles
+  has_many :roles, through: :user_roles
 end
