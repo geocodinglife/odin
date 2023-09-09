@@ -29,6 +29,12 @@
 
 }
 
+h1,
+h2 {
+  color: #212322;
+  text-decoration: underline 2px #ffce32;
+}
+
 .padding-20 {
   padding: 0;
   margin: 0;
@@ -111,9 +117,10 @@ a {
   display: inline-flex;
   padding-bottom: 2px;
   padding-top: 2px;
-  justify-content: center;
-  grid-row: auto;
+  /* justify-content: center; */
+  /* grid-row: auto; */
   align-items: center;
+
 
 }
 
@@ -186,6 +193,34 @@ a {
 
 .txt-bold {
   font-weight: bold;
+}
+
+.btn-align {
+  width: 700px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-sessions {
+  padding: 5px;
+  text-decoration: underline 2px #212322;
+  border: none;
+  background: none;
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-sessions:hover {
+  text-decoration: underline 3px #ffce32;
+  /* color: #46aca9; */
+}
+
+.logout-container {
+  justify-content: end;
+
+
+  text-align: end;
 }
 
 /* for the slider image */
@@ -345,6 +380,74 @@ a {
   color: #fff !important;
 }
 
+/* This part will be for the login view only */
+
+
+.row-sessions {
+  display: inline-block;
+  padding: 20px;
+  margin: 0;
+
+}
+
+.container-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+
+}
+
+.row-sessions-deco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: linear-gradient(to left, rgba(33, 35, 34, 0.5), rgba(252, 84, 4, 0.5)), url('realstate.jpg'); */
+  /* background: rgba(33, 35, 34, 0.8); */
+  background: url('realstate.jpg'), linear-gradient(rgba(33, 35, 34, 0.6), rgba(33, 35, 34, 0.6));
+  padding: 20px;
+  height: auto;
+  background-size: cover;
+
+}
+
+.position-row {
+  display: inline-block;
+  width: 50%;
+  padding: 100px;
+  margin: 0;
+
+
+}
+
+.container-sessions .navbar-main {
+  display: none;
+}
+
+.bg-container {
+  background-color: #212322;
+}
+
+.container-row2 {
+  display: flex;
+  justify-content: center;
+  background: url('carsale.jpg'), linear-gradient(rgba(33, 35, 34, 0.6), rgba(33, 35, 34, 0.6));
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+
+
+}
+
+.row-sessions2 {
+  display: inline-block;
+  padding: 50px;
+  margin: 50px;
+  border-radius: 25px;
+  border: 1px solid #212322;
+  background-color: rgba(240, 240, 240, 0.7);
+}
+
 /* aca va el codigo para que se vea responsive el header */
 /* Estilos para pantallas más pequeñas */
 @media (max-width: 768px) {
@@ -399,5 +502,14 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .btn-align {
+    max-width: 100px;
+    display: flex;
+  }
+
+  .btn-sessions:hover {
+    color: #ffce32;
   }
 }
