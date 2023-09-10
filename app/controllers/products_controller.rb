@@ -16,61 +16,36 @@ class ProductsController < ApplicationController
   end
 
   def create
-  @article = Article.new(article_params)
-
-  if @article.save
-    @article.images.each do |image|
-      image.attach(params[:article][:images][image])
-    end
-
-    redirect_to @article
-  else
-    render :new
-  end
-end
-  def create
-    user = User.find_or_create_by(email: product_params[:email]) do |user|
-      user.first_name = product_params[:first_name]
-      user.phone = product_params[:phone]
-      user.password = (product_params[:first_name] + product_params[:phone])
+    user = User.find_or_create_by(email: params[:product][:email]) do |user|
+      user.first_name = params[:product][:first_name]
+      user.phone = params[:product][:phone]
+      user.password = (params[:product][:first_name] + params[:product][:phone])
     end
 
     @product = user.products.build(product_params)
 
-    respond_to do |format|
-      if @product.save
-        @product.images.each do |image|
-          image.attach(params[:product][:images][image])
-        end
-
-        format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
-        format.json { render :show, status: :created, location: @product }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+    if @product.save
+      @product.images.each do |image|
+        image.attach(params[:product][:images][image])
       end
+
+      redirect_to product_url(@product), notice: "Product was successfully created."
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
-      end
+    if @product.update(product_params)
+      redirect_to product_url(@product), notice: "Product was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 
   def destroy
     @product.destroy
-
-    respond_to do |format|
-      format.html { redirect_to products_url, notice: "Product was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to products_url, notice: "Product was successfully destroyed."
   end
 
   private
@@ -79,6 +54,6 @@ end
     end
 
     def product_params
-      params.require(:product).permit(:name, :description, :price, :phone, :first_name)
+      params.require(:product).permit(:name, :description, :price, :phone, :first_name, :email, :active_storage_attachment, :active_text_attribute, images: [])
     end
 end

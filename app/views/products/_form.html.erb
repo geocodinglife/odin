@@ -11,14 +11,27 @@
     </div>
   <% end %>
 
+<h2>Please Add your information</h2>
   <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name, multiple: true %>
   </div>
 
+    <div>
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email, multiple: true %>
+  </div>
+
+    <div>
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.text_field :phone, multiple: true %>
+  </div>
+
+  <h2>Please Add The Product information</h2>
+
   <div>
-    <%= form.label :description, style: "display: block-inline" %>
-    <%= form.rich_text_area :description %>
+    <%= form.label :product_name, style: "display: block" %>
+    <%= form.text_field :name %>
   </div>
 
   <div>
@@ -32,8 +45,8 @@
   </div>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :description, style: "display: block-inline" %>
+    <%= form.rich_text_area :description %>
   </div>
 
   <div>
