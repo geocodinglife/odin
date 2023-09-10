@@ -1,0 +1,67 @@
+<style>
+  .main-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #181D31;
+  }
+
+  .content-container {
+    width: 83.33%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 0 1.25rem;
+  }
+
+  .messages-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 83.33%;
+  }
+
+  .message-list {
+    width: 100%;
+  }
+
+  .message-scroll {
+    height: 18rem;
+    width: 100%;
+    background-color: white;
+    border-radius: 0.25rem;
+    padding: 0.125rem;
+    margin-top: 1.25rem;
+    overflow-y: auto;
+  }
+
+  .message-form-container {
+    width: 100%;
+  }
+</style>
+
+<%= turbo_frame_tag 'rooms_controller' do %>
+<%= turbo_stream_from 'room_messages_channel' %>
+
+  <main class="main-container">
+    <%= render 'shared/side_bar' %>
+
+    <section class="content-container">
+      <%= render 'room', room: @room %>
+
+      <div class="messages-container">
+        <div class="message-list">
+          <div class="message-scroll">
+            <% @room.messages.order(:id).each do |message| %>
+              <%= render 'messages/message', message: message %>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="message-form-container">
+          <%= render 'messages/form', { room: @room, message: Message.new } %>
+        </div>
+      </div>
+    </section>
+  </main>
+<% end %>

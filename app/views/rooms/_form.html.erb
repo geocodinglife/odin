@@ -1,0 +1,120 @@
+<style>
+  .section-title {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.75rem;
+    width: 100%;
+  }
+
+  .error-message {
+    background-color: #f7a1a1;
+    border-radius: 0.25rem;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+  }
+
+  .error-title {
+    font-weight: bold;
+    font-size: 0.875rem;
+    color: #b91c1c;
+  }
+
+  .error-list {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .error-item {
+    font-weight: 600;
+    font-size: 0.75rem;
+    color: #b91c1c;
+  }
+
+  .input-container {
+    margin-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .input-label {
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .input-field {
+    width: 100%;
+    border: 1px solid #cbd5e0;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+  }
+
+  .button-container {
+    margin-top: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  .submit-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: white;
+    font-weight: 600;
+    background-color: #38a169;
+    border-radius: 0.25rem;
+    cursor: pointer;
+  }
+
+  .cancel-button {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    color: white;
+    text-align: center;
+    font-weight: 600;
+    background-color: #e53e3e;
+    border-radius: 0.25rem;
+    text-decoration: none;
+  }
+</style>
+
+<h4 class="section-title"><%= title %></h4>
+
+<div data-controller="form" class="form-container">
+  <%= form_with(model: room, class: 'form-content', data: { controller: 'form', action: 'submit->form#resetComponent' }) do |form| %>
+    <% if room.errors.any? %>
+      <div class="error-message">
+        <h2 class="error-title">An error occurred while saving it.</h2>
+        <ul class="error-list">
+          <% room.errors.each do |error| %>
+            <li class="error-item"> - <%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="input-container">
+      <%= form.label :name, class: 'input-label' %>
+      <%= form.text_field :name, class: 'input-field' %>
+    </div>
+
+    <div class="button-container">
+      <%= form.submit class: 'submit-button' %>
+      <%= link_to 'Cancel', :back, class: 'cancel-button' %>
+    </div>
+  <% end %>
+</div>
