@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :leads
   resources :products
   resources :categories
-  devise_for :users
   root 'welcome#index'
 end

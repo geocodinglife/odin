@@ -21,4 +21,8 @@ end
 
 group :development do
   gem "web-console"
+  gem "standard"
+  gem "pry"
+  gem 'pry-rails'
+  gem "awesome_print"
 end
