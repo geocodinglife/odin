@@ -16,6 +16,19 @@ class ProductsController < ApplicationController
   end
 
   def create
+  @article = Article.new(article_params)
+
+  if @article.save
+    @article.images.each do |image|
+      image.attach(params[:article][:images][image])
+    end
+
+    redirect_to @article
+  else
+    render :new
+  end
+end
+  def create
     user = User.find_or_create_by(email: product_params[:email]) do |user|
       user.first_name = product_params[:first_name]
       user.phone = product_params[:phone]
@@ -26,6 +39,10 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
+        @product.images.each do |image|
+          image.attach(params[:product][:images][image])
+        end
+
         format.html { redirect_to product_url(@product), notice: "Product was successfully created." }
         format.json { render :show, status: :created, location: @product }
       else
