@@ -5,15 +5,19 @@ class LeadsController < ApplicationController
       user.phone = params[:lead][:phone]
       user.password = (params[:lead][:first_name] + params[:lead][:phone])
     end
-    
-    lead = user.leads.build(product_id: params[:lead][:product_id], user_id: user.id)
 
+    lead = user.leads.build(product_id: params[:lead][:product_id], user_id: user.id)
+    # seller_phone = Product.find_by(id: params[:lead][:product_id]).user.phone
     if lead.save
-      flash[:notice] = 'Lead was successfully created.'
+      # send message to seller of this Lead
+      # this message should be send by text.
+      # product beling to use find it by product id
+      # send_text_to_seller(seller_lead)
+      flash[:notice] = "Lead was successfully created."
       redirect_to lead_path(lead.id)
     else
-      flash[:notice] = 'We can create you Lead.'
-      render 'new'
+      flash[:notice] = "We can create you Lead."
+      render "new"
     end
   end
 

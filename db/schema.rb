@@ -58,15 +58,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_202830) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "category_products", force: :cascade do |t|
-    t.bigint "category_id", null: false
-    t.bigint "product_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category_id"], name: "index_category_products_on_category_id"
-    t.index ["product_id"], name: "index_category_products_on_product_id"
-  end
-
   create_table "leads", force: :cascade do |t|
     t.bigint "product_id", null: false
     t.bigint "user_id", null: false
@@ -90,8 +81,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_202830) do
     t.string "name"
     t.decimal "price"
     t.bigint "user_id", null: false
+    t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
@@ -147,12 +140,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_202830) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "category_products", "categories"
-  add_foreign_key "category_products", "products"
   add_foreign_key "leads", "products"
   add_foreign_key "leads", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "products", "categories"
   add_foreign_key "products", "users"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"

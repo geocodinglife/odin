@@ -29,7 +29,7 @@
 }
 
 /* this code will propagate true the whole page, is this what we want? */
-/* h1,
+h1,
 h2 {
   color: #212322;
   text-decoration: underline 2px #ffce32;
@@ -38,7 +38,7 @@ h2 {
 a {
   text-decoration: none;
   color: #212322;
-} */
+}
 
 /* code for the navbar move this to his own file for the partial. */
 .header {
