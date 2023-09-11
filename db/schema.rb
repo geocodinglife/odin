@@ -103,10 +103,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_202830) do
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
-    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_rooms_on_user_id"
   end
 
   create_table "user_roles", force: :cascade do |t|
@@ -156,7 +154,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_10_202830) do
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
   add_foreign_key "products", "users"
-  add_foreign_key "rooms", "users"
   add_foreign_key "user_roles", "roles"
   add_foreign_key "user_roles", "users"
   add_foreign_key "user_rooms", "rooms"

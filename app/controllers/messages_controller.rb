@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   before_action :set_room, only: %i[create edit]
   before_action :set_message, only: %i[edit update destroy]
+  before_action :authenticate_user!
 
   def create
     @message = @room.messages.new message_params
@@ -42,6 +43,6 @@ class MessagesController < ApplicationController
   end
 
   def message_params
-    params.require(:message).permit(:message)
+    params.require(:message).permit(:text)
   end
 end

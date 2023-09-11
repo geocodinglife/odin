@@ -17,9 +17,7 @@ class RoomsController < ApplicationController
   end
 
   def create
-    # binding.pry
     @room = Room.new(room_params)
-    @room.user_id = current_user.id
 
     respond_to do |format|
       if @room.save
