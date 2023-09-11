@@ -26,19 +26,20 @@ user_three = User.create!(
   password: "password"
 )
 
-Category.create!(name: "Electronics")
-Category.create!(name: "Clothing")
+first_category = Category.create!(name: "Electronics")
+second_category = Category.create!(name: "Clothing")
 Category.create!(name: "Books")
-
 
 Product.create!(
   name: "Smartphone",
   price: 499.99,
-  user_id: user_three.id
+  user_id: user_three.id,
+  category_id: first_category.id
 )
 
 Product.create!(
   name: "T-shirt",
   price: 19.99,
-  user_id: user_three.id
+  user_id: user_three.id,
+  category_id: second_category.id
 )

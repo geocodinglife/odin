@@ -1,0 +1,36 @@
+<style>
+  .room-container {
+    display: flex;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.25rem;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .room-name {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: white;
+    text-decoration: none;
+  }
+
+  .edit-link {
+    font-size: 0.75rem;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+  }
+</style>
+
+<%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
+  <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
+    <%= room.name %>
+  <% end %>
+  
+  <%= link_to edit_room_path(room), id: "edit_room_#{room.id}", class: 'edit-link' do %>
+    Edit
+  <% end %>
+<% end %>
