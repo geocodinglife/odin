@@ -42,6 +42,7 @@
 
 <%= turbo_frame_tag 'rooms_controller' do %>
 <%= turbo_stream_from 'room_messages_channel' %>
+
   <main class="main-container">
     <%= render 'shared/side_bar' %>
 
@@ -50,7 +51,7 @@
 
       <div class="messages-container">
         <div class="message-list">
-          <div class="message-scroll">
+          <div class="message-scroll" id="room_messages_div" class="room_messages_div">
             <% @room.messages.order(:id).each do |message| %>
               <%= render 'messages/message', message: message %>
             <% end %>

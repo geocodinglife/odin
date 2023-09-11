@@ -7,6 +7,6 @@ export default class extends Controller {
 
     const timer = setInterval(() => {
       form.reset();
-    }, 100);
+    }, 100000);
   }
 }
