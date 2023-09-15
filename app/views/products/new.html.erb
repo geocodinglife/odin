@@ -1,9 +1,8 @@
-<h1>New product</h1>
-
-<%= render "form", product: @product %>
-
-<br>
-
-<div>
-  <%= link_to "Back to products", products_path %>
+<div class="container-fluidProduct">
+  <h2>Crear nuevo Producto</h2>
+  <%= render "form", product: @product %>
+  <br>
+  <div class="btnPosition">
+    <%= link_to "Volver a tus productos", products_path, class:"btnProduct" %>
+  </div>
 </div>

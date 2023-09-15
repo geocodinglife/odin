@@ -29,8 +29,7 @@
 }
 
 /* this code will propagate true the whole page, is this what we want? */
-h1,
-h2 {
+h1 {
   color: #212322;
   text-decoration: underline 2px #ffce32;
 }
@@ -311,6 +310,11 @@ a {
   margin: 0;
 }
 
+.container-fluidProduct {
+  padding: 10px;
+  margin: 10px;
+}
+
 .footer-links-head {
   margin-bottom: 10px;
 }
@@ -408,6 +412,43 @@ a {
   border-radius: 25px;
   border: 1px solid #212322;
   background-color: rgba(240, 240, 240, 0.7);
+}
+
+.rowForm {
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  padding: 50px;
+}
+
+.rowPosition {
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.btnProduct {
+  padding: 10px;
+  width: 200px;
+  background-color: #212322;
+  border: 2px #46aca9 solid;
+  color: #F0F0F0;
+  border-radius: 25px;
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btnPosition {
+  text-align: center;
+}
+
+.customFormLabel {
+  padding: 5px;
+  margin: 5px;
+  border: 1px #212322 solid;
+  border-radius: 25px;
+  width: 200px;
 }
 
 /* aca va el codigo para que se vea responsive el header */
