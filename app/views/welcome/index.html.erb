@@ -135,6 +135,81 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="clasifieds-cards-area">
+ <% @products.each do |product| %>
+    <h2>Automoviles</h2>
+    <div>
+      <div class="ad-card">
+        <div>
+          <%= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
+        </div>
+        <div>
+          <p class="pricing">COP  $ <%= product.price %>
+            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
+          </p>
+        </div>
+        <div class="ad-desc">
+          <p><%= product.name %></p>
+        </div>
+        <div class="location">
+          <p>Cartagena, Colombia. </p>
+          <p class="small-txt">1 semana atras</p>
+        </div>
+
+        <button class="btn showModalButton" data-product-id="<%= product.id %>">Add Lead</button>
+        <%= render "welcome/lead", locals: { product_id: product.id }  %>
+      </div>     
+    </div>
+  <% end %>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   <div class="clasifieds-cards-area">
     <h2>Automoviles</h2>
     <div>
@@ -346,25 +421,32 @@
     </div>
   </div>
 </main>
+
+
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    const showModalButtons = document.querySelectorAll('.showModalButton');
+    const modal = document.getElementById('modal');
+    const closeModal = document.getElementById('closeModal');
+    const productInput = document.getElementById('product');
 
-  const showModalButton = document.getElementById('showModalButton');
-  const modal = document.getElementById('modal');
-  const closeModal = document.getElementById('closeModal');
+    showModalButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        modal.style.display = 'block';
 
-  showModalButton.addEventListener('click', function () {
-    modal.style.display = 'block';
-  });
+        const productId = button.getAttribute('data-product-id');
+        productInput.value = productId;
+      });
+    });
 
-  closeModal.addEventListener('click', function () {
-    modal.style.display = 'none';
-  });
-
-  window.addEventListener('click', function (event) {
-    if (event.target === modal) {
+    closeModal.addEventListener('click', function () {
       modal.style.display = 'none';
-    }
+    });
+
+    window.addEventListener('click', function (event) {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
   });
-});
 </script>
