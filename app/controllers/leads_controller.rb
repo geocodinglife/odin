@@ -1,5 +1,16 @@
 class LeadsController < ApplicationController
+  before_action :authenticate_user!, only: :index
+  def index
+    @leads = current_user.products.map do |product|
+      product.leads.map do |lead|
+        lead
+      end
+    end
+  end
+
   def create
+    product = Product.find_by(id: params[:product_id])
+
     Lead.transaction do
       user = User.find_or_create_by(email: params[:lead][:email]) do |user|
         user.first_name = params[:lead][:first_name]
@@ -7,8 +18,11 @@ class LeadsController < ApplicationController
         user.password = (params[:lead][:first_name] + params[:lead][:phone])
       end
 
-      lead = Lead.new(product_id: params[:product_id], user_id: user.id)
-      # seller_phone = Product.find_by(id: params[:lead][:product_id]).user.phone
+      lead = Lead.create!(product_id: params[:product_id], user_id: user.id)
+      room = Room.create!(name: "#{product.name} - #{params[:lead][:first_name]}")
+
+      UserRoom.create!([{room: room, user: user}, {room: room, user: product.user}])
+
       if lead.save!
         # send message to seller of this Lead
         # this message should be send by text.
