@@ -80,20 +80,8 @@
       <% User.all.each do |user| %>
         <% next unless room.users.include?(user) %>
         <div class="user-item">
-          <%= user.email %>
+          <%= user.first_name %>
         </div>
-      <% end %>
-    </div>
-
-    <div class="all-users-list">
-      <h3 class="user-list-title">All users</h3>
-      <% User.all.each do |user| %>
-        <% next if room.users.include?(user) %>
-        <%= button_to add_user_path, params: { user_id: user, room_id: room }, id: "add_user_#{user.id}", method: :post, class: 'add-user-button' do %>
-          <div class="user-item">
-            <%= user.email %>
-          </div>
-        <% end %>
       <% end %>
     </div>
   </section>
