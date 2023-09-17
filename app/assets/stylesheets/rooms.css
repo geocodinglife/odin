@@ -1,0 +1,274 @@
+.room-box {
+  display: flex;
+
+  height: 69vh;
+  background-color: #181D31;
+}
+
+.new-room {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 100vh;
+}
+
+.messages-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 83.33%;
+}
+
+.message-list {}
+
+.message-scroll {
+  height: 18rem;
+  background-color: white;
+  border-radius: 0.25rem;
+  padding: 0.125rem;
+  margin-top: 1.25rem;
+  overflow-y: auto;
+}
+
+.message-form-container {}
+
+.main-container {
+  display: flex;
+  background-color: #181D31;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  text-align: center;
+  padding: 0 1.25rem;
+}
+
+.app-logo {
+  width: 100px;
+}
+
+.app-title {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: white;
+  margin-top: 1rem;
+}
+
+.app-description {
+  text-align: center;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.75rem;
+}
+
+.error-message {
+  background-color: #f7a1a1;
+  border-radius: 0.25rem;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+}
+
+.error-title {
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #b91c1c;
+}
+
+.error-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.error-item {
+  font-weight: 600;
+  font-size: 0.75rem;
+  color: #b91c1c;
+}
+
+.input-container {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.input-label {
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.input-field {
+  width: 100%;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.25rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+}
+
+.button-container {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.submit-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: white;
+  font-weight: 600;
+  background-color: #38a169;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.cancel-button {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+  background-color: #e53e3e;
+  border-radius: 0.25rem;
+  text-decoration: none;
+}
+
+.room-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.room-title {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.room-users {
+  font-weight: 600;
+  color: white;
+}
+
+.user-section {
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: column;
+}
+
+.room-users-list,
+.all-users-list {
+  padding: 0.5rem;
+  border: 1px solid #90cdf4;
+  border-radius: 0.25rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.user-list-title {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white;
+  text-align: center;
+}
+
+.user-item {
+  padding: 0.25rem 0;
+  text-decoration: underline;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.add-user-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-decoration: underline;
+}
+
+.room-container {
+  display: flex;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.25rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.room-name {
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white;
+  text-decoration: none;
+}
+
+.edit-link {
+  font-size: 0.75rem;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.user-info {
+  color: white;
+  text-align: center;
+  font-size: 0.875rem;
+  margin-top: 1.25rem;
+}
+
+.logout-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.logout-button-style {
+  padding: 0.25rem 0.75rem;
+  background-color: #e53e3e;
+  color: white;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.user-rooms {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0.625rem;
+  width: 100%;
+}
