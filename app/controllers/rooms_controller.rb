@@ -16,6 +16,19 @@ class RoomsController < ApplicationController
   def edit
   end
 
+  def create
+    @room = Room.new(room_params)
+
+    respond_to do |format|
+      if @room.save
+        UserRoom.create(room: @room, user: current_user)
+        format.turbo_stream { render turbo_stream: turbo_stream.append("user_#{current_user.id}_rooms", partial: "shared/room", locals: {room: @room}) }
+      else
+        format.turbo_stream { render turbo_stream: turbo_stream.replace("room_form", partial: "rooms/form", locals: {room: @room, title: "Create new room"}) }
+      end
+    end
+  end
+
   def update
     respond_to do |format|
       if @room.update(room_params)
