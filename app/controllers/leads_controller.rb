@@ -24,10 +24,7 @@ class LeadsController < ApplicationController
       UserRoom.create!([{room: room, user: user}, {room: room, user: product.user}])
 
       if lead.save!
-        # send message to seller of this Lead
-        # this message should be send by text.
-        # product beling to use find it by product id
-        # send_text_to_seller(seller_lead)
+        Lead.send_message_to_seller(product.user.phone)
         flash[:notice] = "Lead was successfully created."
         redirect_to lead_path(lead.id)
       else
