@@ -10,7 +10,7 @@ gem "importmap-rails"
 gem "turbo-rails"
 gem "stimulus-rails"
 gem "jbuilder"
-gem "redis", "~> 4.0"
+# gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
 gem "devise"
