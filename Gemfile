@@ -16,13 +16,14 @@ gem "image_processing", "~> 1.2"
 gem "devise"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "debug", platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
+  gem "dotenv-rails"
   gem "web-console"
   gem "standard"
   gem "pry"
-  gem 'pry-rails'
+  gem "pry-rails"
   gem "awesome_print"
 end
