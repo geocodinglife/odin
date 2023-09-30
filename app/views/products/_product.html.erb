@@ -4,9 +4,13 @@
     <%= product.name %>
   </p>
 
+  <% @product.images.each do |image| %>
+    <%= image_tag image %>
+  <% end %>
+
   <p>
     <strong>Description:</strong>
-    <%= product.description %>
+    <%= product.description.body %>
   </p>
 
   <p>

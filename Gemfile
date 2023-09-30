@@ -23,7 +23,5 @@ group :development do
   gem "dotenv-rails"
   gem "web-console"
   gem "standard"
-  gem "pry"
-  gem "pry-rails"
   gem "awesome_print"
 end

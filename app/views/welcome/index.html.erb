@@ -62,109 +62,6 @@
       </div>
     </div>
   </div>
-  <div class="clasifieds-cards-area">
-    <h2>Telefonos celulares</h2>
-    <div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'motorola1.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Kia Picanto</p>
-        </div>
-        <div class="location">
-          <p>Bucaramanga, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'motorola1.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Motorola E40</p>
-        </div>
-        <div class="location">
-          <p>Bucaramanga, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'motorola1.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Motorola E40</p>
-        </div>
-        <div class="location">
-          <p>Bucaramanga, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'motorola1.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Motorola E40</p>
-        </div>
-        <div class="location">
-          <p>Bucaramanga, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <div class="clasifieds-cards-area">
  <% @products.each do |product| %>
@@ -172,7 +69,8 @@
     <div>
       <div class="ad-card">
         <div>
-          <%= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
+        <%= image_tag product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
+          <%#= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
         </div>
         <div>
           <p class="pricing">COP  $ <%= product.price %>
@@ -182,6 +80,10 @@
         <div class="ad-desc">
           <p><%= product.name %></p>
         </div>
+        <div class="ad-desc">
+        <p><%= product.description.body %></p>
+        </div>
+
         <div class="location">
           <p>Cartagena, Colombia. </p>
           <p class="small-txt">1 semana atras</p>
@@ -195,170 +97,6 @@
   </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-  <div class="clasifieds-cards-area">
-    <h2>Automoviles</h2>
-    <div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Kia Picanto</p>
-        </div>
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-       <button id="showModalButton" class="btn">Add Lead</button>
-       <%= render "welcome/lead", locals: { product_id: "1" }  %>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Kia Picanto</p>
-        </div>
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Kia Picanto</p>
-        </div>
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Kia Picanto</p>
-        </div>
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="clasifieds-cards-area">
-    <h2>Bikes</h2>
-    <div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://bd.gaadicdn.com/processedimages/indian/scout-bobber/source/scout-bobber62eb4a0d92990.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Honda Navi </p>
-        </div>
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://bd.gaadicdn.com/processedimages/indian/scout-bobber/source/scout-bobber62eb4a0d92990.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Honda Navi </p>
-        </div>
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://bd.gaadicdn.com/processedimages/indian/scout-bobber/source/scout-bobber62eb4a0d92990.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Honda Navi </p>
-        </div>
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-      <div class="ad-card">
-        <div>
-          <%= image_tag 'https://bd.gaadicdn.com/processedimages/indian/scout-bobber/source/scout-bobber62eb4a0d92990.jpg' %>
-        </div>
-        <div>
-          <p class="pricing">COP  $ 1.500.000
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p>Honda Navi </p>
-        </div>
-        <div class="location">
-          <p>Bucaramanga, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 <div class="bottom-link-img container">
   <%= image_tag 'banner.jpg', class:"bottom-link-img container" %>
 </div>

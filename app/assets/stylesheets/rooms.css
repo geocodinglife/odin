@@ -21,8 +21,6 @@
   width: 83.33%;
 }
 
-.message-list {}
-
 .message-scroll {
   height: 18rem;
   background-color: white;
@@ -31,8 +29,6 @@
   margin-top: 1.25rem;
   overflow-y: auto;
 }
-
-.message-form-container {}
 
 .main-container {
   display: flex;
