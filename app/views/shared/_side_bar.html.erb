@@ -1,12 +1,47 @@
 <style>
-  .side-nav {
-    width: 15rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+
+  /* Styles for the side navigation menu */
+.side-nav {
+    height: 100%;
+    position: fixed;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
     border: 1px solid #90cdf4;
   }
+  }
+}
+
+.side-nav a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+}
+
+.side-nav a:hover {
+    color: #555;
+}
+
+/* Button to open the side navigation */
+#openNav {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+}
+
 </style>
 
 <%= turbo_stream_from 'user_rooms_channel' %>
@@ -15,3 +50,49 @@
 <nav class="side-nav">
   <%= render 'shared/user_rooms' %>
 </nav>
+
+
+    <!-- Button to open the side navigation -->
+    <button id="openNav">☰ Messages</button>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const openNavButton = document.getElementById('openNav');
+    const sideNav = document.querySelector('.side-nav');
+
+    openNavButton.addEventListener('click', function () {
+        sideNav.style.width = '300px'; // Adjust the width as needed
+    });
+
+    // Close the side navigation when clicking outside of it
+    window.addEventListener('click', function (event) {
+        if (event.target !== sideNav && event.target !== openNavButton) {
+            sideNav.style.width = '0';
+        }
+    });
+
+    // Swipe gestures for mobile
+    let touchStartX = null;
+    let touchEndX = null;
+
+    document.addEventListener('touchstart', function (event) {
+        touchStartX = event.touches[0].clientX;
+    });
+
+    document.addEventListener('touchmove', function (event) {
+        touchEndX = event.touches[0].clientX;
+    });
+
+    document.addEventListener('touchend', function () {
+        const swipeThreshold = 50; // Adjust the threshold as needed
+
+        if (touchStartX - touchEndX > swipeThreshold) {
+            // Swiped from left to right, open the side navigation
+            sideNav.style.width = '250px'; // Adjust the width as needed
+        } else if (touchEndX - touchStartX > swipeThreshold) {
+            // Swiped from right to left, close the side navigation
+            sideNav.style.width = '0';
+        }
+    });
+});
+
+</script>

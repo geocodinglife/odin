@@ -1,0 +1,491 @@
+/* this code will propagate true the whole page, is this what we want? */
+main-page,
+h1,
+h2 {
+  color: #212322;
+  text-decoration: underline 2px #ffce32;
+}
+
+main-page,
+a {
+  text-decoration: none;
+  color: #212322;
+}
+
+/* code for the navbar move this to his own file for the partial. */
+
+.header {
+  background-color: none;
+  padding: 20px;
+  padding-left: 80px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  justify-content: center;
+  align-items: center;
+  background-color: #212322;
+  color: #fff;
+}
+
+.brand-style {
+  color: #212322;
+  font-weight: bold;
+  font-size: 24px;
+  padding: 0 3px 0 3px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Hero image node */
+.content {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 0;
+  background-color: #f7f8f8;
+}
+
+.masterhead {
+  background: url(realstate.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 400px;
+}
+
+.txt-masterhead {
+  position: relative;
+  top: 60px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+  background-color: rgba(33, 35, 34, 0.5);
+  border-radius: 15px;
+  padding: 20px;
+}
+
+
+.content_select {
+  display: flex;
+  align-items: center;
+}
+
+.top-bar-items {
+  padding: 5px;
+  display: inline-flex;
+  padding-bottom: 2px;
+  padding-top: 2px;
+  align-items: center;
+}
+
+.header-bottom {
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.select_input {
+  padding: 10px;
+  width: 200px;
+}
+
+.search {
+  width: 40vw;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.logo2 {
+  width: 60px;
+  fill: blue;
+}
+
+.fa-magnifying-glass {
+  background-color: #fff;
+  color: #212322;
+  padding: 13px;
+  border-radius: 0 10% 10% 0;
+}
+
+.sell-button {
+  background-color: #fff;
+  border-bottom: 7px solid #46aca9;
+  border-top: 7px solid #3a77ff;
+  border-left: 7px solid #ffce32;
+  border-right: 7px solid #23e5db;
+  padding: 15px;
+  border-radius: 20px;
+  margin-left: 20px;
+}
+
+.top-bar-icons {
+  padding: 20px;
+  font-size: 20px;
+}
+
+.header-bottom-bar {
+  padding: 20px;
+  padding-left: 80px;
+  box-shadow: 0 1px 1px #00000041;
+}
+
+.li-menu {
+  display: inline-block;
+  padding-right: 10px;
+  font-size: 0.8em;
+}
+
+.li-menu:hover {
+  cursor: pointer;
+  color: #46aca9;
+}
+
+.txt-bold {
+  font-weight: bold;
+}
+
+.btn-align {
+  width: 700px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-sessions {
+  padding: 5px;
+  text-decoration: underline 2px #212322;
+  border: none;
+  background: none;
+  font-size: large;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-sessions:hover {
+  text-decoration: underline 3px #ffce32;
+  /* color: #46aca9; */
+}
+
+.logout-container {
+  justify-content: end;
+  text-align: end;
+}
+
+/* for the slider image */
+
+.mySlides {
+  width: 100%;
+  height: 220px;
+}
+
+.cat-area {
+  background-color: #F0F0F0;
+  text-align: center;
+}
+
+.products {
+  display: flex;
+  justify-content: space-around;
+  background-color: #F0F0F0;
+}
+
+.cat-card {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin: 20px 5px;
+  padding-left: 10px;
+}
+
+.cat-card p {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.cat-card-img {
+  width: 50px;
+  height: 50px;
+
+}
+
+.cat-card-align {
+  text-align: center;
+}
+
+/* For the categories area */
+
+.ad-card {
+  width: 20.62em;
+  margin: 20px 15px;
+  border-radius: 5px;
+  overflow: hidden;
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+  border-radius: 10px;
+
+}
+
+.ad-card img {
+  width: 100%;
+  height: auto;
+}
+
+.ad-card::first-child {
+  background-color: white;
+}
+
+.pricing {
+  padding: 10px;
+  font-weight: bold;
+  border-top: 1px dotted #002f34;
+}
+
+.heart-icon {
+  float: right;
+}
+
+.ad-desc,
+.location {
+  padding: 5px 0 5px 0;
+  margin: 0;
+  background-color: #212322;
+  color: #fff;
+}
+
+.small-txt {
+  font-size: 10px;
+  color: #8b8a8a;
+  padding: 10px 0 0 0;
+}
+
+.bottom-link-img {
+  width: 100%;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background-color: #f7f8f8;
+  padding: 20px;
+  padding-left: 80px;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  display: flex;
+}
+
+/* I think this code is not doing anything. */
+.container-fluid {
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links-head {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  list-style-type: none;
+  margin-bottom: 3px;
+  color: #6c6c6c;
+  cursor: pointer;
+}
+
+.footer-column {
+  margin-right: 20px;
+  display: inline-block;
+  width: 200px;
+  padding-top: 5px;
+}
+
+.social-footer-links {
+  margin-right: 10px;
+}
+
+.app-logo .img-footer {
+  margin-top: 20px;
+  max-width: 50px;
+}
+
+.footer-credit {
+  text-align: end;
+}
+
+.footer-credit-bg {
+  background-color: #002f34;
+  padding: 20px;
+  padding-right: 80px;
+}
+
+.footer-credit-p {
+  color: #fff;
+}
+
+/* This part will be for the login view only */
+.row-sessions {
+  display: inline-block;
+  padding: 20px;
+  margin: 0;
+}
+
+.container-row {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.row-sessions-deco {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('realstate.jpg'), linear-gradient(rgba(33, 35, 34, 0.6), rgba(33, 35, 34, 0.6));
+  padding: 20px;
+  height: auto;
+  background-size: cover;
+
+}
+
+.position-row {
+  display: inline-block;
+  width: 50%;
+  padding: 100px;
+  margin: 0;
+}
+
+.container-sessions .navbar-main {
+  display: none;
+}
+
+.bg-container {
+  background-color: #212322;
+}
+
+.container-row2 {
+  display: flex;
+  justify-content: center;
+  background: url('carsale.jpg'), linear-gradient(rgba(33, 35, 34, 0.6), rgba(33, 35, 34, 0.6));
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.row-sessions2 {
+  display: inline-block;
+  padding: 50px;
+  margin: 50px;
+  border-radius: 25px;
+  border: 1px solid #212322;
+  background-color: rgba(240, 240, 240, 0.7);
+}
+
+/* aca va el codigo para que se vea responsive el header */
+/* Estilos para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .logo2 {
+    visibility: hidden;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 20px;
+  }
+
+  .top-bar-items {
+    padding: 5px;
+    text-align: center;
+  }
+
+  .select_input {
+    width: 100%;
+  }
+
+  .search {
+    width: 80%;
+  }
+
+  .sell-button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .top-bar-icons {
+    padding: 10px;
+    font-size: 16px;
+  }
+
+  .content_select {
+    min-width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-bottom {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px #212322 solid;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .btn-align {
+    max-width: 100px;
+    display: flex;
+  }
+
+  .btn-sessions:hover {
+    color: #ffce32;
+  }
+}
+
+/* -------------------------This code is for testing porpuse, make it better -------------------- */
+
+/* Style the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Style the modal content */
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px;
+}
+
+/* Style the close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -10,5 +10,5 @@ class User < ApplicationRecord
   has_many :rooms, through: :user_rooms
   has_many :messages
 
-  validates_uniqueness_of :phone
+  validates :phone, {presence: true, uniqueness: true}
 end
