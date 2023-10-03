@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @products = Product.all
+    @products = Product.last(40)
   end
 end

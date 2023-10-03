@@ -1,4 +1,4 @@
-<main class="main-properties">
+<main class="main-page">
 <div>
   <div class="content masterhead">
     <div class="txt-masterhead">
@@ -63,13 +63,12 @@
     </div>
   </div>
 
-<div class="clasifieds-cards-area">
+<div class="products">
  <% @products.each do |product| %>
-    <h2>Automoviles</h2>
     <div>
       <div class="ad-card">
         <div>
-        <%= image_tag product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
+        <%= image_tag product.images.first.variant(resize: '100x100') || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
           <%#= image_tag 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1' %>
         </div>
         <div>

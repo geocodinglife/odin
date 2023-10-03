@@ -1,16 +1,19 @@
 /* this code will propagate true the whole page, is this what we want? */
+main-page,
 h1,
 h2 {
   color: #212322;
   text-decoration: underline 2px #ffce32;
 }
 
+main-page,
 a {
   text-decoration: none;
   color: #212322;
 }
 
 /* code for the navbar move this to his own file for the partial. */
+
 .header {
   background-color: none;
   padding: 20px;
@@ -32,6 +35,7 @@ a {
   width: 100%;
 }
 
+/* Hero image node */
 .content {
   display: flex;
   align-items: center;
@@ -179,11 +183,15 @@ a {
   height: 220px;
 }
 
-.header-ad,
-.cat-area,
-.clasifieds-cards-area {
+.cat-area {
   background-color: #F0F0F0;
   text-align: center;
+}
+
+.products {
+  display: flex;
+  justify-content: space-around;
+  background-color: #F0F0F0;
 }
 
 .cat-card {
@@ -215,9 +223,7 @@ a {
 /* For the categories area */
 
 .ad-card {
-  cursor: pointer;
-  display: inline-block;
-  width: 220px;
+  width: 20.62em;
   margin: 20px 15px;
   border-radius: 5px;
   overflow: hidden;
@@ -227,13 +233,13 @@ a {
 
 }
 
-.ad-card::first-child {
-  background-color: white;
-}
-
 .ad-card img {
   width: 100%;
   height: auto;
+}
+
+.ad-card::first-child {
+  background-color: white;
 }
 
 .pricing {
@@ -416,7 +422,7 @@ a {
     font-size: 16px;
   }
 
-  .contentSelect {
+  .content_select {
     min-width: 50%;
     display: flex;
     flex-direction: column;
@@ -427,10 +433,6 @@ a {
     justify-content: center;
     text-align: center;
     border-bottom: 1px #212322 solid;
-  }
-
-  .mySlides {
-    flex: 0 0 100%;
   }
 
   .footer {

@@ -4,8 +4,8 @@
     <%= product.name %>
   </p>
 
-  <% @product.images.each do |image| %>
-    <%= image_tag image %>
+  <% product.images.each do |image| %>
+      <%= image_tag image, class: "product-image" %>
   <% end %>
 
   <p>
