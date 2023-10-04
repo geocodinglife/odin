@@ -1,164 +1,119 @@
 <main class="main-page">
-<div>
-  <div class="content masterhead">
-    <div class="txt-masterhead">
-      <p>Necesitas un espacio para trabajar, tu proxima oficina te espera aca ..  </p>
-    </div>
-  </div>
-  <div class="category-area">
-    <div class="cat-card-align ">
-      <div class="cat-card">
-        <%= image_tag 'mobile.png', class:"category_image_link"%>
-        <p>Mobiles</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'car.png', class:"category_image_link"%>
-        <p>Vehiculos</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'property.png', class:"category_image_link"%>
-        <p>Propiedades</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'rental.png', class:"category_image_link"%>
-        <p>Alquileres</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'electro.png', class:"category_image_link"%>
-        <p>Electronica</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'bikes.png', class:"category_image_link"%>
-        <p>Bicicletas</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'business.png', class:"category_image_link"%>
-        <p>Empresas</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'services.png', class:"category_image_link"%>
-        <p>Servicios</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'jobs.png', class:"category_image_link"%>
-        <p>Empleos</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'pets.png', class:"category_image_link"%>
-        <p>Mascotas</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'furniture.png', class:"category_image_link"%>
-        <p>Muebles</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'books.png', class:"category_image_link"%>
-        <p>Libros</p>
-      </div>
-      <div class="cat-card">
-        <%= image_tag 'kids.png', class:"category_image_link"%>
-        <p>Niños</p>
+  <div>
+    <div class="content masterhead">
+      <div class="txt-masterhead">
+        <p>Necesitas un espacio para trabajar, tu proxima oficina te espera aca ..  </p>
       </div>
     </div>
-  </div>
-
-<div class="products">
- <% @products.each do |product| %>
-    <div>
-      <div class="ad-card">
-        <div>
-        <%= link_to(image_tag(product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1'), product_path(product)) %>
+    <div class="category-area">
+      <div class="cat-card-align ">
+      <% @icons.each do |icon| %>
+        <div class="cat-card">
+          <%= image_tag icon.second, class:"category_image_link"%>
+          <p><%= icon.first %></p>
         </div>
-        <div>
-          <h2>Todas la categorias</h2>
-          <h2 class="pricing"><%= product.category.name %></h2>
-          </p>
-        </div>
-        <div>
-          <p class="pricing">COP  $ <%= product.price %>
-            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-          </p>
-        </div>
-        <div class="ad-desc">
-          <p><%= product.name %></p>
-        </div>
-        <div class="ad-desc">
-        <p><%= product.description.body %></p>
-        </div>
-
-        <div class="location">
-          <p>Cartagena, Colombia. </p>
-          <p class="small-txt">1 semana atras</p>
-        </div>
-
-        <button class="btn showModalButton" data-product-id="<%= product.id %>">Add Lead</button>
-        <%= render "welcome/lead", locals: { product_id: product.id }  %>
-      </div>     
+        <% end %>
+      </div>
     </div>
-  <% end %>
+
+  <div class="products">
+    <% @products.each do |product| %>
+      <div>
+        <div class="ad-card">
+          <div>
+          <%= link_to(image_tag(product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1'), product_path(product)) %>
+          </div>
+          <div>
+            <h2>Todas la categorias</h2>
+            <h2 class="pricing"><%= product.category.name %></h2>
+            </p>
+          </div>
+          <div>
+            <p class="pricing">COP  $ <%= product.price %>
+              <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
+            </p>
+          </div>
+          <div class="ad-desc">
+            <p><%= product.name %></p>
+          </div>
+          <div class="ad-desc">
+          <p><%= product.description.body %></p>
+          </div>
+
+          <div class="location">
+            <p>Cartagena, Colombia. </p>
+            <p class="small-txt">1 semana atras</p>
+          </div>
+
+          <button class="btn showModalButton" data-product-id="<%= product.id %>">Add Lead</button>
+          <%= render "welcome/lead", locals: { product_id: product.id }  %>
+        </div>
+      </div>
+    <% end %>
   </div>
 
 
-<div class="bottom-link-img container">
-  <%= image_tag 'banner.jpg', class:"bottom-link-img container" %>
-</div>
-<div class="container">
-  <div class="footer">
-    <div class="footer-column">
-      <p class="footer-links-head"><strong>Categorias Populares</strong></p>
-      <ul>
-        <li class="footer-links">Autos</li>
-        <li class="footer-links">Casas Alquiler</li>
-        <li class="footer-links">Celulares</li>
-        <li class="footer-links">Electronica</li>
-      </div>
+  <div class="bottom-link-img container">
+    <%= image_tag 'banner.jpg', class:"bottom-link-img container" %>
+  </div>
+
+  <div class="container">
+    <div class="footer">
       <div class="footer-column">
-        <p class="footer-links-head"><strong>Lo mas buscado</strong></p>
+        <p class="footer-links-head"><strong>Categorias Populares</strong></p>
         <ul>
           <li class="footer-links">Autos</li>
           <li class="footer-links">Casas Alquiler</li>
           <li class="footer-links">Celulares</li>
           <li class="footer-links">Electronica</li>
-          <li class="footer-links">Trabajos</li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <p class="footer-links-head"><strong>Acerca de nosotros</strong></p>
-        <ul>
-          <li class="footer-links">FAQ</li>
-          <li class="footer-links">Odin Jobs</li>
-          <li class="footer-links">Quienes somos</li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <p class="footer-links-head"><strong>ODIN Store</strong></p>
-        <ul>
-          <li class="footer-links">Contactos</li>
-          <li class="footer-links">Ayuda</li>
-          <li class="footer-links">Preguntas frecuentes</li>
-          <li class="footer-links">Terminos & condiciones</li>
-        </ul>
-      </div>
-      <div class="footer-column footer-column2">
-        <p class="footer-links-head"><strong>FOLLOW US</strong></p>
-        <div class="">
-          <span class="social-footer-links"> <i class="fa-brands fa-facebook fa-2xl"></i></span>
-          <span class="social-footer-links"> <i class="fa-brands fa-instagram fa-2xl"></i></span>
-          <span class="social-footer-links"> <i class="fa-brands fa-twitter fa-2xl"></i></span>
-          <span class="social-footer-links"> <i class="fa-brands fa-youtube fa-2xl"></i></span>
         </div>
-        <div class="app-logo">
-          <%= image_tag 'mac.jpg', class:"img-footer" %>
-          <%= image_tag 'playstore.jpg', class:"img-footer"%>
-          <%= image_tag 'galleryapp.jpg', class:"img-footer"%>
+        <div class="footer-column">
+          <p class="footer-links-head"><strong>Lo mas buscado</strong></p>
+          <ul>
+            <li class="footer-links">Autos</li>
+            <li class="footer-links">Casas Alquiler</li>
+            <li class="footer-links">Celulares</li>
+            <li class="footer-links">Electronica</li>
+            <li class="footer-links">Trabajos</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <p class="footer-links-head"><strong>Acerca de nosotros</strong></p>
+          <ul>
+            <li class="footer-links">FAQ</li>
+            <li class="footer-links">Odin Jobs</li>
+            <li class="footer-links">Quienes somos</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <p class="footer-links-head"><strong>ODIN Store</strong></p>
+          <ul>
+            <li class="footer-links">Contactos</li>
+            <li class="footer-links">Ayuda</li>
+            <li class="footer-links">Preguntas frecuentes</li>
+            <li class="footer-links">Terminos & condiciones</li>
+          </ul>
+        </div>
+        <div class="footer-column footer-column2">
+          <p class="footer-links-head"><strong>FOLLOW US</strong></p>
+          <div class="">
+            <span class="social-footer-links"> <i class="fa-brands fa-facebook fa-2xl"></i></span>
+            <span class="social-footer-links"> <i class="fa-brands fa-instagram fa-2xl"></i></span>
+            <span class="social-footer-links"> <i class="fa-brands fa-twitter fa-2xl"></i></span>
+            <span class="social-footer-links"> <i class="fa-brands fa-youtube fa-2xl"></i></span>
+          </div>
+          <div class="app-logo">
+            <%= image_tag 'mac.jpg', class:"img-footer" %>
+            <%= image_tag 'playstore.jpg', class:"img-footer"%>
+            <%= image_tag 'galleryapp.jpg', class:"img-footer"%>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="footer-credit-bg">
-      <div class="footer-credit footer-credit-p">
-        <p class="footer-credit"><strong class="credit-footer-p">Clasificado gratis en Colombia</strong> &copy; 2023</p>
+      <div class="footer-credit-bg">
+        <div class="footer-credit footer-credit-p">
+          <p class="footer-credit"><strong class="credit-footer-p">Clasificado gratis en Colombia</strong> &copy; 2023</p>
+        </div>
       </div>
-    </div>
   </div>
 </main>
 
