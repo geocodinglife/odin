@@ -5,59 +5,58 @@
       <p>Necesitas un espacio para trabajar, tu proxima oficina te espera aca ..  </p>
     </div>
   </div>
-  <div class="cat-area">
-    <h2>Todas la categorias</h2>
+  <div class="category-area">
     <div class="cat-card-align ">
       <div class="cat-card">
-        <%= image_tag 'mobile.png', class:"cat-card-img"%>
+        <%= image_tag 'mobile.png', class:"category_image_link"%>
         <p>Mobiles</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'car.png', class:"cat-card-img"%>
+        <%= image_tag 'car.png', class:"category_image_link"%>
         <p>Vehiculos</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'property.png', class:"cat-card-img"%>
+        <%= image_tag 'property.png', class:"category_image_link"%>
         <p>Propiedades</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'rental.png', class:"cat-card-img"%>
+        <%= image_tag 'rental.png', class:"category_image_link"%>
         <p>Alquileres</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'electro.png', class:"cat-card-img"%>
+        <%= image_tag 'electro.png', class:"category_image_link"%>
         <p>Electronica</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'bikes.png', class:"cat-card-img"%>
+        <%= image_tag 'bikes.png', class:"category_image_link"%>
         <p>Bicicletas</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'business.png', class:"cat-card-img"%>
+        <%= image_tag 'business.png', class:"category_image_link"%>
         <p>Empresas</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'services.png', class:"cat-card-img"%>
+        <%= image_tag 'services.png', class:"category_image_link"%>
         <p>Servicios</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'jobs.png', class:"cat-card-img"%>
+        <%= image_tag 'jobs.png', class:"category_image_link"%>
         <p>Empleos</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'pets.png', class:"cat-card-img"%>
+        <%= image_tag 'pets.png', class:"category_image_link"%>
         <p>Mascotas</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'furniture.png', class:"cat-card-img"%>
+        <%= image_tag 'furniture.png', class:"category_image_link"%>
         <p>Muebles</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'books.png', class:"cat-card-img"%>
+        <%= image_tag 'books.png', class:"category_image_link"%>
         <p>Libros</p>
       </div>
       <div class="cat-card">
-        <%= image_tag 'kids.png', class:"cat-card-img"%>
+        <%= image_tag 'kids.png', class:"category_image_link"%>
         <p>Niños</p>
       </div>
     </div>
@@ -69,6 +68,11 @@
       <div class="ad-card">
         <div>
         <%= link_to(image_tag(product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1'), product_path(product)) %>
+        </div>
+        <div>
+          <h2>Todas la categorias</h2>
+          <h2 class="pricing"><%= product.category.name %></h2>
+          </p>
         </div>
         <div>
           <p class="pricing">COP  $ <%= product.price %>
