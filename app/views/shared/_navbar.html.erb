@@ -1,65 +1,33 @@
 <div class="navbar-main">
-  <div class="content">
-    <div class="top-bar-items">
-      <span class="brand-style">ODIN </span>
-    </div>
-    <div class="top-bar-items">
-      <a href="#"><i class="fa-solid fa-car padding-icons"></i> Motors</a>
-    </div>
-    <div class="top-bar-items">
-      <a href="#"><i class="fa-solid fa-building"></i> Property</a>
-    </div>
-    <div class="top-bar-items">
-      <span style="font-size:10px">and more ...</span>
-    </div>
-    <div class="top-bar-items">
-      <div class="btn-align">
-        <div class="logout-container">
-          <% if user_signed_in? %>
-            <%= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
-            <a href="#" class="btn-align">Mis compras</a>
-          <% else %>
-            <%= link_to  "Entrar", user_session_path, class:"btn-sessions" %>
-          <% end %>
-        </div>
-      </div>
+  <div class="top_navbar_links">
+    <%= image_tag 'logow.svg', class:"logo2"%>
+  </div>
+  <div class="top_navbar_links">
+    <select name="" id="" class="select_input">
+      <option value="BU">Bucaramanga</option>
+      <option value="BO">Bogota</option>
+      <option value="CA">Cali</option>
+    </select>
+  </div>
+  <div class="top_navbar_links">
+    <input type="search" class="select_input search" placeholder="Encuentra autos, casas y mucho mas ...">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+  <div class="top_navbar_links">
+    <i class="fa-regular fa-comment top-bar-icons"></i>
+    <i class="fa-regular fa-bell top-bar-icons"></i>
+    <%= link_to new_product_path, class: "sell-button" do %>
+      <i class="fa-solid fa-plus"></i> Vender
+    <% end %>
+  </div>
+  <div class="top_navbar_links">
+    <div class="btn-align">
+      <% if user_signed_in? %>
+        <%= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
+        <a href="#">Mis compras</a>
+      <% else %>
+        <%= link_to  "Entrar", user_session_path, class:"btn-sessions"%>
+      <% end %>
     </div>
   </div>
-  <div class="header">
-    <div class="header-bottom">
-      <div class="content_select">
-        <div class="top-bar-items">
-          <%= image_tag 'logow.svg', class:"logo2"%>
-        </div>
-        <div class="top-bar-items">
-          <select name="" id="" class="select_input">
-            <option value="BU">Bucaramanga</option>
-            <option value="BO">Bogota</option>
-            <option value="CA">Cali</option>
-          </select>
-        </div>
-        <div class="top-bar-items">
-          <input type="search" class="select_input search" placeholder="Encuentra autos, casas y mucho mas ...">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </div>
-        <div class="top-bar-items">
-          <i class="fa-regular fa-comment top-bar-icons"></i>
-          <i class="fa-regular fa-bell top-bar-icons"></i>
-          <button class="sell-button"> <i class="fa-solid fa-plus"></i> Vender</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="header-bottom-bar">
-    <div>
-      <ul class="navbar-menu-cat">
-        <li class="li-menu">Todas las categorias</b> <i class="fa-solid fa-angle-down"></i></li>
-      <li class="li-menu">Telefonos</li>
-      <li class="li-menu">Autos</li>
-      <li class="li-menu">Motocicletas</li>
-      <li class="li-menu">TV - Audio - Videos</li>
-      <li class="li-menu">Tables</li>
-    </ul>
-  </div>
-</div>
 </div>

@@ -1,7 +1,37 @@
 <div id="<%= dom_id category %>">
   <p>
     <strong>Name:</strong>
-    <%= category.name %>
+    <h1><%= category.name %></div>
   </p>
-
 </div>
+
+<div class="products">
+ <% category.products.each do |product| %>
+    <div>
+      <div class="ad-card">
+        <div>
+        <%= link_to(image_tag(product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1'), product_path(product)) %>
+        </div>
+        <div>
+          <p class="pricing">COP  $ <%= product.price %>
+            <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
+          </p>
+        </div>
+        <div class="ad-desc">
+          <p><%= product.name %></p>
+        </div>
+        <div class="ad-desc">
+        <p><%= product.description.body %></p>
+        </div>
+
+        <div class="location">
+          <p>Cartagena, Colombia. </p>
+          <p class="small-txt">1 semana atras</p>
+        </div>
+
+        <button class="btn showModalButton" data-product-id="<%= product.id %>">Add Lead</button>
+        <%= render "welcome/lead", locals: { product_id: product.id }  %>
+      </div>
+    </div>
+  <% end %>
+  </div>
