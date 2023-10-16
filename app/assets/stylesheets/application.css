@@ -27,3 +27,10 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+
+.navbar-main {
+  padding: 8vh;
+  display: flex;
+  justify-content: space-between;
+}
