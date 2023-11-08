@@ -17,7 +17,7 @@ class LeadsController < ApplicationController
       user = User.find_or_create_by(email: params[:lead][:email]) do |user|
         user.first_name = params[:lead][:first_name]
         user.phone = params[:lead][:phone]
-        user.auth_secret = (params[:lead][:first_name] + params[:lead][:phone])
+        user.auth_secret = ROTP::Base32.random(16)
       end
 
       lead = Lead.create!(product_id: params[:product_id], user_id: user.id)

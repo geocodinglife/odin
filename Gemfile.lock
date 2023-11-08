@@ -283,7 +283,7 @@ DEPENDENCIES
   puma (~> 6.4.0)
   rails (~> 7.1)
   redis (~> 4.0)
-  rotp
+  rotp (~> 6.3)
   sprockets-rails
   standard
   stimulus-rails

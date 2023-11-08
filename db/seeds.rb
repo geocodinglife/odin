@@ -5,7 +5,7 @@ Category.delete_all
 User.create!(
   first_name: "John",
   last_name: "Doe",
-  auth_secret: "123456",
+  auth_secret: ROTP::Base32.random(16),
   phone: "1234567893",
   email: "john@example.com"
 )
@@ -13,7 +13,7 @@ User.create!(
 User.create!(
   first_name: "Jane",
   last_name: "Doe",
-  auth_secret: "123456",
+  auth_secret: ROTP::Base32.random(16),
   phone: "9876543211",
   email: "jane@example.com"
 )
@@ -21,9 +21,9 @@ User.create!(
 user_three = User.create!(
   first_name: "geo",
   last_name: "test",
-  auth_secret: "123456",
-  phone: "9876543212",
-  email: "test@test.com"
+  auth_secret: ROTP::Base32.random(16),
+  phone: "9876543210",
+  email: "geo@geo.com"
 )
 
 first_category = Category.create!(name: "Electronics")

@@ -1,5 +1,5 @@
 <p class="text-2xl text-gray-900 font-medium mb-3">
-  What’s your email?
+  What’s your phone?
 </p>
 <%= form_with(url: auth_path, html: { data: { turbo: false } }) do |f| %>
   <%= f.phone_field :phone, value: params[:phone], placeholder: "333333333", class: "w-full rounded-md border-gray-300" %>

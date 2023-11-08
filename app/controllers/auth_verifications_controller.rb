@@ -8,7 +8,7 @@ class AuthVerificationsController < ApplicationController
 
   def create
     @phone = session[:phone]
-    resp = UserLogin.verify(@phone, params[:auth_code], session[:salt])
+    resp = UserLogin.verify_information(@phone, params[:auth_code], session[:salt])
 
     if resp.error
       flash[:error] = resp.error

@@ -5,8 +5,8 @@ class AuthController < ApplicationController
   end
 
   def create
-    session[:email] = params[:email]
-    session[:salt] = UserLogin.start_auth(params.permit(:email, :first_name, :last_name, :phone))
+    session[:phone] = params[:phone]
+    session[:salt] = UserLogin.start_auth(params)
     redirect_to auth_verifications_path
   rescue ActiveRecord::RecordInvalid
     # If the user creations fails (usually when first and last name are empty)

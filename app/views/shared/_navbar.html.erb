@@ -1,21 +1,17 @@
 <div class="navbar-main">
   <div>
-    <%= image_tag 'logow.svg', class:"logo2"%>
+    <%= image_tag 'logow.svg', class:"logo"%>
   </div>
   
-  <div>
-    <input type="search" class="select_input search" placeholder="Encuentra autos, casas y mucho mas ...">
-  </div>
-  
-  <div>
-    <%= link_to new_product_path, class: "sell-button" do %>
-      <i class="fa-solid fa-plus"></i> Vender
+  <div class="navbar-right-buttons">
+    <%= link_to new_product_path, class: "green-sale-button" do %>
+       Registrarse
     <% end %>
       <% if user_signed_in? %>
-        <%= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
+        <%#= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
         <a href="#">Mis compras</a>
       <% else %>
-        <%= link_to  "Entrar", sessions_new_path, class:"btn-sessions"%>
+        <%= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
       <% end %>
   </div>
 </div>
