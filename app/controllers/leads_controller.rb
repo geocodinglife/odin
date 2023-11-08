@@ -9,13 +9,15 @@ class LeadsController < ApplicationController
   end
 
   def create
+    # TODO leands and products has a similar way of create a new user
+    # I have to create the create of user in the users_controller.rb
     product = Product.find_by(id: params[:product_id])
 
     Lead.transaction do
       user = User.find_or_create_by(email: params[:lead][:email]) do |user|
         user.first_name = params[:lead][:first_name]
         user.phone = params[:lead][:phone]
-        user.password = (params[:lead][:first_name] + params[:lead][:phone])
+        user.auth_secret = ROTP::Base32.random(16)
       end
 
       lead = Lead.create!(product_id: params[:product_id], user_id: user.id)

@@ -13,7 +13,8 @@ gem "jbuilder"
 gem "redis", "~> 4.0"
 gem "bootsnap", require: false
 gem "image_processing", "~> 1.2"
-gem "devise"
+gem "rotp", "~> 6.3"
+gem "base32"
 
 group :development, :test do
   gem "debug", platforms: %i[mri mingw x64_mingw]

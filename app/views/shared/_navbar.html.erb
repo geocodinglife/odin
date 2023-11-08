@@ -1,33 +1,17 @@
 <div class="navbar-main">
-  <div class="top_navbar_links">
-    <%= image_tag 'logow.svg', class:"logo2"%>
+  <div>
+    <%= image_tag 'logow.svg', class:"logo"%>
   </div>
-  <div class="top_navbar_links">
-    <select name="" id="" class="select_input">
-      <option value="BU">Bucaramanga</option>
-      <option value="BO">Bogota</option>
-      <option value="CA">Cali</option>
-    </select>
-  </div>
-  <div class="top_navbar_links">
-    <input type="search" class="select_input search" placeholder="Encuentra autos, casas y mucho mas ...">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </div>
-  <div class="top_navbar_links">
-    <i class="fa-regular fa-comment top-bar-icons"></i>
-    <i class="fa-regular fa-bell top-bar-icons"></i>
-    <%= link_to new_product_path, class: "sell-button" do %>
-      <i class="fa-solid fa-plus"></i> Vender
+  
+  <div class="navbar-right-buttons">
+    <%= link_to new_product_path, class: "green-sale-button" do %>
+       Registrarse
     <% end %>
-  </div>
-  <div class="top_navbar_links">
-    <div class="btn-align">
       <% if user_signed_in? %>
-        <%= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
+        <%#= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
         <a href="#">Mis compras</a>
       <% else %>
-        <%= link_to  "Entrar", user_session_path, class:"btn-sessions"%>
+        <%= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
       <% end %>
-    </div>
   </div>
 </div>
