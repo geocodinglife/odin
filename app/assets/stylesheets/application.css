@@ -18,19 +18,128 @@
 
 /* Este sera el header */
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200&family=Poppins:wght@200;300;400;500&display=swap');
+@import url("../assets/fontello-5dc59156/css/fontello.css");
 
-* {
-  font-family: 'Nunito Sans', sans-serif;
-  font-family: 'Poppins', sans-serif;
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+@font-face {
+  font-family: "Cross-bold";
+  src: url("../assets/crossten-cufonfonts/CrosstenExtraBold.otf") format("truetype");
 }
 
+@font-face {
+  font-family: "Cross-normal";
+  src: url("../assets/crossten-cufonfonts/CrosstenLight.otf") format("truetype");
+}
 
-.navbar-main {
-  padding: 8vh;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  max-width: 100vw;
+}
+
+:root {
+  --verde-principal: #00b473;
+  --verde-secundario: green;
+  --azul-principal: #033771;
+  --padding-secciones: 1rem 4rem;
+  --rojo-principal: #9a0505;
+}
+
+button {
+  border: none;
+  background: none;
+  border-radius: 6px;
+  padding: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  border-radius: 1rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Cross-bold";
+  font-weight: bolder;
+}
+
+div,
+p,
+span {
+  font-family: "Cross-normal";
+  font-weight: bolder;
+}
+
+strong {
+  font-family: "Cross-bold";
+  font-weight: bolder;
+}
+
+i {
+  cursor: pointer;
+}
+
+.alerta-anuncio {
+  font-family: 'Cross-normal';
+  background: var(--verde-principal);
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  padding: 4px 0;
+  letter-spacing: 1px;
+}
+
+.nav-home {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 1rem 1.5rem;
+}
+
+.nav-home img {
+  height: 30px;
+}
+
+.nav-home .usuario-acceso {
+  width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.nav-home .usuario-acceso button {
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  color: black;
+  font-size: 16px;
+  font-family: "Cross-bold";
+  box-shadow: none;
+}
+
+.nav-home .usuario-acceso .boton-verde {
+  box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
+  background: var(--verde-principal);
+  color: #fff;
+  font-weight: 100;
+}
+
+footer {
+  background: var(--verde-principal);
+  padding: 8px;
+  text-align: center;
 }
