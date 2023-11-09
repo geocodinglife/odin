@@ -1,11 +1,137 @@
-<%= turbo_frame_tag 'rooms_controller' do %>
-  <main class="main-container">
-    <%= render 'shared/side_bar' %>
+<main>
+<%= turbo_stream_from 'user_rooms_channel' %>
+<%= turbo_stream_from 'room_details_channel' %>
 
-    <section class="content-container">
-      <%= image_tag('chat.png', class: 'app-logo') %>
-      <h1 class="app-title">Chat App - Ruby on Rails 7</h1>
-      <p class="app-description">This is the chat app with RoR and Hotwire.</p>
-    </section>
-  </main>
-<% end %>
+<article class="ventas-compras">
+  <div class="botones">
+    <button class="ventas">Ventas</button>
+    <button class="compras">Compras</button>
+  </div>
+
+  <div class="fijados">
+    <p class="texto-fijados">Fijados</p>
+    <div class="chat-fijado prev-abrir-chat-cliente">
+      <div class="contenedor-izq">
+        <%= image_tag "Contenido/Imágen.svg" %>
+          <div class="nombre-msj">
+            <p>Cristina</p>
+            <p>Pasame tu númerowe</p>
+          </div>
+      </div>
+        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
+    </div>
+  </div>
+  
+  <%#= turbo_frame_tag 'rooms_controller' do %>
+    <div class="demas-chats">
+      <p class="texto-demas-chats">Chats</p>
+      <div class="dropdown-clientes">
+        <p>Moto Yamaha T500</p>
+        <%#= render 'shared/user_rooms' %>
+          <i class="icon-down-open" id="abrir-lista-clientes"></i>
+      </div>
+    </div>
+  <%# end %>
+
+  <div class="lista-clientes" id="lista-clientes">
+    <div class="cliente prev-abrir-chat-cliente">
+      <div class="caja-izq">
+        <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
+        <div class="nombre-y-msj">
+            <p>Laura</p>
+            <p class="mensaje-cliente">Mensaje de prueba de laurqweeeeeeeeeeeeeea</p>
+        </div>
+      </div>
+        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
+    </div>
+
+    <div class="cliente prev-abrir-chat-cliente">
+      <div class="caja-izq">
+        <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
+          <div class="nombre-y-msj">
+              <p>Laura</p>
+              <p class="mensaje-cliente">Mensaje de prueba de laura</p>
+          </div>
+      </div>
+        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
+    </div>
+
+    <div class="cliente prev-abrir-chat-cliente">
+      <div class="caja-izq">
+        <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
+        <div class="nombre-y-msj">
+            <p>Laura</p>
+            <p class="mensaje-cliente">Mensaje de prueba de laura</p>
+        </div>
+      </div>
+        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
+    </div>
+  </div>
+</article>
+
+<article class="chat">
+  <div class="header-chat">
+    <div class="cliente-chat">
+      <%= image_tag "Contenido/Vendedor.png" %>
+      <p class="nombre-vendedor">Pedro Flores</p>
+    </div>
+    <p class="producto-chat">Moto Yamaha T500</p>
+  </div>
+
+  <div class="cuerpo-chat">
+    <h4 class="fecha">24 de Julio</h4>
+
+    <div class="tus-mensajes">
+      <p class="tu-mensaje">Lorem ipsumulla lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Doloribus dicta cum optio consequatur dolore corrupti a, sed omnis rerum voluptatibus nostrum
+          deleniti modi. Perferendis, adipisci molestias vitae ipsum modi sapiente, culpa officia tempore
+          asperiores dignissimos voluptate facere ex fugit obcaecati accusantium expedita illum ducimus
+          voluptatum sunt minus illo at eos harum non? Placeat, excepturi! Voluptatem facere distinctio
+          aspernatur cum doloremque.
+      </p>
+
+      <div class="foto-hora-mensaje">
+          <%= image_tag "Contenido/Imágen.svg" %>
+          <p class="hora-mensaje">6:32 pm</p>
+      </div>
+    </div>
+
+    <div class="mensajes-vendedor">
+      <div class="foto-hora-mensaje-vendedor">
+          <%= image_tag "Contenido/Imágen.svg" %>
+          <p class="hora-mensaje">6:32 pm</p>
+      </div>
+      <p class="su-mensaje">Lorempedit. Nulla?</p>
+    </div>
+
+    <div class="tus-mensajes">
+      <p class="tu-mensaje">Lorem ipsumulla lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Doloribus dicta cum optio consequatur dolore corrupti a, sed omnis rerum voluptatibus nostrum
+          deleniti modi. Perferendis, adipisci molestias vitae ipsum modi sapiente, culpa officia tempore
+          asperiores dignissimos voluptate facere ex fugit obcaecati accusantium expedita illum ducimus
+          voluptatum sunt minus illo at eos harum non? Placeat, excepturi! Voluptatem facere distinctio
+          aspernatur cum doloremque.</p>
+      <div class="foto-hora-mensaje">
+        <%= image_tag "Contenido/Imágen.svg" %>
+        <p class="hora-mensaje">6:32 pm</p>
+      </div>
+    </div>
+
+
+    <div class="mensajes-vendedor">
+      <div class="foto-hora-mensaje-vendedor">
+          <%= image_tag "Contenido/Imágen.svg" %>
+          <p class="hora-mensaje">6:32 pm</p>
+      </div>
+      <p class="su-mensaje">Lorempedit. Nulla?</p>
+    </div>
+  </div>
+
+
+  <div class="mensajes">
+    <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje">
+    <%= image_tag "Contenido/Adjuntar.svg", class: "adjuntar" %>
+    <%= image_tag "Contenido/Telegram.svg" %>
+  </div>
+</article>
+</main>
