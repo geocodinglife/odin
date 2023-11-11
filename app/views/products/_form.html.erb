@@ -1,3 +1,5 @@
+<section class="create-product">
+  <div class="product-information">
 <% if !user_signed_in? %>
   <%= form_with(model: @product) do |form| %>
     <% if @product.errors.any? %>
@@ -12,7 +14,6 @@
       </div>
     <% end %>
 
-  <h2>Please Add your information</h2>
     <div>
       <%= form.label :first_name, style: "display: block" %>
       <%= form.text_field :first_name, multiple: true %>
@@ -28,7 +29,6 @@
       <%= form.text_field :phone, multiple: true %>
     </div>
 
-    <h2>Please Add The Product information</h2>
     <div>
       <%= form.label :category_id, "Select Category", style: "display: block" %>
       <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Select a category' %>
@@ -43,9 +43,12 @@
       <%= form.text_field :price %>
     </div>
 
-    <div>
-      <%= form.label :images, style: "display: block" %>
-      <%= form.file_field :images, multiple: true %>
+    <div style="display: flex; align-items: center; justify-content: space-between;">
+      <%= form.label :images, "Adjuntar imagenes" %>
+
+      <%= form.file_field :images, multiple: true, id: "image-upload", style: "display: none;" %>
+
+      <%= label_tag :images, image_tag("Contenido/Adjuntar.svg"), for: "image-upload", style: "cursor: pointer;" %>
     </div>
 
     <div>
@@ -54,7 +57,7 @@
     </div>
 
     <div>
-      <%= form.submit %>
+      <%= form.submit class: "create-product-button" %>
     </div>
   <% end %>
 <% else %>
@@ -96,8 +99,10 @@
       <%= form.rich_text_area :description %>
     </div>
 
-    <div>
+    <div class="create-product-button">
       <%= form.submit %>
     </div>
   <% end %>
 <% end %>
+    </div>
+</section>
