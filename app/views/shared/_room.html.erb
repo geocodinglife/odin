@@ -2,8 +2,4 @@
   <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
     <%= room.name %>
   <% end %>
-  
-  <%#= link_to edit_room_path(room), id: "edit_room_#{room.id}", class: 'edit-link' do %>
-   <!-- Edit -->
-  <%# end %>
 <% end %>

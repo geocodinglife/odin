@@ -1,0 +1,77 @@
+<div class="screen-alert" id="screen-alert">
+    <div class="alert-box">
+        <img src="../../assets/images/Contenido/Cerrar.svg" alt="" id="x-cerrar-alerta">
+        <h2>Iniciar sesión</h2>
+
+        <form id="form-registrate">
+            <input type="text" placeholder="Celular">
+
+            <button type="submit">Siguiente</button>
+
+        </form>
+
+    </div>
+</div>
+
+
+<style>
+
+.screen-alert img {
+  height: 20px;
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.screen-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+}
+
+.screen-alert .alert-box {
+  position: relative;
+  padding: 1rem 2rem;
+  background: #fff;
+  width: 250px;
+  border-radius: 12px;
+}
+
+.screen-alert h2{
+    font-family: 'Cross-bold';
+    margin: 0 0 8px 0;
+    padding: 0;
+    text-align: center;
+}
+
+
+
+.screen-alert form{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.screen-alert form input{
+    padding: 8px;
+    margin: 6px 0;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+.screen-alert form button{
+    margin-top: 12px;
+    background: #033771;
+    border: none;
+    color: white;
+    font-size: 16px;
+    width: 150px;
+    border-radius: 10px;
+    padding: 6px;
+}
+</style>

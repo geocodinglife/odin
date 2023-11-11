@@ -1,53 +1,102 @@
-<main class="main-page">
-  <div>
-    <div class="category-area">
-      <div class="cat-card-align ">
-      <% @icons.each do |icon| %>
-        <div class="cat-card">
-          <%= image_tag icon.second, class:"category_image_link"%>
-          <p><%= icon.first %></p>
-        </div>
-        <% end %>
-      </div>
+<section class="main-banner">
+  <div class="banner-home">
+  <%= image_tag "Contenido/Odin/Banner.png" %>
+    <div class="banner-presentacion">
+        <h1>¡Tenemos lo que quieres!</h1>
+        <p>Solo busca lo que necesitas, dale clic a "<strong>más información</strong>"
+            y descubre una variedad de opciones para lo que estas buscando.
+        </p>
+        <button class="boton-azul" id="quiero-vender-boton">
+            ¡Quiero vender!
+        </button>
+
     </div>
+  </div>
+</section>
 
-  <div class="products">
+<section id="busqueda" class="seccion-busqueda">
+  <div class="input-box">
+    <input type="text" placeholder="Buscar">
+      <i class="icon-search"></i>
+    </div>
+  <article id="categorias" class="categorias">
+    <div id="categorias-box" class="categorias-box">
+      <% @icons.each do |icon| %>
+        <div class="categorias-item-box">
+          <div class="categorias-item">
+            <%= image_tag icon.second %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </article>
+</section>
+
+
+<section id="destacados" class="seccion-productos-destacados">
+  <h2>Productos destacados</h2>
+  
+  <div class="contenido-destacados" id="contenido-destacados">
     <% @products.each do |product| %>
-      <div>
-        <div class="ad-card">
-          <div>
+      <div class="producto-item">
+
+        <div class="header-item">
+          <i class="icon-heart" id="#{<%= product.id %>}"></i>
+            <%= product.name %>
+        </div>
+      
+        <div class="imagen">
           <%= link_to(image_tag(product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1'), product_path(product)) %>
-          </div>
-          <div>
-            <h2>Todas la categorias</h2>
-            <h2 class="pricing"><%= product.category.name %></h2>
-            </p>
-          </div>
-          <div>
-            <p class="pricing">COP  $ <%= product.price %>
-              <span class="heart-icon"> <i class="fa-regular fa-heart"></i></span>
-            </p>
-          </div>
-          <div class="ad-desc">
-            <p><%= product.name %></p>
-          </div>
-          <div class="ad-desc">
-          <p><%= product.description.body %></p>
-          </div>
-
-          <div class="location">
-            <p>Cartagena, Colombia. </p>
-            <p class="small-txt">1 semana atras</p>
-          </div>
-
-          <button class="btn showModalButton" data-product-id="<%= product.id %>">Add Lead</button>
+        </div>
+        
+        <div class="resenas">
+          <i class="icon-star-empty"></i>
+          <i class="icon-star-empty"></i>
+          <i class="icon-star-empty"></i>
+          <i class="icon-star-empty"></i>
+          <i class="icon-star-empty"></i>
+          <span>546 reseñas</span>
+        </div>
+        <p style="background-color: coral;"><%= product.description.body %></p>
+        <div class="precio-info">
+          <span><%= product.price %></span>
+          <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
           <%= render "welcome/lead", locals: { product_id: product.id }  %>
         </div>
+
       </div>
     <% end %>
   </div>
-</main>
+  <button id="destacados-ver-mas">Ver más</button>
+</section>
 
+<section id="elegirnos" class="seccion-por-que-elegirnos">
+  <h2>¿Por qué comprar en Odín?</h2>
+  <div class="por-que-elegirnos-content">
+      <div class="item-razones-para-comprar">
+          <%= image_tag "Contenido/Odin/Precios bajos.svg" %>
+          <h3>Precios más bajos</h3>
+          <p>
+              Encuentra productos con los precios más bajos que puedas imaginar
+          </p>
+      </div>
+      <div class="item-razones-para-comprar">
+          <%= image_tag "Contenido/Odin/Sostenibilidad.svg" %>
+          <h3>Sostenibilidad</h3>
+          <p>Comprar de segunda mano contribuye a la sostenibilidad ambiental</p>
+      </div>
+      <div class="item-razones-para-comprar">
+          <%= image_tag "Contenido/Odin/Seguridad.svg" %>
+          <h3>Seguridad</h3>
+          <p>Los números de los vendedores son verificados para mayor seguridad</p>
+      </div>
+      <div class="item-razones-para-comprar">
+          <%= image_tag "Contenido/Odin/Variedad.svg" %>
+          <h3>Variedad</h3>
+          <p>Encuentra desde una casa hasta un empleo. Aquí tenemos de todo</p>
+      </div>
+  </div>
+</section>
 
 <script>
   document.addEventListener('DOMContentLoaded', function () {

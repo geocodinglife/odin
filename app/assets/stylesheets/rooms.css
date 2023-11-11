@@ -1,3 +1,457 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 5rem 1rem 1rem;
+}
+
+nav img {
+  height: 30px;
+}
+
+nav .usuario {
+  display: flex;
+  align-items: center;
+}
+
+nav .usuario img {
+  margin: 0 12px;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+main .ventas-compras {
+  width: 25%;
+  box-shadow: 1px 1px 8px 4px #bbbbbb;
+  border-radius: 16px;
+  height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+main .ventas-compras .botones {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+main .ventas-compras .botones .ventas {
+  border-radius: 0.6rem 0px 0px 0.6rem/0.6rem 0px 0px 0.6rem;
+  background: var(--azul-principal);
+}
+
+main .ventas-compras .botones .compras {
+  border-radius: 0px 0.6rem 0.6rem 0px/0px 0.6rem 0.6rem 0px;
+  color: black;
+  background: #dadada;
+}
+
+main .ventas-compras .botones button {
+  width: 50%;
+  margin: 0;
+  box-shadow: none;
+}
+
+main .ventas-compras .fijados {
+  margin-top: 8px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+main .ventas-compras .fijados .texto-fijados {
+  text-align: start;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+main .ventas-compras .fijados .contenedor-izq {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+main .ventas-compras .fijados .contenedor-izq img {
+  height: 30px;
+}
+
+main .ventas-compras .fijados .contenedor-izq p {
+  font-size: 12px;
+}
+
+main .ventas-compras .fijados .contenedor-izq .nombre-msj {
+  margin-left: 6px;
+  max-width: 70%;
+}
+
+main .ventas-compras .fijados .contenedor-izq .nombre-msj p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+main .ventas-compras .fijados .fijado {
+  height: 20px;
+}
+
+main .ventas-compras .fijados .chat-fijado {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .ventas-compras .demas-chats {
+  margin-top: 8px;
+  width: 100%;
+  overflow-y: auto;
+}
+
+main .ventas-compras .demas-chats .texto-demas-chats {
+  text-align: start;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+main .ventas-compras .demas-chats .contenedor-izq {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+main .ventas-compras .demas-chats .contenedor-izq img {
+  height: 30px;
+}
+
+main .ventas-compras .demas-chats .contenedor-izq p {
+  font-size: 12px;
+}
+
+main .ventas-compras .demas-chats .contenedor-izq .nombre-msj {
+  margin-left: 6px;
+  background: red;
+}
+
+main .ventas-compras .demas-chats .fijado {
+  height: 20px;
+}
+
+main .ventas-compras .demas-chats .chat-fijado {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .ventas-compras .dropdown-clientes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+main .ventas-compras .dropdown-clientes p {
+  margin: 8px 0;
+  font-family: "Cross-normal";
+}
+
+main .ventas-compras .lista-clientes {
+  position: relative;
+  display: none;
+  width: 100%;
+  padding: 4px 0;
+  border-bottom: 1px solid #bbbbbb;
+  overflow-y: auto;
+}
+
+main .ventas-compras .cliente {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .ventas-compras .cliente .caja-izq {
+  display: flex;
+  padding: 4px 0;
+}
+
+main .ventas-compras .cliente .nombre-y-msj {
+  max-width: 40%;
+  overflow: hidden;
+}
+
+main .ventas-compras .cliente .nombre-y-msj .mensaje-cliente {
+  font-family: "Cross-normal";
+  color: #bbbbbb;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+main .ventas-compras .cliente-img {
+  height: 35px;
+}
+
+main .ventas-compras .fijado {
+  height: 20px;
+  position: absolute;
+  right: 0.7rem;
+}
+
+main .ventas-compras .cliente p {
+  margin-left: 6px;
+  font-family: "Cross-bold";
+}
+
+main .chat {
+  position: relative;
+  width: 72%;
+  box-shadow: 1px 1px 8px 4px #bbbbbb;
+  border-radius: 16px;
+  height: 70vh;
+  overflow: hidden;
+  background: rgba(236, 192, 199, 0.507);
+}
+
+main .chat .header-chat {
+  padding: 0.5rem 1rem;
+  display: flex;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+}
+
+main .chat .header-chat .cliente-chat {
+  display: flex;
+  align-items: center;
+}
+
+main .chat .header-chat img {
+  margin-right: 12px;
+  border-radius: 50%;
+  height: 40px;
+}
+
+main .chat .header-chat p {
+  font-family: "Cross-bold";
+}
+
+main .chat .cuerpo-chat {
+  height: 70%;
+  overflow-y: auto;
+}
+
+main .chat .cuerpo-chat .fecha {
+  text-align: center;
+  margin: 8px 0 12px;
+}
+
+main .chat .cuerpo-chat .tus-mensajes {
+  position: relative;
+  padding-right: 1rem;
+  float: right;
+  display: flex;
+  width: 70%;
+  margin-bottom: 8px;
+}
+
+main .chat .cuerpo-chat .tus-mensajes .foto-hora-mensaje {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-left: 8px;
+}
+
+main .chat .cuerpo-chat .tus-mensajes .foto-hora-mensaje img {
+  height: 30px;
+}
+
+main .chat .cuerpo-chat .tus-mensajes .foto-hora-mensaje .hora-mensaje {
+  font-size: 12px;
+  display: flex;
+}
+
+main .chat .cuerpo-chat .tus-mensajes .tu-mensaje {
+  font-size: 14px;
+  text-align: left;
+  max-width: 90%;
+  background: rgba(255, 0, 0, 0.479);
+  border-radius: 1rem;
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+main .chat .cuerpo-chat .mensajes-vendedor {
+  padding-left: 1rem;
+  float: left;
+  display: flex;
+  width: 70%;
+  margin-bottom: 8px;
+}
+
+main .chat .cuerpo-chat .mensajes-vendedor .foto-hora-mensaje-vendedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  margin-right: 8px;
+}
+
+main .chat .cuerpo-chat .mensajes-vendedor .foto-hora-mensaje-vendedor img {
+  height: 30px;
+}
+
+main .chat .cuerpo-chat .mensajes-vendedor .foto-hora-mensaje-vendedor .hora-mensaje {
+  font-size: 12px;
+  display: flex;
+}
+
+main .chat .cuerpo-chat .mensajes-vendedor .su-mensaje {
+  font-size: 14px;
+  text-align: left;
+  max-width: 90%;
+  background: rgb(255, 255, 255);
+  border-radius: 1rem;
+  padding: 0.4rem 1rem;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+main .mensajes {
+  position: absolute;
+  bottom: 8px;
+  left: 14px;
+  width: 98%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main .mensajes input {
+  font-family: "Cross-normal";
+  border: 1px solid #bbbbbb;
+  width: 92%;
+  padding: 12px;
+}
+
+main .mensajes .adjuntar {
+  position: absolute;
+  right: 8%;
+  height: 30px;
+}
+
+main .mensajes img {
+  height: 40px;
+  margin-right: 8px;
+}
+
+@media (max-width: 992px) {
+  main {
+    padding: 0;
+  }
+
+  main .ventas-compras {
+    width: 100%;
+    box-shadow: none;
+    height: 85vh;
+  }
+
+  main .chat {
+    box-shadow: none;
+    height: 85vh;
+    width: 100%;
+    display: none;
+  }
+
+  main .chat .cliente-chat {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  main .chat .producto-chat {
+    display: none;
+  }
+
+  main .chat .cuerpo-chat .tus-mensajes {
+    width: 80%;
+  }
+
+  main .chat .cuerpo-chat .mensajes-vendedor {
+    width: 80%;
+  }
+
+  main .mensajes input {
+    width: 80%;
+  }
+
+  main .mensajes .adjuntar {
+    right: 18%;
+  }
+
+  main .mensajes img {
+    margin-right: 16px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------------------OLD---------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
 .room-box {
   display: flex;
 
@@ -225,6 +679,7 @@
 }
 
 .room-name {
+  color: #181D31 !important;
   font-weight: 600;
   font-size: 0.875rem;
   color: white;

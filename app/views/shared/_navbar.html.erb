@@ -1,17 +1,21 @@
-<div class="navbar-main">
-  <div>
-    <%= image_tag 'logow.svg', class:"logo"%>
-  </div>
-  
-  <div class="navbar-right-buttons">
-    <%= link_to new_product_path, class: "green-sale-button" do %>
-       Registrarse
-    <% end %>
-      <% if user_signed_in? %>
-        <%#= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
-        <a href="#">Mis compras</a>
-      <% else %>
-        <%= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
-      <% end %>
-  </div>
+<div class="alerta-anuncio">
+  ¡Los mejores productos para ti!
 </div>
+
+<nav class="nav-home">
+  <div class="usuario-acceso">
+      <%= link_to image_tag("buhologo.png", alt: "odin-logo"), root_path %>
+      <div>
+        <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde", id: "registrarse-boton" %>
+        <%#= render 'shared/alerta-inicio-sesion' %>
+          <%#= link_to new_product_path, class: "green-sale-button" do %>
+            <!-- Registrarse -->
+          <%# end %>
+      <%# if user_signed_in? %>
+        <%#= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
+      <%# else %>
+        <%#= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
+      <%# end %>
+      </div>
+  </div>
+</nav>

@@ -1,0 +1,104 @@
+<div class="screen-alert" id="screen-alert">
+    <div class="alert-box">
+      <img src="../../assets/images/Contenido/Cerrar.svg" alt="" id="x-cerrar-alerta">
+        <h2>Ingresar PIN</h2>
+        <p>Te enviamos un pin al celular para confirmar el número</p>
+
+        <form action="">
+          <input class="pin" type="text" maxlength="1"  oninput="this.value = this.value.replace(/\D/g,'');" />
+          <input class="pin" type="text" maxlength="1"  oninput="this.value = this.value.replace(/\D/g,'');" />
+          <input class="pin" type="text" maxlength="1"  oninput="this.value = this.value.replace(/\D/g,'');" />
+          <input class="pin" type="text" maxlength="1"  oninput="this.value = this.value.replace(/\D/g,'');" />
+        </form>
+
+        <button>Crear cuenta</button>
+    </div>
+
+
+</div>
+
+
+<style>
+
+  h2{
+    text-align: center;
+    font-family: 'Cross-bold';
+    padding: 0;
+    margin: 0;
+  }
+
+.screen-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  padding: 0rem 0;
+}
+
+.screen-alert .alert-box {
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 1rem 2rem;
+  background: #fff;
+  width: 350px;
+  border-radius: 12px;
+}
+
+img{
+  top: 1rem;
+    height: 20px;
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+  }
+
+
+p{
+  font-family: 'Cross-normal';
+}
+
+button{
+  margin-top: 12px;
+    background: #033771;
+    border: none;
+    color: white;
+    font-size: 16px;
+    width: 150px;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+form{
+  display: flex;
+  justify-content: center;
+}
+
+.pin{
+  margin: 0 10px;
+  width: 20%;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+input{
+  outline: none;
+  text-align: center;
+  font-size: 22px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+</style>
