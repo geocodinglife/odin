@@ -1,0 +1,78 @@
+.alert-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  height: 83vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.alert-box>div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.signin-box-form input[type="tel"] {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.signin-box-form input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background-color: #033771;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.signin-box-form input[type="submit"]:hover {
+  background-color: #022b5a;
+}
+
+.signin-box-form input[type="submit"]:focus {
+  outline: none;
+  border: 2px solid #022b5a;
+}
+
+.signin-box-form {
+  padding: 20px;
+  width: 100%;
+}
+
+.alert-box>div:first-child {
+  justify-content: flex-start;
+}
+
+.alert-box>div>img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .alert-box {
+    flex-direction: column;
+  }
+
+  .alert-box>div:first-child {
+    max-height: 50%;
+  }
+
+  .alert-box .signin-box-form {
+    width: 100%;
+    flex: 1;
+  }
+}
