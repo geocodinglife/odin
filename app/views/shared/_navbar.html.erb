@@ -4,10 +4,10 @@
 
 <nav class="nav-home">
   <div class="usuario-acceso">
-      <%= image_tag "buhologo.png", alt: "odin-logo" %>
+      <%= link_to image_tag("buhologo.png", alt: "odin-logo"), root_path %>
       <div>
-          <button class="boton-verde" id="registrarse-boton">Registrarse</button>
-          <button id="iniciar-sesion-boton">Iniciar sesión</button>
+        <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde", id: "registrarse-boton" %>
+        <%#= render 'shared/alerta-inicio-sesion' %>
           <%#= link_to new_product_path, class: "green-sale-button" do %>
             <!-- Registrarse -->
           <%# end %>

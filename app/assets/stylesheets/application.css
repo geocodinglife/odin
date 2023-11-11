@@ -142,4 +142,15 @@ footer {
   background: var(--verde-principal);
   padding: 8px;
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+footer p {
+  font-family: 'Cross-normal';
+  margin: 0;
+  color: white;
 }

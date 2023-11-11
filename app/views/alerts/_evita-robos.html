@@ -1,0 +1,91 @@
+<div class="screen-alert" id="screen-alert">
+    <div class="alert-box">
+        <img src="../../assets/images/Contenido/Odín/Advertencia.svg">
+        <h2>¡Evita robos!</h2>
+
+        <p>Trata de realizar transacciones presenciales para evitar posibles
+            robos o estafas.
+        </p>
+
+        <div class="aceptar-evita-robos">
+            <input type="checkbox">
+            <p>Soy consciente de que Odín no se hace responsable de posibles robos o estafas</p>
+        </div>
+
+
+        <button id="x-cerrar-alerta">Aceptar</button>
+
+    </div>
+</div>
+
+
+<style>
+
+  h2{
+    text-align: center;
+    font-family: 'Cross-bold';
+    padding: 0;
+    margin: 0;
+  }
+
+  p{
+    text-align: center;
+    font-family: 'Cross-normal';
+    font-weight: bold;
+  }
+
+.screen-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  padding: 0rem 0;
+}
+
+.screen-alert .alert-box {
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 1rem 2rem;
+  background: #fff;
+  width: 350px;
+  border-radius: 12px;
+}
+
+img{
+    height: 80px;
+    margin-bottom: 12px;
+}
+
+.aceptar-evita-robos{
+    display: flex;
+    align-items: center;
+}
+
+.aceptar-evita-robos p {
+    margin-left: 6px;
+    text-align: start;
+    font-family: 'Cross-normal';
+    font-weight: 100;
+    font-size: 14px;
+}
+
+button{
+        margin-top: 12px;
+        background: #033771;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 10px;
+        padding: 6px;
+        width: 50%;
+       align-self: center;
+}
+
+</style>

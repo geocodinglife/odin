@@ -1,0 +1,107 @@
+<div class="contenido-superpuesto">
+  <div class="caja-contenedor" id="caja-contenedor-opciones">
+    <i class="icon-menu" id="menu-hamburguesa"></i>
+  
+    <div class="opciones" id="opciones-menu">
+      <img src="../../assets/images/Contenido/Cerrar.svg" class="cerrar" alt="" id="x-cerrar-alerta">
+      <ul>
+        <li> <i class="icon-bell-alt"></i> Nuevos clientes</li>
+        <li> <img src="../../assets/images/Contenido/Mensaje.svg" class="chat" alt=""> Chats</li>
+        <li> <img src="../../assets/images/Contenido/Producto.svg" alt=""> Mis publicaciones</li>
+        <li> <i class="icon-heart"></i> Mis favoritos</li>
+      </ul>
+      <button>Vender nuevo producto</button>
+    </div>
+  
+  </div>
+</div>
+
+
+<style>
+  @import url('../../assets/fontello-5dc59156/css/fontello.css');
+
+  @font-face {
+    font-family: 'Cross-normal';
+    src: url('../assets/crossten-cufonfonts/CrosstenLight.otf') format('truetype');
+  }
+
+  .contenido-superpuesto{
+    position: absolute;
+    top: 3.3rem;
+    right: 2rem;
+    z-index: 999;
+  }
+
+  .caja-contenedor {
+    position: relative;
+    font-family: 'Cross-normal';
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .icon-menu{
+    margin: 0;
+    font-size: 26px;
+    margin-bottom: 1rem;
+  }
+
+  .opciones {
+    background: #fff;
+    display: none;
+    width: 100%;
+    padding: 1rem;
+    box-shadow: 1px 1px 8px 4px rgb(228, 228, 228);
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  ul{
+    padding: 0;
+    width: 100%;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    padding: 0.6rem 0;
+  }
+
+  img{
+    height: 22px;
+  }
+
+  i{
+    font-size: 22px;
+    margin-right: 0.4rem;
+  }
+
+  img{
+    filter: grayscale(1);
+    margin-right: 0.8rem;
+    margin-left: 4px;
+  }
+
+  
+  #x-cerrar-alerta{
+    filter: none;
+    position: absolute;
+    right: -0.4rem;
+    top: 60px;
+  }
+
+  button{
+    margin-top: 12px;
+    background: #033771;
+    border: none;
+    color: white;
+    font-size: 16px;
+    width: 150px;
+    border-radius: 14px;
+    padding: 6px;
+    width: 90%;
+    font-family: 'Cross-normal';
+  }
+</style>

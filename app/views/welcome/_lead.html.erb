@@ -1,7 +1,7 @@
 <div id="modal" class="modal">
   <div class="modal-content">
-    <span id="closeModal" class="close">&times;</span>
-    <h2>Add Lead</h2>
+    <%= image_tag "Contenido/Cerrar.svg", id: "x-cerrar-alerta", id: "closeModal", class: "close" %>
+
     <form id="leadForm" class="form" action="<%= leads_path %>" method="post">
       <label for="name">Name:</label>
       <input type="text" id="first_name" name="lead[first_name]" required><br>
@@ -14,7 +14,7 @@
 
       <input type="hidden" name="product_id" id="product">
 
-      <input type="submit" value="Post">
+      <input type="submit" value="Post" class="button-popup">
     </form>
   </div>
 </div>

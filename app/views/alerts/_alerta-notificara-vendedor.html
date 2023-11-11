@@ -1,0 +1,66 @@
+<div class="screen-alert" id="screen-alert">
+    <div class="alert-box">
+        <img src="../../assets/images/Contenido/Odín/Bien.svg" alt="" id="x-cerrar-alerta">
+        <h2>Se le acaba de notificar al vendedor por mensaje.
+            <strong>¡Pronto se comunicará contigo!</strong>
+        </h2>
+    </div>
+</div>
+
+
+<style>
+
+
+  @font-face {
+    font-family: 'Cross-normal';
+    src: url('../assets/crossten-cufonfonts/CrosstenLight.otf') format('truetype');
+  }  
+
+  @font-face {
+    font-family: 'Cross-bold';
+    src: url('../assets/crossten-cufonfonts/CrosstenExtraBold.otf') format('truetype');
+  }
+
+
+  h2{
+    text-align: center;
+    font-family: 'Cross-normal';
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  strong{
+    font-family: 'Cross-bold';
+  }
+
+.screen-alert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  padding: 0rem 0;
+}
+
+.screen-alert .alert-box {
+    display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 1rem 2rem;
+  background: #fff;
+  width: 350px;
+  border-radius: 12px;
+}
+
+img{
+    height: 80px;
+    margin-bottom: 12px;
+}
+
+</style>
