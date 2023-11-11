@@ -18,16 +18,15 @@
 
 /* Este sera el header */
 
-@import url("../assets/fontello-5dc59156/css/fontello.css");
 
 @font-face {
   font-family: "Cross-bold";
-  src: url("../assets/crossten-cufonfonts/CrosstenExtraBold.otf") format("truetype");
+  src: url("crossten-cufonfonts/CrosstenExtraBold.otf") format("truetype");
 }
 
 @font-face {
   font-family: "Cross-normal";
-  src: url("../assets/crossten-cufonfonts/CrosstenLight.otf") format("truetype");
+  src: url("crossten-cufonfonts/CrosstenLight.otf") format("truetype");
 }
 
 * {

@@ -2,3 +2,46 @@
   width: 100px;
   height: 100px;
 }
+
+.create-product {
+  display: flex;
+  justify-content: center;
+}
+
+.product-information {
+  overflow-y: scroll;
+  position: relative;
+  padding: 1rem 2rem;
+  background: #fff;
+  width: 750px;
+  border-radius: 12px;
+  max-height: 90%;
+  padding: 8px;
+  margin: 6px 0;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+form input,
+select {
+  padding: 8px;
+  margin: 6px 0;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid gray;
+}
+
+form select {
+  background: #033771;
+  color: white;
+}
+
+.create-product-button {
+  margin-top: 12px;
+  background: #033771;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 10px;
+  padding: 6px;
+}
