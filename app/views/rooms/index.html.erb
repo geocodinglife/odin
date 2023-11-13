@@ -25,12 +25,10 @@
   <%#= turbo_frame_tag 'rooms_controller' do %>
     <div class="demas-chats">
       <p class="texto-demas-chats">Chats</p>
-      <div class="dropdown-clientes">
-        <p>Moto Yamaha T500</p>
+      <div class="dropdown-toggle" id="abrir-lista-clientes"">
+        <p id="abrir-lista-clientes">Moto Yamaha T500</p>
         <%#= render 'shared/user_rooms' %>
-          <i class="icon-down-open" id="abrir-lista-clientes"></i>
-      </div>
-    </div>
+
   <%# end %>
 
   <div class="lista-clientes" id="lista-clientes">
@@ -67,6 +65,8 @@
         <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
     </div>
   </div>
+        </div>
+    </div>
 </article>
 
 <article class="chat">
@@ -135,3 +135,23 @@
   </div>
 </article>
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the dropdown toggle and dropdown menu elements
+    var dropdownToggle = document.getElementById('abrir-lista-clientes');
+    var dropdownMenu = document.getElementById('lista-clientes');
+
+    // Function to toggle dropdown
+    function toggleDropdown() {
+        dropdownMenu.classList.toggle('show');
+    }
+
+    // Event listener for the dropdown toggle
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function() {
+            toggleDropdown();
+        });
+    }
+});
+</script>

@@ -412,9 +412,19 @@ main .mensajes img {
 
 
 
+.dropdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 
+#lista-clientes {
+  display: none;
+}
 
-
+#lista-clientes.show {
+  display: block;
+}
 
 
 
