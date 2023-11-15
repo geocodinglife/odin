@@ -7,7 +7,12 @@
 
   <div class="user-rooms" id="user_<%= current_user.id %>_rooms">
     <% current_user.rooms.all.each do |room| %>
-      <%= render 'shared/room', room: room %>
+      <%#= render 'shared/room', room: room %>
+      <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
+        <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
+          <%= room.name %>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 </section>
