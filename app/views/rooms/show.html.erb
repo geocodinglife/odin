@@ -1,25 +1,110 @@
 <%= turbo_frame_tag 'rooms_controller' do %>
-<%= turbo_stream_from 'room_messages_channel' %>
+  <%= turbo_stream_from 'room_messages_channel' %>
 
-  <main class="main-container">
-    <%#= render 'shared/side_bar' %>
-
+  <div class="main-container">
     <section class="content-container">
-      <%= render 'room', room: @room %>
-
       <div class="messages-container">
         <div class="message-list">
           <div class="message-scroll" id="room_messages_div" class="room_messages_div">
-            <% @room.messages.order(:id).each do |message| %>
-              <%= render 'messages/message', message: message %>
-            <% end %>
-          </div>
-        </div>
+            <article class="chat">
+              <div class="header-chat">
+                <div class="cliente-chat">
+                  <%= image_tag "Contenido/Vendedor.png" %>
+                  <p class="nombre-vendedor"><%#= message.user.first_name %></p>
+                </div>
+                <p class="producto-chat"><%= @room.name %></p>
+              </div>
 
-        <div class="message-form-container">
-          <%= render 'messages/form', { room: @room, message: Message.new } %>
+              <% @room.messages.order(:id).each do |message| %>
+                <%= render 'messages/message', message: message %>
+              <% end %>
+          
+              <div class="mensajes">
+                <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje">
+                <%= image_tag "Contenido/Adjuntar.svg", class: "adjuntar" %>
+                <%= image_tag "Contenido/Telegram.svg" %>
+              </div>
+            </article>
+
+          </div>
+          </div>
+
+          <div class="message-form-container">
+            <%#= render 'messages/form', { room: @room, message: Message.new } %>
+          </div>
         </div>
       </div>
     </section>
-  </main>
+  </div>
 <% end %>
+
+  <article class="chat">
+    <div class="header-chat">
+
+      <div class="cliente-chat">
+        <%= image_tag "Contenido/Vendedor.png" %>
+        <p class="nombre-vendedor">Pedro Flores</p>
+      </div>
+
+      <p class="producto-chat">Moto Yamaha T500</p>
+    </div>
+      <%#= render 'shared/user_rooms' %>
+      <%#= render 'shared/room', room: room %>
+
+    <div class="cuerpo-chat">
+
+      <h4 class="fecha">24 de Julio</h4>
+
+      <div class="tus-mensajes">
+        <p class="tu-mensaje">Lorem ipsumulla lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Doloribus dicta cum optio consequatur dolore corrupti a, sed omnis rerum voluptatibus nostrum
+            deleniti modi. Perferendis, adipisci molestias vitae ipsum modi sapiente, culpa officia tempore
+            asperiores dignissimos voluptate facere ex fugit obcaecati accusantium expedita illum ducimus
+            voluptatum sunt minus illo at eos harum non? Placeat, excepturi! Voluptatem facere distinctio
+            aspernatur cum doloremque.
+        </p>
+
+        <div class="foto-hora-mensaje">
+          <%= image_tag "Contenido/Imágen.svg" %>
+          <p class="hora-mensaje">6:32 pm</p>
+        </div>
+      </div>
+
+      <div class="mensajes-vendedor">
+        <div class="foto-hora-mensaje-vendedor">
+          <%= image_tag "Contenido/Imágen.svg" %>
+          <p class="hora-mensaje">6:32 pm</p>
+        </div>
+        <p class="su-mensaje">Lorempedit. Nulla?</p>
+      </div>
+
+      <div class="tus-mensajes">
+        <p class="tu-mensaje">Lorem ipsumulla lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Doloribus dicta cum optio consequatur dolore corrupti a, sed omnis rerum voluptatibus nostrum
+            deleniti modi. Perferendis, adipisci molestias vitae ipsum modi sapiente, culpa officia tempore
+            asperiores dignissimos voluptate facere ex fugit obcaecati accusantium expedita illum ducimus
+            voluptatum sunt minus illo at eos harum non? Placeat, excepturi! Voluptatem facere distinctio
+            aspernatur cum doloremque.</p>
+        <div class="foto-hora-mensaje">
+          <%= image_tag "Contenido/Imágen.svg" %>
+          <p class="hora-mensaje">6:32 pm</p>
+        </div>
+      </div>
+
+
+      <div class="mensajes-vendedor">
+        <div class="foto-hora-mensaje-vendedor">
+            <%= image_tag "Contenido/Imágen.svg" %>
+            <p class="hora-mensaje">6:32 pm</p>
+        </div>
+        <p class="su-mensaje">Lorempedit. Nulla?</p>
+      </div>
+  </div>
+
+
+  <div class="mensajes">
+    <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje">
+    <%= image_tag "Contenido/Adjuntar.svg", class: "adjuntar" %>
+    <%= image_tag "Contenido/Telegram.svg" %>
+  </div>
+  </article>
