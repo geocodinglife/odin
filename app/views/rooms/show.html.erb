@@ -14,11 +14,11 @@
                 </div>
                 <p class="producto-chat"><%= @room.name %></p>
               </div>
-
-              <% @room.messages.order(:id).each do |message| %>
-                <%= render 'messages/message', message: message %>
-              <% end %>
-          
+              <div class="chat-text">
+                <% @room.messages.order(:id).each do |message| %>
+                  <%= render 'messages/message', message: message %>
+                <% end %>
+              <div>
               <div class="mensajes">
                 <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje">
                 <%#= image_tag "Contenido/Adjuntar.svg", class: "adjuntar" %>

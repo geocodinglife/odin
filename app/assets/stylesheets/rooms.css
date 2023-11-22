@@ -398,3 +398,8 @@
 #lista-clientes.show {
   display: block;
 }
+
+.chat-text {
+  height: 400px;
+  overflow-y: auto;
+}
