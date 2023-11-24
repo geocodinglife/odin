@@ -1,137 +1,83 @@
-<main>
-<%= turbo_stream_from 'user_rooms_channel' %>
-<%= turbo_stream_from 'room_details_channel' %>
-
-<article class="ventas-compras">
-  <div class="botones">
-    <button class="ventas">Ventas</button>
-    <button class="compras">Compras</button>
-  </div>
-
-  <div class="fijados">
-    <p class="texto-fijados">Fijados</p>
-    <div class="chat-fijado prev-abrir-chat-cliente">
-      <div class="contenedor-izq">
-        <%= image_tag "Contenido/Imágen.svg" %>
-          <div class="nombre-msj">
-            <p>Cristina</p>
-            <p>Pasame tu númerowe</p>
+<div class="main-chat">
+  <div class="container">
+    <article class="buy-or-sale">
+      <div class="botones">
+        <button class="ventas">Ventas</button>
+        <button class="compras">Compras</button>
+      </div>
+    <!-------------Pigned Chats ----------------->
+      <div class="fijados">
+        <p class="texto-fijados">Fijados</p>
+        <div class="chat-fijado prev-abrir-chat-cliente">
+          <div class="contenedor-izq">
+            <%= image_tag "Contenido/Imágen.svg" %>
+              <div class="nombre-msj">
+                <p>Cristina</p>
+                <p>Pasame tu número</p>
+              </div>
           </div>
-      </div>
-        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
-    </div>
-  </div>
-  
-  <%#= turbo_frame_tag 'rooms_controller' do %>
-    <div class="demas-chats">
-      <p class="texto-demas-chats">Chats</p>
-      <div class="dropdown-clientes">
-        <p>Moto Yamaha T500</p>
-        <%#= render 'shared/user_rooms' %>
-          <i class="icon-down-open" id="abrir-lista-clientes"></i>
-      </div>
-    </div>
-  <%# end %>
-
-  <div class="lista-clientes" id="lista-clientes">
-    <div class="cliente prev-abrir-chat-cliente">
-      <div class="caja-izq">
-        <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
-        <div class="nombre-y-msj">
-            <p>Laura</p>
-            <p class="mensaje-cliente">Mensaje de prueba de laurqweeeeeeeeeeeeeea</p>
+            <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
         </div>
       </div>
-        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
-    </div>
+    
+    <h1><%= current_user.first_name %></h1>
+    <!-------------Chats Rooms ----------------->
+      <div class="user-rooms" id="user_<%= current_user.id %>_rooms">
 
-    <div class="cliente prev-abrir-chat-cliente">
-      <div class="caja-izq">
-        <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
-          <div class="nombre-y-msj">
-              <p>Laura</p>
-              <p class="mensaje-cliente">Mensaje de prueba de laura</p>
-          </div>
-      </div>
-        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
-    </div>
+        <div class="demas-chats">
+          <p class="texto-demas-chats">Chats</p>
+          <div class="dropdown-toggle" id="abrir-lista-clientes">
+          <% @rooms.each do |room| %>
+          <% room.user_rooms.each do |product_chat| %>
+            <p id="abrir-lista-clientes">
+              <%= product_chat.room.name %>
+            </p>
 
-    <div class="cliente prev-abrir-chat-cliente">
-      <div class="caja-izq">
-        <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
-        <div class="nombre-y-msj">
-            <p>Laura</p>
-            <p class="mensaje-cliente">Mensaje de prueba de laura</p>
-        </div>
-      </div>
-        <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
-    </div>
-  </div>
-</article>
+            <div class="lista-clientes" id="lista-clientes">
+              <div class="cliente prev-abrir-chat-cliente">
+                <div class="caja-izq">
+                  <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
+                  <div class="nombre-y-msj">
+                    <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
+                      <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
+                        <% room.users.each do |room_user| %>
+                        <% next if room_user.id == current_user.id %> 
+                          <%= room_user.first_name %>
+                        <% end %>
+                      <% end %>
 
-<article class="chat">
-  <div class="header-chat">
-    <div class="cliente-chat">
-      <%= image_tag "Contenido/Vendedor.png" %>
-      <p class="nombre-vendedor">Pedro Flores</p>
-    </div>
-    <p class="producto-chat">Moto Yamaha T500</p>
-  </div>
+                    <% end %>
 
-  <div class="cuerpo-chat">
-    <h4 class="fecha">24 de Julio</h4>
+                      <p class="mensaje-cliente">
+                      <%= product_chat.room.messages.first.text %>
+                      </p>
+                  </div>
+                </div>
+                  <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+        <% end %>
+    </article>
+<!--------------------------- Chat ---------------------->
+  <%= turbo_frame_tag 'rooms_controller' do %>
+  <% end %>
+</div>
 
-    <div class="tus-mensajes">
-      <p class="tu-mensaje">Lorem ipsumulla lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Doloribus dicta cum optio consequatur dolore corrupti a, sed omnis rerum voluptatibus nostrum
-          deleniti modi. Perferendis, adipisci molestias vitae ipsum modi sapiente, culpa officia tempore
-          asperiores dignissimos voluptate facere ex fugit obcaecati accusantium expedita illum ducimus
-          voluptatum sunt minus illo at eos harum non? Placeat, excepturi! Voluptatem facere distinctio
-          aspernatur cum doloremque.
-      </p>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdownToggle = document.getElementById('abrir-lista-clientes');
+    var dropdownMenu = document.getElementById('lista-clientes');
 
-      <div class="foto-hora-mensaje">
-          <%= image_tag "Contenido/Imágen.svg" %>
-          <p class="hora-mensaje">6:32 pm</p>
-      </div>
-    </div>
+    function toggleDropdown() {
+        dropdownMenu.classList.toggle('show');
+    }
 
-    <div class="mensajes-vendedor">
-      <div class="foto-hora-mensaje-vendedor">
-          <%= image_tag "Contenido/Imágen.svg" %>
-          <p class="hora-mensaje">6:32 pm</p>
-      </div>
-      <p class="su-mensaje">Lorempedit. Nulla?</p>
-    </div>
-
-    <div class="tus-mensajes">
-      <p class="tu-mensaje">Lorem ipsumulla lorem Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Doloribus dicta cum optio consequatur dolore corrupti a, sed omnis rerum voluptatibus nostrum
-          deleniti modi. Perferendis, adipisci molestias vitae ipsum modi sapiente, culpa officia tempore
-          asperiores dignissimos voluptate facere ex fugit obcaecati accusantium expedita illum ducimus
-          voluptatum sunt minus illo at eos harum non? Placeat, excepturi! Voluptatem facere distinctio
-          aspernatur cum doloremque.</p>
-      <div class="foto-hora-mensaje">
-        <%= image_tag "Contenido/Imágen.svg" %>
-        <p class="hora-mensaje">6:32 pm</p>
-      </div>
-    </div>
-
-
-    <div class="mensajes-vendedor">
-      <div class="foto-hora-mensaje-vendedor">
-          <%= image_tag "Contenido/Imágen.svg" %>
-          <p class="hora-mensaje">6:32 pm</p>
-      </div>
-      <p class="su-mensaje">Lorempedit. Nulla?</p>
-    </div>
-  </div>
-
-
-  <div class="mensajes">
-    <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje">
-    <%= image_tag "Contenido/Adjuntar.svg", class: "adjuntar" %>
-    <%= image_tag "Contenido/Telegram.svg" %>
-  </div>
-</article>
-</main>
+    if (dropdownToggle) {
+        dropdownToggle.addEventListener('click', function() {
+            toggleDropdown();
+        });
+    }
+});
+</script>

@@ -38,9 +38,9 @@ class ProductsController < ApplicationController
   end
 
   def create
-    email = params[:product][:email].first
-    user_first_name = params[:product][:first_name].first
-    user_phone = params[:product][:phone].first
+    email = current_user.email || params[:product][:email].first
+    user_first_name = current_user.first_name || params[:product][:first_name].first
+    user_phone = current_user.phone || params[:product][:phone].first
 
     Product.transaction do
       user = User.find_or_create_by(email: email) do |user|
