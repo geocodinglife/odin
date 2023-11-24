@@ -23,7 +23,9 @@
       <% @icons.each do |icon| %>
         <div class="categorias-item-box">
           <div class="categorias-item">
-            <%= image_tag icon.second %>
+          <%= link_to products_path(category_name: icon.first) do %>
+  <%= image_tag icon.second, alt: icon.first %>
+<% end %>
           </div>
         </div>
       <% end %>
