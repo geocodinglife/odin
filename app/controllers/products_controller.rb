@@ -3,10 +3,11 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    if (params[:category_name] || params[:category_id]).nil?
-      @products = Product.all
+    category = Category.find_by(name: params[:category_name]) || Category.find_by(id: params[:category_id])
+
+    @products = if category.nil?
+      Product.all
     else
-      category = Category.find_by(name: params[:category_name]) || Category.find(params[:category_id])
       category.products
     end
   end

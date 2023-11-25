@@ -6,6 +6,7 @@
   <div class="usuario-acceso">
       <%= link_to image_tag("buhologo.png", alt: "odin-logo"), root_path %>
       <div>
+      <% if current_user.nil? %>
         <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde", id: "registrarse-boton" %>
         <%#= render 'shared/alerta-inicio-sesion' %>
         <%#= link_to new_product_path, class: "green-sale-button" do %>
@@ -13,14 +14,17 @@
           <%# end %>
       <%# if user_signed_in? %>
         <%#= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
-      <%# else %>
+      <% else %>
+        <%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
         <%#= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
       <%# end %>
+      <% end %>
        
   </div>
-   <div class="usuario"> 
-     <%= image_tag "Contenido/Imágen.svg" %>
-     <p><%= current_user.first_name %></p>
+   <!-- <div class="usuario"> 
+     <%#= image_tag "Contenido/Imágen.svg" %>
+     <p><%#= current_user.first_name %></p>
      <div class="nav-opciones"></div>
    </div>
+   -->
 </nav>
