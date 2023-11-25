@@ -1,7 +1,10 @@
 <div data-controller="form" class="form-container">
   <%= form_with(model: [room, message], id: 'message_form', class: 'message-form', data: { controller: 'form', action: 'submit->form#resetComponent' }) do |f| %>
-    <div class="form-fields">
+    <div class="form-fields form-input-text">
       <%= f.text_field :text, class: 'message-input' %>
+    </div>
+
+    <div class="form-submit-button">
       <%= f.submit class: 'submit-button' %>
     </div>
   <% end %>

@@ -1,14 +1,40 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Products</h1>
-
-<div id="products">
+<h1>Products</h1>   
+<div class="productos" id="productos">
   <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+    <div class="producto-item">
+      <div class="header-item">
+        <%= image_tag "Contenido/Compartir 2.svg", class: "compartir" %>
+        <%= product.name %>
+      </div>
+
+      <div class="imagen">
+        <% if product.images.attached? %>
+          <% product.images.each do |image| %>
+            <%= image_tag image, class: "product-image", alt: product.name %>
+          <% end %>
+        <% else %>
+          <!-- Fallback image if no image is attached -->
+          <img src="https://falabella.scene7.com/is/image/FalabellaCO/881653694_1?wid=800&hei=800&qlt=70" alt="Default Image">
+        <% end %>
+      </div>
+
+      <div class="resenas">
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <span>546 reseñas</span>
+      </div>
+      <div class="precio-info">
+        <span><%= product.price %></span>
+        <p><%= link_to "Show this product", product %></p>
+      </div>
+    </div>
   <% end %>
 </div>
+
 
 <%= link_to "New product", new_product_path %>

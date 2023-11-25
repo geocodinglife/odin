@@ -1,11 +1,8 @@
 <%= turbo_frame_tag 'rooms_controller' do %>
   <%= turbo_stream_from 'room_messages_channel' %>
 
-  <div class="main-container">
     <section class="content-container">
-      <div class="messages-container">
-        <div class="message-list">
-          <div class="message-scroll" id="room_messages_div" class="room_messages_div">
+      <div id="room_messages_div" class="room_messages_div">
             <article class="chat">
               <div class="header-chat">
                 <div class="cliente-chat">
@@ -20,7 +17,7 @@
                 <% end %>
               <div>
               <div class="mensajes">
-                <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje">
+               <!-- <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje"> -->
                 <%#= image_tag "Contenido/Adjuntar.svg", class: "adjuntar" %>
                 <%#= image_tag "Contenido/Telegram.svg" %>
                 <%= render 'messages/form', { room: @room, message: Message.new } %>
@@ -28,11 +25,6 @@
             </article>
 
           </div>
-          </div>
-
-
-        </div>
       </div>
     </section>
-  </div>
 <% end %>

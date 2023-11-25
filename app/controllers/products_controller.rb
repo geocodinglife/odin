@@ -3,7 +3,12 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.all
+    if (params[:category_name] || params[:category_id]).nil?
+      @products = Product.all
+    else
+      category = Category.find_by(name: params[:category_name]) || Category.find(params[:category_id])
+      category.products
+    end
   end
 
   def show
@@ -11,27 +16,7 @@ class ProductsController < ApplicationController
 
   def new
     @categories = Category.all
-
     @product = Product.new
-
-    if @product.new_record?
-      default_template = <<-TEMPLATE
-      <h2>Introduction</h2>
-      <p>Write a brief introduction about the product here.</p>
-
-      <h2>Features</h2>
-      <ul>
-        <li>Feature 1: Briefly describe this feature.</li>
-        <li>Feature 2: Briefly describe this feature.</li>
-        <li>Feature 3: Briefly describe this feature.</li>
-      </ul>
-
-      <h2>Conclusion</h2>
-      <p>Summarize the product's main selling points and encourage a purchase or further exploration.</p>
-      TEMPLATE
-
-      @product.description = default_template
-    end
   end
 
   def edit

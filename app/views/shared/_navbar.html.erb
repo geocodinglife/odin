@@ -16,6 +16,11 @@
       <%# else %>
         <%#= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
       <%# end %>
-      </div>
+       
   </div>
+   <div class="usuario"> 
+     <%= image_tag "Contenido/Imágen.svg" %>
+     <p><%= current_user.first_name %></p>
+     <div class="nav-opciones"></div>
+   </div>
 </nav>
