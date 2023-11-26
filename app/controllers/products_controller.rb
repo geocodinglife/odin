@@ -32,7 +32,7 @@ class ProductsController < ApplicationController
       user = User.find_or_create_by(email: email) do |user|
         user.first_name = user_first_name
         user.phone = user_phone
-        user.auth_secret = (user_first_name + user_phone)
+        user.auth_secret = ROTP::Base32.random(16)
       end
 
       @product = user.products.build(product_params)

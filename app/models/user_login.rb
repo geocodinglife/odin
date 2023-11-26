@@ -3,13 +3,11 @@ module UserLogin
 
   def start_auth(params)
     salt = User.generate_auth_salt
-    user = User.find_by(phone: params[:phone])
 
-    if user.nil?
-      user = User.create!(params)
-      User.send_login_code_message_to_user(user, user.auth_code(salt))
-
-      salt
+    user = User.find_or_create_by(email: params[:email]) do |user|
+      user.first_name = params[:first_name]
+      user.phone = params[:phone]
+      user.auth_secret = ROTP::Base32.random(16)
     end
 
     User.send_login_code_message_to_user(user, user.auth_code(salt))
