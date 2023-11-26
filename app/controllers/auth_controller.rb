@@ -9,8 +9,6 @@ class AuthController < ApplicationController
     session[:salt] = UserLogin.start_auth(params)
     redirect_to auth_verifications_path
   rescue ActiveRecord::RecordInvalid
-    # If the user creations fails (usually when first and last name are empty)
-    # we reload the form, and also display the first and last name fields.
     render :show
   end
 

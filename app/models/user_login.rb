@@ -6,8 +6,10 @@ module UserLogin
     user = User.find_by(phone: params[:phone])
 
     if user.nil?
-      # User is registering a new account
       user = User.create!(params)
+      User.send_login_code_message_to_user(user, user.auth_code(salt))
+
+      salt
     end
 
     User.send_login_code_message_to_user(user, user.auth_code(salt))
@@ -15,8 +17,6 @@ module UserLogin
     salt
   end
 
-  # Called to check the code the user types
-  # in and make sure it’s valid.
   def verify_information(phone, code, salt)
     user = User.find_by(phone: phone)
 
