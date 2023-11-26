@@ -38,7 +38,7 @@
 
 .banner-home .banner-presentacion .boton-azul {
   border-radius: 2rem;
-  background: var(--azul-principal);
+  background: var(--main-blue);
   margin: 0;
   font-size: 2.2rem;
   padding: 8px 2rem;
@@ -111,7 +111,7 @@
 
 .seccion-productos-destacados,
 .seccion-grandes-ofertas {
-  padding: var(--padding-secciones);
+  padding: var(--padding-section);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -236,7 +236,7 @@
 .seccion-productos-destacados .contenido-ofertas .producto-item .precio-info button,
 .seccion-grandes-ofertas .contenido-destacados .producto-item .precio-info button,
 .seccion-grandes-ofertas .contenido-ofertas .producto-item .precio-info button {
-  background: var(--azul-principal);
+  background: var(--main-blue);
   width: 100%;
   padding: 6px 0;
 }
@@ -255,13 +255,13 @@
 .seccion-productos-destacados button,
 .seccion-grandes-ofertas button {
   margin-top: 16px;
-  background: var(--verde-principal);
+  background: var(--main-green);
   border-radius: 1rem;
   width: 120px;
 }
 
 .seccion-por-que-elegirnos {
-  padding: var(--padding-secciones);
+  padding: var(--padding-section);
 }
 
 .seccion-por-que-elegirnos h2 {
@@ -388,7 +388,7 @@
 
 @media (max-width: 992px) {
   :root {
-    --padding-secciones: 2rem;
+    --padding-section: 2rem;
   }
 
   .banner-home .banner-presentacion {

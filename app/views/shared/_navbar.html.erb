@@ -3,11 +3,11 @@
 </div>
 
 <nav class="nav-home">
-  <div class="usuario-acceso">
+  <div class="user-access">
       <%= link_to image_tag("buhologo.png", alt: "odin-logo"), root_path %>
       <div>
       <% if current_user.nil? %>
-        <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde", id: "registrarse-boton" %>
+        <%= button_to "Iniciar sesión", auth_path, method: :get, class: "green-button", id: "registrarse-boton" %>
         <%#= render 'shared/alerta-inicio-sesion' %>
         <%#= link_to new_product_path, class: "green-sale-button" do %>
             <!-- Registrarse -->
