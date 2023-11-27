@@ -22,7 +22,7 @@ class User < ApplicationRecord
     totp(salt).now
   end
 
-  def valid_auth_code?(phone, code, salt)
+  def valid_auth_code?(code, salt)
     totp(salt).verify(code, drift_behind: 300).present?
   end
 
