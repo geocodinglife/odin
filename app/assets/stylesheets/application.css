@@ -136,6 +136,10 @@ i {
   font-weight: 100;
 }
 
+.nav-link-buttons {
+  display: flex;
+}
+
 footer {
   background: var(--verde-principal);
   padding: 8px;
