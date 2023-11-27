@@ -15,7 +15,10 @@
       <%# if user_signed_in? %>
         <%#= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
       <% else %>
-        <%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
+      <div class="nav-link-buttons">
+        <%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;" %>
+        <%= link_to "Chat", rooms_path, class: "boton-verde" %>
+      </div>
         <%#= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
       <%# end %>
       <% end %>
