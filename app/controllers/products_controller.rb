@@ -6,9 +6,9 @@ class ProductsController < ApplicationController
     category = Category.find_by(name: params[:category_name]) || Category.find_by(id: params[:category_id])
 
     @products = if category.nil?
-      Product.all
+      Product.order(created_at: :desc)
     else
-      category.products
+      category.products.order(created_at: :desc)
     end
   end
 
@@ -24,9 +24,15 @@ class ProductsController < ApplicationController
   end
 
   def create
-    email = current_user.email || params[:product][:email].first
-    user_first_name = current_user.first_name || params[:product][:first_name].first
-    user_phone = current_user.phone || params[:product][:phone].first
+    if user_signed_in?
+      email = current_user.email
+      user_first_name = current_user.first_name
+      user_phone = current_user.phone
+    else
+      email = params[:product][:email].first
+      user_first_name = params[:product][:first_name].first
+      user_phone = params[:product][:phone].first
+    end
 
     Product.transaction do
       user = User.find_or_create_by(email: email) do |user|
@@ -38,7 +44,7 @@ class ProductsController < ApplicationController
       @product = user.products.build(product_params)
 
       if @product.save
-        redirect_to product_url(@product), notice: "Product was successfully created."
+        redirect_to products_path, notice: "Product was successfully created."
       else
         render :new, status: :unprocessable_entity
       end
