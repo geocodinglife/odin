@@ -49,7 +49,11 @@
                     <% end %>
 
                       <p class="mensaje-cliente">
+                      <% if product_chat.room.messages.empty? %>
+                        p> No message.</p>
+                      <% else %>
                       <%= product_chat.room.messages.first.text %>
+                      <% end %>
                       </p>
                   </div>
                 </div>

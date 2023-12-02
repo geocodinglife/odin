@@ -26,7 +26,8 @@ class LeadsController < ApplicationController
       UserRoom.create!([{room: room, user: user}, {room: room, user: product.user}])
 
       if lead.save!
-        Lead.send_message_to_seller(product.user)
+        # TODO I need to un comment this code when the phone service for send message is the production one.
+        # Lead.send_message_to_seller(product.user)
         flash[:notice] = "Lead was successfully created."
         redirect_to lead_path(lead.id)
       else

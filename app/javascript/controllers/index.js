@@ -10,5 +10,5 @@ eagerLoadControllersFrom("controllers", application)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
 
-import FormController from "./form_controller"
-application.register("form", FormController)
+// import FormController from "./form_controller"
+// application.register("form", FormController)

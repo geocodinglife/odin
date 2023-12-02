@@ -80,6 +80,13 @@
   justify-content: space-between;
 }
 
+.buy-or-sale .user-rooms,
+.buy-or-sale .demas-chats {
+  flex-grow: 1;
+  overflow-y: auto;
+  max-height: 50%;
+}
+
 .buy-or-sale .demas-chats {
   margin-top: 8px;
   width: 100%;
