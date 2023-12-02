@@ -1,3 +1,8 @@
+.product-new-form-view {
+  display: flex;
+  justify-content: center;
+}
+
 .create-product {
   display: flex;
   justify-content: center;
@@ -134,7 +139,7 @@
 }
 
 .productos .producto-item .precio-info button {
-  background: var(--rojo-principal);
+  background: var(--azul-principal);
   width: 100%;
   padding: 6px 0;
   border-radius: 16px;
