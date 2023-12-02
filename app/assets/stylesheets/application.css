@@ -18,7 +18,7 @@
 
 /* Este sera el header */
 
-@font-face {
+/* @font-face {
   font-family: "Cross-bold";
   src: url("crossten-cufonfonts/CrosstenExtraBold.otf") format("truetype");
 }
@@ -26,7 +26,7 @@
 @font-face {
   font-family: "Cross-normal";
   src: url("crossten-cufonfonts/CrosstenLight.otf") format("truetype");
-}
+} */
 
 * {
   box-sizing: border-box;

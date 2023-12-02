@@ -7,18 +7,18 @@ import "@fortawesome/fontawesome-free"
 
 // new Code.
 
-import './components/alert/alerta-registro.js';
-import './components/alert/alerta-inicio-sesion.js';
-import './components/alert/alerta-vender.js';
-import './components/alert/alerta-vender-dos.js';
-import './components/alert/creado-exitosamente.js';
-import './components/alert/menu-nav-opciones.js';
-import './components/info/footer-component.js';
-import './components/info/productos-para-ti.js'
-import './components/alert/alerta-notificara-vendedor.js';
-import './components/alert/nuevo-cliente.js';
-import './components/alert/nuevo-cliente-dos.js';
-import './components/alert/nueva-tarjeta.js';
-import './components/alert/evita-robos.js';
-import './components/alert/alerta-pin.js';
-import './components/alert/card-producto.js';
+// import './components/alert/alerta-registro.js';
+// import './components/alert/alerta-inicio-sesion.js';
+// import './components/alert/alerta-vender.js';
+// import './components/alert/alerta-vender-dos.js';
+// import './components/alert/creado-exitosamente.js';
+// import './components/alert/menu-nav-opciones.js';
+// import './components/info/footer-component.js';
+// import './components/info/productos-para-ti.js'
+// import './components/alert/alerta-notificara-vendedor.js';
+// import './components/alert/nuevo-cliente.js';
+// import './components/alert/nuevo-cliente-dos.js';
+// import './components/alert/nueva-tarjeta.js';
+// import './components/alert/evita-robos.js';
+// import './components/alert/alerta-pin.js';
+// import './components/alert/card-producto.js';
