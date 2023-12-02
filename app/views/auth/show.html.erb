@@ -5,7 +5,7 @@
 
   <div class="signin-box-form">
     <p class="text-2xl text-gray-900 font-medium mb-3">¿Cuál es tu teléfono?</p>
-    <%= form_with url: auth_path do |f| %>
+    <%= form_with(url: auth_path, local: true) do |f| %>
       <button type="button" id="sign-in-btn">Sign In</button>
       <button type="button" id="create-account-btn">Create Account</button>
 
