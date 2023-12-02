@@ -16,7 +16,7 @@
 
       <%= f.phone_field :phone, placeholder: "333333333", class: "" %>
       <div class="signin-button">
-        <%= f.submit "Continue" %>
+        <%= f.submit "Continue", data: { turbo_drive: false } %>
       </div>
     <% end %>
 

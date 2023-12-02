@@ -19,7 +19,7 @@
       <% end %>
       <%= f.text_field :auth_code, class: "code-numbers", maxlength: 6 %>
 
-      <%= f.submit "Continue to your account" %>
+      <%= f.submit "Continue to your account", data: { turbo_drive: false } %>
     <% end %>
   </div>
 </div>
