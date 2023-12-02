@@ -6,7 +6,7 @@
   <div class="signin-box-form">
     <p class="text-2xl text-gray-900 font-medium mb-3">¿Cuál es tu teléfono?</p>
 
-    <%= form_with(url: auth_path, html: { data: { turbo: false } }) do |f| %>
+    <%= form_with(url: auth_path) do |f| %>
       <button type="button" id="sign-in-btn">Sign In</button>
       <button type="button" id="create-account-btn">Create Account</button>
 
@@ -16,7 +16,9 @@
       </div>
 
       <%= f.phone_field :phone, value: params[:phone], placeholder: "333333333", class: "" %>
-      <%= f.submit "Continue" %>
+      <div class="signin-button">
+        <%= f.submit "Continue" %>
+      <div>
     <% end %>
   </div>
 </div>
