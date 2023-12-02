@@ -33,43 +33,43 @@
   </article>
 </section>
 
-
-<section id="destacados" class="seccion-productos-destacados">
-  <h2>Productos destacados</h2>
-  
-  <div class="contenido-destacados" id="contenido-destacados">
-    <% @products.each do |product| %>
-      <div class="producto-item">
-
-        <div class="header-item">
-          <i class="icon-heart" id="#{<%= product.id %>}"></i>
-            <%= product.name %>
-        </div>
-      
-        <div class="imagen">
-          <%= link_to(image_tag(product.images.first || 'https://imgd.aeplcdn.com/1056x594/n/cw/ec/105799/rumion-exterior-right-front-three-quarter-4.jpeg?isig=0&q=80&wm=1'), product_path(product)) %>
-        </div>
-        
-        <div class="resenas">
-          <i class="icon-star-empty"></i>
-          <i class="icon-star-empty"></i>
-          <i class="icon-star-empty"></i>
-          <i class="icon-star-empty"></i>
-          <i class="icon-star-empty"></i>
-          <span>546 reseñas</span>
-        </div>
-        <p style="background-color: coral;"><%= product.description.body %></p>
-        <div class="precio-info">
-          <span><%= product.price %></span>
-          <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
-          <%= render "welcome/lead", locals: { product_id: product.id }  %>
-        </div>
-
+<div class="productos" id="productos">
+  <% @products.each do |product| %>
+    <div class="producto-item">
+      <div class="header-item">
+        <%= image_tag "Contenido/Compartir 2.svg", class: "compartir" %>
+        <%= product.name %>
       </div>
-    <% end %>
-  </div>
-  <button id="destacados-ver-mas">Ver más</button>
-</section>
+
+      <div class="imagen">
+        <% if product.images.attached? %>
+          <% product.images.each do |image| %>
+            <%= image_tag image, class: "product-image", alt: product.name %>
+          <% end %>
+        <% else %>
+          <!-- Fallback image if no image is attached -->
+          <img src="https://falabella.scene7.com/is/image/FalabellaCO/881653694_1?wid=800&hei=800&qlt=70" alt="Default Image">
+        <% end %>
+      </div>
+
+      <div class="resenas">
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <i class="icon-star-empty"></i>
+        <span>546 reseñas</span>
+      </div>
+      <div class="precio-info">
+        <span><%= product.price %></span>
+        <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
+          <%= render "welcome/lead", locals: { product_id: product.id }  %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
 
 <section id="elegirnos" class="seccion-por-que-elegirnos">
   <h2>¿Por qué comprar en Odín?</h2>
