@@ -6,7 +6,7 @@
       Acabamos de enviarte un código de seis dígitos a tu teléfono, por favor ingrésalo en la caja de abajo.
     </div>
 
-    <%= form_with(url: auth_verifications_path, local: true) do |f| %>
+    <%= form_with(url: auth_verifications_path, local: true, data: { turbo: false }) do |f| %>
       <%= f.label :phone do %>
         Teléfono
         <%= link_to "Cambio", auth_path %>
