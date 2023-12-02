@@ -5,12 +5,7 @@ module UserLogin
     salt = User.generate_auth_salt
     user = User.find_by(phone: params[:phone])
 
-    if user.nil?
-      user = User.create!(email: params[:email],
-        first_name: params[:first_name],
-        phone: params[:phone],
-        auth_secret: salt)
-    end
+    return UserLoginResponse.new("User not found") if user.nil?
 
     User.send_login_code_message_to_user(user, user.auth_code(salt))
 
