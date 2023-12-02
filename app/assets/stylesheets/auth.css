@@ -42,6 +42,10 @@
   margin-top: 15px;
 }
 
+.signin-button {
+  padding-bottom: 30px;
+}
+
 .signin-box-form input[type="submit"]:hover {
   background-color: #022b5a;
 }
