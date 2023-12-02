@@ -15,9 +15,11 @@
 
 <section id="busqueda" class="seccion-busqueda">
   <div class="input-box">
-    <input type="text" placeholder="Buscar">
+    <%= text_field_tag :search, nil, placeholder: "Buscar", id: "search-bar" %>
+    <div id="search-results"></div>
       <i class="icon-search"></i>
-    </div>
+  </div>
+  
   <article id="categorias" class="categorias">
     <div id="categorias-box" class="categorias-box">
       <% @icons.each do |icon| %>
@@ -68,8 +70,6 @@
     </div>
   <% end %>
 </div>
-
-
 
 <section id="elegirnos" class="seccion-por-que-elegirnos">
   <h2>¿Por qué comprar en Odín?</h2>
