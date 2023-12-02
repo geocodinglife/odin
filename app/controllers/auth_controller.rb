@@ -7,8 +7,9 @@ class AuthController < ApplicationController
   def create
     session[:phone] = params[:phone]
     session[:salt] = UserLogin.start_auth(params)
+    redirect_to root_path
 
-    redirect_to auth_verifications_path
+    # redirect_to auth_verifications_path
   rescue ActiveRecord::RecordInvalid
     render :show
   end
