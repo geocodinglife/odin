@@ -45,11 +45,13 @@
           </div>
 
           <div style="display: flex; align-items: center; justify-content: space-between;">
-            <%= form.label :images, "Adjuntar imagenes" %>
+            <%= form.label :images, "Adjuntar imagenes", style: "cursor: pointer;" %>
 
             <%= form.file_field :images, multiple: true, id: "image-upload", style: "display: none;" %>
 
-            <%= label_tag :images, image_tag("Contenido/Adjuntar.svg"), for: "image-upload", style: "cursor: pointer;" %>
+            <label for="image-upload">
+              <%= image_tag("Contenido/Adjuntar.svg") %>
+            </label>
           </div>
 
           <div>
