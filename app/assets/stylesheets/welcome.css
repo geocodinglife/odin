@@ -47,61 +47,6 @@
   color: white;
 }
 
-.seccion-busqueda {
-  padding: 1rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.seccion-busqueda .input-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 1rem 0;
-  position: relative;
-}
-
-.seccion-busqueda .input-box input {
-  width: 60%;
-  border: 1px solid gray;
-  padding: 14px 2rem;
-  border-radius: 2.5rem;
-  box-shadow: 1px 1px 8px 2px rgb(199, 199, 199);
-  font-size: 24px;
-}
-
-.seccion-busqueda .input-box .icon-search {
-  position: absolute;
-  right: 22%;
-  font-size: 24px;
-}
-
-.seccion-busqueda .categorias {
-  margin-top: 2rem;
-}
-
-.seccion-busqueda .categorias .categorias-box {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.seccion-busqueda .categorias .categorias-box .categorias-item-box {
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.seccion-busqueda .categorias .categorias-box .categorias-item-box img {
-  width: 90px;
-  height: 90px;
-}
-
 .seccion-productos-destacados .contenido-destacados,
 .seccion-productos-destacados .contenido-ofertas,
 .seccion-grandes-ofertas .contenido-destacados,
@@ -395,39 +340,6 @@
     padding: 0 1rem;
     width: 100%;
     margin: 0;
-  }
-
-  .seccion-busqueda .input-box input {
-    width: 75%;
-  }
-
-  .seccion-busqueda .input-box .icon-search {
-    right: 14%;
-  }
-
-  .seccion-busqueda .categorias {
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-  }
-
-  .seccion-busqueda .categorias .categorias-box {
-    width: 90%;
-    overflow-x: scroll;
-    overflow-y: hidden;
-    height: calc(80px + 1.5rem);
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-  }
-
-  .seccion-busqueda .categorias .categorias-box .categorias-item-box p {
-    margin: 12px;
-  }
-
-  .seccion-busqueda .categorias .categorias-box .categorias-item-box .categorias-item {
-    margin: 0 2rem;
-    min-width: 40px;
-    min-height: 40px;
   }
 
   .seccion-productos-destacados .contenido-destacados,

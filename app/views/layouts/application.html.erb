@@ -9,11 +9,61 @@
     <%= javascript_importmap_tags %>
   </head>
   <body>
+
     <div>
-      <%= render 'shared/navbar' %>
+      <%#= render 'shared/navbar' %>
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
     </div>
+    <%
+    @icons = {
+      'vehículos' => 'Contenido/Odin/Vehículos.svg',
+      'inmuebles' => 'Contenido/Odin/Inmuebles.svg',
+      'alquiler' => 'Contenido/Odin/Alquiler.svg',
+      'servicios' => 'Contenido/Odin/Servicios.svg',
+      'Electrónica' => 'Contenido/Odin/Electrónica.svg',
+      'tecnología' => 'Contenido/Odin/Tecnología.svg',
+      'muebles' => 'Contenido/Odin/Muebles.svg',
+      'deportes' => 'Contenido/Odin/Deportes.svg',
+      'belleza' => 'Contenido/Odin/Belleza.svg',
+      'niños' => 'Contenido/Odin/Niños.svg',
+      'libros' => 'Contenido/Odin/Libros.svg',
+      'mascotas' => 'Contenido/Odin/Mascotas.svg',
+      'empleos' => 'Contenido/Odin/Empleos.svg'
+    }
+  %>
+    <section id="busqueda" class="seccion-busqueda">
+      <div class="search-section">
+        <div class="logo">
+          <%= link_to image_tag("buhologo.png", alt: "odin-logo"), root_path %>
+        </div>
+        <div class="input-box">
+          <%= text_field_tag :search, nil, placeholder: "Buscar", id: "search-bar" %>
+          <i class="icon-search"></i>
+        </div>
+        <div class="quiero-vender-link">
+          <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde", id: "registrarse-boton" %>
+          <%= link_to new_product_path, class: "boton-azul" do %>
+            ¡Quiero vender!
+          <% end %>
+        </div>
+      </div>
+
+      <article id="categorias" class="categorias">
+        <div id="categorias-box" class="categorias-box">
+          <% @icons.each do |icon| %>
+            <div class="categorias-item-box">
+              <div class="categorias-item">
+              <%= link_to products_path(category_name: icon.first) do %>
+                <%= image_tag icon.second, alt: icon.first %>
+              <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </article>
+    </section>
+
     <%= yield %>
       <%= render 'shared/footer' %>
   </body>
