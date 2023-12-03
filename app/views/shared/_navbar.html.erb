@@ -1,7 +1,8 @@
+<!--
 <div class="alerta-anuncio">
   ¡Los mejores productos para ti!
 </div>
-
+-->
 <nav class="nav-home">
   <div class="usuario-acceso">
       <%= link_to image_tag("buhologo.png", alt: "odin-logo"), root_path %>
@@ -22,7 +23,11 @@
         <%#= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
       <%# end %>
       <% end %>
-       
+      <div>
+      <%= link_to new_product_path, class: "boton-azul" do %>
+        ¡Quiero vender!
+      <% end %>
+      </div>
   </div>
    <!-- <div class="usuario"> 
      <%#= image_tag "Contenido/Imágen.svg" %>

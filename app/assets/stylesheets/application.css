@@ -129,7 +129,7 @@ i {
   box-shadow: none;
 }
 
-.nav-home .usuario-acceso .boton-verde {
+.boton-verde {
   box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
   background: var(--verde-principal);
   color: #fff;
@@ -155,4 +155,225 @@ footer p {
   font-family: 'Cross-normal';
   margin: 0;
   color: white;
+}
+
+.seccion-busqueda {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-banner,
+.productos,
+.seccion-por-que-elegirnos {
+  margin-top: 200px;
+  z-index: 500;
+}
+
+.productos {
+  padding-top: 40px;
+}
+
+.seccion-busqueda img {
+  height: 30px;
+}
+
+
+.nav-home .usuario-acceso .boton-azul {
+  border-radius: 2rem;
+  background: var(--azul-principal);
+  margin: 0;
+  font-size: 1.2rem;
+  padding: 8px 2rem;
+  font-family: "Cross-bold";
+  font-weight: bolder;
+  color: white;
+}
+
+
+.seccion-busqueda .input-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+  margin: 1rem 0;
+  position: relative;
+}
+
+.seccion-busqueda .input-box input {
+  width: 100%;
+  border: 1px solid gray;
+  padding: 14px 2rem;
+  border-radius: 2.5rem;
+  box-shadow: 1px 1px 8px 2px rgb(199, 199, 199);
+  font-size: 24px;
+}
+
+.seccion-busqueda .input-box .icon-search {
+  position: absolute;
+  right: 0;
+  /* Adjust right to 0 to place the icon all the way to the right */
+  font-size: 24px;
+}
+
+.seccion-busqueda .categorias {
+  margin-top: 2rem;
+}
+
+.seccion-busqueda .categorias .categorias-box {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.seccion-busqueda .categorias .categorias-box .categorias-item-box {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.seccion-busqueda .categorias .categorias-box .categorias-item-box img {
+  width: 90px;
+  height: 90px;
+}
+
+.subnavbar {
+  display: flex;
+  justify-content: center;
+}
+
+.subnavbar .usuario-acceso .boton-verde {
+  box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
+  background: var(--verde-principal);
+  color: #fff;
+  font-weight: 100;
+}
+
+.search-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-section .logo {
+  margin-right: 1rem;
+}
+
+.search-section .input-box {
+  flex: 1;
+}
+
+.search-section .input-box input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid gray;
+  padding: 14px 2rem;
+  border-radius: 2.5rem;
+  box-shadow: 1px 1px 8px 2px rgb(199, 199, 199);
+  font-size: 24px;
+}
+
+.search-section .quiero-vender-link {
+  margin-left: 1rem;
+}
+
+.seccion-busqueda .input-box input {
+  width: 100%;
+  border: 1px solid gray;
+  padding: 14px 2rem;
+  border-radius: 2.5rem;
+  box-shadow: 1px 1px 8px 2px rgb(199, 199, 199);
+  font-size: 24px;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --padding-secciones: 2rem;
+  }
+
+  .banner-home .banner-presentacion {
+    padding: 0 1rem;
+    width: 100%;
+    margin: 0;
+  }
+
+  .seccion-busqueda .input-box input {
+    width: 75%;
+  }
+
+  .seccion-busqueda .input-box .icon-search {
+    right: 14%;
+  }
+
+  .seccion-busqueda .categorias {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+  }
+
+  .seccion-busqueda .categorias .categorias-box {
+    width: 90%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: calc(80px + 1.5rem);
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+
+  .seccion-busqueda .categorias .categorias-box .categorias-item-box p {
+    margin: 12px;
+  }
+
+  .seccion-busqueda .categorias .categorias-box .categorias-item-box .categorias-item {
+    margin: 0 2rem;
+    min-width: 40px;
+    min-height: 40px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-home {
+    display: none;
+  }
+
+  .seccion-busqueda {
+    width: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .quiero-vender-link {
+    /* display: none; */
+  }
+
+  .logo {
+    /* display: none; */
+
+  }
+
+  .search-section {
+    /* width: 0; */
+  }
+
+  .seccion-busqueda .input-box input {
+    width: 100%;
+  }
+
+  .seccion-busqueda .categorias {
+    margin-top: 1rem;
+  }
 }

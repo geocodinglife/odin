@@ -1,3 +1,4 @@
+<!--
 <section class="main-banner">
   <div class="banner-home">
   <%= image_tag "Contenido/Odin/Banner.png" %>
@@ -12,27 +13,7 @@
     </div>
   </div>
 </section>
-<section id="busqueda" class="seccion-busqueda">
-  <div class="input-box">
-    <%#= text_field_tag :search, nil, placeholder: "Buscar", id: "search-bar" %>
-    <!-- <div id="search-results"></div> -->
-      <!-- <i class="icon-search"></i> -->
-  </div>
-  
-  <article id="categorias" class="categorias">
-    <div id="categorias-box" class="categorias-box">
-      <% @icons.each do |icon| %>
-        <div class="categorias-item-box">
-          <div class="categorias-item">
-          <%= link_to products_path(category_name: icon.first) do %>
-            <%= image_tag icon.second, alt: icon.first %>
-          <% end %>
-          </div>
-        </div>
-      <% end %>
-    </div>
-  </article>
-</section>
+-->
 
 <div class="productos" id="productos">
   <% @products.each do |product| %>
