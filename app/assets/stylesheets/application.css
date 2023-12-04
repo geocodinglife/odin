@@ -144,7 +144,6 @@ footer {
   background: var(--verde-principal);
   padding: 8px;
   text-align: center;
-  position: fixed;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -224,7 +223,7 @@ footer p {
 }
 
 .seccion-busqueda .categorias {
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
 }
 
 .seccion-busqueda .categorias .categorias-box {
@@ -259,7 +258,7 @@ footer p {
 }
 
 .search-section {
-  width: 100%;
+  width: 80%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -284,7 +283,7 @@ footer p {
 }
 
 .search-section .quiero-vender-link {
-  /* margin-left: 1rem; */
+  margin-left: 1rem;
 }
 
 .seccion-busqueda .input-box input {
@@ -295,6 +294,26 @@ footer p {
   box-shadow: 1px 1px 8px 2px rgb(199, 199, 199);
   font-size: 24px;
 }
+
+.mobile-list-icon {
+  font-size: 24px;
+  /* Adjust the size as needed */
+  margin-left: 10px;
+  /* Adjust the spacing from the search icon */
+  cursor: pointer;
+}
+
+.icon-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.burger {
+  display: none;
+}
+
+/*------------------- TABLET ----------------------------- */
 
 @media (max-width: 992px) {
   :root {
@@ -308,7 +327,7 @@ footer p {
   }
 
   .seccion-busqueda .input-box input {
-    /* width: 75%; */
+    width: 75%;
   }
 
   .seccion-busqueda .input-box .icon-search {
@@ -335,15 +354,23 @@ footer p {
   }
 
   .seccion-busqueda .categorias .categorias-box .categorias-item-box .categorias-item {
-    /* margin: 0 2rem; */
     min-width: 40px;
     min-height: 40px;
   }
 }
 
+/* ---------------MOBILE ------------------- */
 @media only screen and (max-width: 600px) {
   .nav-home {
     display: none;
+  }
+
+  .burger {
+    display: contents;
+  }
+
+  .nav {
+    display: ;
   }
 
   .seccion-busqueda {
@@ -356,15 +383,27 @@ footer p {
   }
 
   .quiero-vender-link {
-    /* display: none; */
+    display: none;
   }
 
   .logo {
-    /* display: none; */
+    display: none;
   }
 
   .seccion-busqueda .categorias .categorias-box .categorias-item-box img {
     width: 70px;
     height: 70px;
+  }
+
+  .icon-search-container {
+    flex-direction: column;
+    /* Stack the icons vertically */
+    align-items: flex-end;
+    /* Align icons to the right */
+  }
+
+  .mobile-list-icon {
+    margin-top: 5px;
+    /* Adjust the spacing from the search bar */
   }
 }
