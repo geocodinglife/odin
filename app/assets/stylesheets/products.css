@@ -97,10 +97,6 @@
   left: 12px;
 }
 
-.productos .producto-item .imagen {
-  height: 200px;
-}
-
 .productos .producto-item .imagen img {
   -o-object-fit: contain;
   object-fit: contain;
