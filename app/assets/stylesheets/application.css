@@ -177,10 +177,6 @@ footer p {
   z-index: 500;
 }
 
-.productos {
-  padding-top: 40px;
-}
-
 .seccion-busqueda img {
   height: 30px;
 }
@@ -344,7 +340,7 @@ footer p {
     width: 90%;
     overflow-x: scroll;
     overflow-y: hidden;
-    height: calc(80px + 1.5rem);
+    /* height: calc(80px + 1.5rem); */
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
