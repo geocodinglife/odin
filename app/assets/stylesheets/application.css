@@ -284,7 +284,7 @@ footer p {
 }
 
 .search-section .quiero-vender-link {
-  margin-left: 1rem;
+  /* margin-left: 1rem; */
 }
 
 .seccion-busqueda .input-box input {
@@ -308,7 +308,7 @@ footer p {
   }
 
   .seccion-busqueda .input-box input {
-    width: 75%;
+    /* width: 75%; */
   }
 
   .seccion-busqueda .input-box .icon-search {
@@ -356,12 +356,11 @@ footer p {
   }
 
   .quiero-vender-link {
-    display: none;
+    /* display: none; */
   }
 
   .logo {
-    display: none;
-
+    /* display: none; */
   }
 
   .seccion-busqueda .categorias .categorias-box .categorias-item-box img {
