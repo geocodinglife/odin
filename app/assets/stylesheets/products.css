@@ -65,7 +65,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0 3rem;
+  padding: 0.5rem;
 }
 
 .productos .producto-item {
@@ -73,7 +73,7 @@
   position: relative;
   border-radius: 1.2rem;
   border: 1px solid rgb(201, 201, 201);
-  width: 240px;
+  width: 340px;
   padding: 0.8rem;
   margin: 1rem 0;
 }

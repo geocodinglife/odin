@@ -357,23 +357,13 @@ footer p {
   }
 
   .quiero-vender-link {
-    /* display: none; */
+    display: none;
   }
 
   .logo {
-    /* display: none; */
+    display: none;
 
   }
 
-  .search-section {
-    /* width: 0; */
-  }
 
-  .seccion-busqueda .input-box input {
-    width: 100%;
-  }
-
-  .seccion-busqueda .categorias {
-    margin-top: 1rem;
-  }
 }
