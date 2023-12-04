@@ -335,7 +335,7 @@ footer p {
   }
 
   .seccion-busqueda .categorias .categorias-box .categorias-item-box .categorias-item {
-    margin: 0 2rem;
+    /* margin: 0 2rem; */
     min-width: 40px;
     min-height: 40px;
   }
