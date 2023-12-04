@@ -158,13 +158,13 @@ footer p {
 }
 
 .seccion-busqueda {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 100%;
   background-color: #fff;
-  z-index: 1000;
-  padding: 1rem 0;
+  /* z-index: 1000; */
+  padding: 0.5rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -174,7 +174,7 @@ footer p {
 .main-banner,
 .productos,
 .seccion-por-que-elegirnos {
-  margin-top: 200px;
+  /* margin-top: 200px; */
   z-index: 500;
 }
 
@@ -185,7 +185,6 @@ footer p {
 .seccion-busqueda img {
   height: 30px;
 }
-
 
 .nav-home .usuario-acceso .boton-azul {
   border-radius: 2rem;
@@ -365,5 +364,8 @@ footer p {
 
   }
 
-
+  .seccion-busqueda .categorias .categorias-box .categorias-item-box img {
+    width: 70px;
+    height: 70px;
+  }
 }
