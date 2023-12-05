@@ -40,15 +40,28 @@
           <%= text_field_tag :search, nil, placeholder: "Buscar", id: "search-bar" %>
           <i class="icon-search"></i>
         </div>
-        <div class="quiero-vender-link">
-          <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde", id: "registrarse-boton" %>
-          <%= link_to new_product_path, class: "boton-azul" do %>
-            ¡Quiero vender!
-          <% end %>
+        <header>
+  <div class="container"> 
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item">
+             <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde nav-link", id: "registrarse-boton" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to new_product_path, class: "boton-azul nav-link" do %>
+              ¡Quiero vender!
+            <% end %>
+          </li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
         </div>
-        <div class="burger">
-            <i class="fas fa-bars"></i>
-        </div>
+      </nav>
+   </div>
+ </header>
+
       </div>
 
       <article id="categorias" class="categorias">
