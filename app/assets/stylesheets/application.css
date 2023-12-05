@@ -531,8 +531,8 @@ a {
     display: none;
   }
 
-  .logo {
-    display: none;
+  .search-section {
+    width: 90%;
   }
 
   .seccion-busqueda .categorias .categorias-box .categorias-item-box img {
