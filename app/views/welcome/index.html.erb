@@ -29,10 +29,14 @@
       </div>
       <div class="header-item">
         <%= image_tag "Contenido/Compartir 2.svg", class: "compartir" %>
-        <%= product.name %>
+        <h2><%= product.name %></h2>
+        <h3>Medellin Colombia</h3>
+        <p><%= truncate(product.description.body.to_s, length: 150) %></p>
       </div>
       <div class="precio-info">
-        <span><%= product.price %></span>
+        <div class="price-information">
+          <span>$ <%= product.price %></span>
+        </div>
         <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
           <%= render "welcome/lead", locals: { product_id: product.id }  %>
       </div>
