@@ -309,10 +309,6 @@ footer p {
   display: none;
 }
 
-header {
-  background-color: lightslategray;
-}
-
 li {
   list-style: none;
 }
@@ -366,7 +362,17 @@ a {
   margin: 5px auto;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  background-color: white;
+  background-color: black;
+}
+
+.boton-azul {
+  box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
+  background: var(--azul-principal);
+  color: #fff;
+  font-weight: 100;
+  border-radius: 0.25rem;
+  text-align: center;
+  padding: 8px;
 }
 
 @media(max-width:1024px) {
@@ -396,6 +402,8 @@ a {
     width: 100%;
     text-align: center;
     transition: 0.3s;
+    z-index: 1000;
+    padding-bottom: 100%;
   }
 
   .nav-item {
@@ -464,10 +472,6 @@ a {
     display: contents;
   }
 
-  .nav {
-    display: ;
-  }
-
   .seccion-busqueda {
     width: 100%;
     padding: 5px;
@@ -492,13 +496,10 @@ a {
 
   .icon-search-container {
     flex-direction: column;
-    /* Stack the icons vertically */
     align-items: flex-end;
-    /* Align icons to the right */
   }
 
   .mobile-list-icon {
     margin-top: 5px;
-    /* Adjust the spacing from the search bar */
   }
 }
