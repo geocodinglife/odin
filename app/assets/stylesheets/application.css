@@ -106,6 +106,10 @@ i {
   justify-content: center;
 }
 
+.seccion-busqueda {
+  border-bottom: 2px solid #cccccc;
+}
+
 .content-container {
   margin-top: 150px;
 }
@@ -238,12 +242,7 @@ footer p {
 .seccion-busqueda .input-box .icon-search {
   position: absolute;
   right: 0;
-  /* Adjust right to 0 to place the icon all the way to the right */
   font-size: 24px;
-}
-
-.seccion-busqueda .categorias {
-  /* margin-top: 2rem; */
 }
 
 .seccion-busqueda .categorias .categorias-box {
