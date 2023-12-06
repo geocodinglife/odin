@@ -15,7 +15,7 @@
 
       <%= f.label :phone do %>
         Auth code
-        <%= link_to "Re-send code", auth_path(phone: @phone), method: :post %>
+        <%= link_to "Re-send code", auth_path(phone: @phone), method: :post, style: "color: green;" %>
       <% end %>
       <%= f.text_field :auth_code, class: "code-numbers", maxlength: 6 %>
 
