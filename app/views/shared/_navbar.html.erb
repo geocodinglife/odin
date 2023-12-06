@@ -1,38 +1,60 @@
-<!--
-<div class="alerta-anuncio">
-  ¡Los mejores productos para ti!
-</div>
--->
-<nav class="nav-home">
-  <div class="usuario-acceso">
+<%
+@icons = {
+  'vehículos' => 'Contenido/Odin/Vehículos.svg',
+  'inmuebles' => 'Contenido/Odin/Inmuebles.svg',
+  'alquiler' => 'Contenido/Odin/Alquiler.svg',
+  'servicios' => 'Contenido/Odin/Servicios.svg',
+  'Electrónica' => 'Contenido/Odin/Electrónica.svg',
+  'tecnología' => 'Contenido/Odin/Tecnología.svg',
+  'muebles' => 'Contenido/Odin/Muebles.svg',
+  'deportes' => 'Contenido/Odin/Deportes.svg',
+  'belleza' => 'Contenido/Odin/Belleza.svg',
+  'niños' => 'Contenido/Odin/Niños.svg',
+  'libros' => 'Contenido/Odin/Libros.svg',
+  'mascotas' => 'Contenido/Odin/Mascotas.svg',
+  'empleos' => 'Contenido/Odin/Empleos.svg'
+}
+%>
+<section id="busqueda" class="seccion-busqueda">
+  <div class="search-section">
+    <div class="logo">
       <%= link_to image_tag("buhologo.png", alt: "odin-logo"), root_path %>
-      <div>
-      <% if current_user.nil? %>
-        <%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde", id: "registrarse-boton" %>
-        <%#= render 'shared/alerta-inicio-sesion' %>
-        <%#= link_to new_product_path, class: "green-sale-button" do %>
-            <!-- Registrarse -->
-          <%# end %>
-      <%# if user_signed_in? %>
-        <%#= button_to "LOGOUT", destroy_user_session_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, class: "btn-sessions" %>
-      <% else %>
-      <div class="nav-link-buttons">
-        <%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;" %>
-        <%= link_to "Chat", rooms_path, class: "boton-verde" %>
+    </div>
+    
+    <div class="input-box">
+      <%= text_field_tag :search, nil, placeholder: "Buscar", id: "search-bar" %>
+      <i class="icon-search"></i>
+    </div>
+    
+    <header>
+      <div class="container"> 
+        <nav class="navbar">
+          <ul class="nav-menu ">
+            <li class="nav-item "><%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde nav-link", id: "registrarse-boton" %></li>
+            <li class="nav-item boton-azul"><%= link_to "¡Quiero vender!", new_product_path, class: " nav-link"%></li>
+          </ul>
+
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+        </nav>
       </div>
-        <%#= link_to  "Iniciar sesion", sessions_new_path, class:"button-sessions"%>
-      <%# end %>
-      <% end %>
-      <div>
-      <%= link_to new_product_path, class: "boton-azul" do %>
-        ¡Quiero vender!
-      <% end %>
-      </div>
+    </header>
   </div>
-   <!-- <div class="usuario"> 
-     <%#= image_tag "Contenido/Imágen.svg" %>
-     <p><%#= current_user.first_name %></p>
-     <div class="nav-opciones"></div>
-   </div>
-   -->
-</nav>
+
+  <article id="categorias" class="categorias">
+    <div id="categorias-box" class="categorias-box">
+      <% @icons.each do |icon| %>
+        <div class="categorias-item-box">
+          <div class="categorias-item">
+            <%= link_to products_path(category_name: icon.first) do %>
+              <%= image_tag icon.second, alt: icon.first %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </article>
+</section>
