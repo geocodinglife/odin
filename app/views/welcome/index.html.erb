@@ -1,41 +1,23 @@
-<!--
-<section class="main-banner">
-  <div class="banner-home">
-  <%= image_tag "Contenido/Odin/Banner.png" %>
-    <div class="banner-presentacion">
-        <h1>Compra y Vende en Línea con Odin</h1>
-        <p>
-        Descubre un mundo de oportunidades. Compra y vende fácilmente con Odin. Encuentra el auto de tus sueños, el negocio perfecto y mucho más. Conéctate con compradores y vendedores confiables. Tu próxima aventura comienza aquí.
-        </p>
-        <%= link_to new_product_path, class: "boton-azul" do %>
-            ¡Quiero vender!
-        <% end %>
-    </div>
-  </div>
-</section>
--->
-
 <div class="productos" id="productos">
   <% @products.each do |product| %>
     <div class="producto-item">
       <div class="imagen">
         <% if product.images.attached? %>
           <% product.images.each do |image| %>
-            <%= image_tag image, class: "product-image", alt: product.name %>
+          <%= image_tag image, class: "product-image", alt: product.name, loading: "lazy", style: "max-width: 100%; height: auto;", loading: "lazy" %>
           <% end %>
         <% else %>
           <img src="https://falabella.scene7.com/is/image/FalabellaCO/881653694_1?wid=800&hei=800&qlt=70" alt="Default Image">
         <% end %>
       </div>
       <div class="header-item">
-        <%= image_tag "Contenido/Compartir 2.svg", class: "compartir" %>
-        <h2><%= product.name %></h2>
-        <h3>Medellin Colombia</h3>
+        <h4><%= product.name %></h4>
+        <p>Medellin Colombia</p>
         <p><%= truncate(product.description.body.to_s, length: 150) %></p>
       </div>
       <div class="precio-info">
         <div class="price-information">
-          <span>$ <%= product.price %></span>
+          <span style="color: #000; background-color: #fff;">$ <%= product.price %></span>
         </div>
         <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
           <%= render "welcome/lead", locals: { product_id: product.id }  %>

@@ -3,33 +3,28 @@
 <div class="productos" id="productos">
   <% @products.each do |product| %>
     <div class="producto-item">
-      <div class="header-item">
-        <%= image_tag "Contenido/Compartir 2.svg", class: "compartir" %>
-        <%= product.name %>
-      </div>
-
       <div class="imagen">
         <% if product.images.attached? %>
           <% product.images.each do |image| %>
-            <%= image_tag image, class: "product-image", alt: product.name %>
+            <%= image_tag image, class: "product-image", alt: product.name, loading: "lazy", style: "max-width: 100%; height: auto;", loading: "lazy" %>
           <% end %>
         <% else %>
-          <!-- Fallback image if no image is attached -->
           <img src="https://falabella.scene7.com/is/image/FalabellaCO/881653694_1?wid=800&hei=800&qlt=70" alt="Default Image">
         <% end %>
       </div>
-
-      <div class="resenas">
-        <i class="icon-star-empty"></i>
-        <i class="icon-star-empty"></i>
-        <i class="icon-star-empty"></i>
-        <i class="icon-star-empty"></i>
-        <i class="icon-star-empty"></i>
-        <span>546 reseñas</span>
+      <div class="header-item">
+        <h4><%= product.name %></h4>
+        <h5>Medellin Colombia</h5>
+        <p><%= truncate(product.description.body.to_s, length: 150) %></p>
       </div>
       <div class="precio-info">
-        <span><%= product.price %></span>
+        <div class="price-information">
+          <span style="color: #000; background-color: #fff;">$ <%= product.price %></span>
+        </div>
         <p><%= link_to "Show this product", product %></p>
+
+        <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
+          <%= render "welcome/lead", locals: { product_id: product.id }  %>
       </div>
     </div>
   <% end %>
