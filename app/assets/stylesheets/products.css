@@ -87,7 +87,6 @@
 
 .productos .producto-item .header-item {
   margin-bottom: 8px;
-  text-align: center;
 }
 
 .productos .producto-item .header-item .icon-heart {
@@ -123,10 +122,6 @@
 .productos .producto-item .resenas .items-sobrepuestos .icon-star {
   color: rgb(214, 214, 34);
   opacity: 0;
-}
-
-.productos .producto-item .precio-info {
-  text-align: center;
 }
 
 .productos .producto-item .precio-info span {
