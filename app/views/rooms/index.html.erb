@@ -10,7 +10,7 @@
         <p class="texto-fijados">Fijados</p>
         <div class="chat-fijado prev-abrir-chat-cliente">
           <div class="contenedor-izq">
-            <%= image_tag "Contenido/Imágen.svg" %>
+            <%#= image_tag "Contenido/Imágen.svg" %>
               <div class="nombre-msj">
                 <p>Cristina</p>
                 <p>Pasame tu número</p>
@@ -36,7 +36,7 @@
             <div class="lista-clientes" id="lista-clientes">
               <div class="cliente prev-abrir-chat-cliente">
                 <div class="caja-izq">
-                  <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
+                  <%#= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
                   <div class="nombre-y-msj">
                     <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                       <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
