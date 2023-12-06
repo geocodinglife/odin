@@ -30,8 +30,13 @@
       <div class="container"> 
         <nav class="navbar">
           <ul class="nav-menu ">
-            <li class="nav-item "><%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde nav-link", id: "registrarse-boton" %></li>
-            <li class="nav-item boton-azul"><%= link_to "¡Quiero vender!", new_product_path, class: " nav-link"%></li>
+          <% if user_signed_in? %>
+              <li class="nav-item "><%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;" %></li>
+              <li class="nav-item "><%= link_to "Chat", rooms_path, class: "boton-verde" %></li>
+            <% else %>
+              <li class="nav-item "><%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde nav-link", id: "registrarse-boton" %></li>
+              <li class="nav-item boton-azul"><%= link_to "¡Quiero vender!", new_product_path, class: " nav-link"%></li>
+            <% end %>
           </ul>
 
           <div class="hamburger">
