@@ -20,27 +20,27 @@ document.addEventListener("turbo:load", () => {
     navMenu.classList.remove("active");
   }));
 
-  const showModalButtons = document.querySelectorAll('.showModalButton');
-  const modal = document.getElementById('modal');
-  const closeModal = document.getElementById('closeModal');
-  const productInput = document.getElementById('product');
+  // const showModalButtons = document.querySelectorAll('.showModalButton');
+  // const modal = document.getElementById('modal');
+  // const closeModal = document.getElementById('closeModal');
+  // const productInput = document.getElementById('product');
 
-  showModalButtons.forEach(function (button) {
-    button.addEventListener('click', function () {
-      modal.style.display = 'block';
+  // showModalButtons.forEach(function (button) {
+  //   button.addEventListener('click', function () {
+  //     modal.style.display = 'block';
 
-      const productId = button.getAttribute('data-product-id');
-      productInput.value = productId;
-    });
-  });
+  //     const productId = button.getAttribute('data-product-id');
+  //     productInput.value = productId;
+  //   });
+  // });
 
-  closeModal.addEventListener('click', function () {
-    modal.style.display = 'none';
-  });
+  // closeModal.addEventListener('click', function () {
+  //   modal.style.display = 'none';
+  // });
 
-  window.addEventListener('click', function (event) {
-    if (event.target === modal) {
-      modal.style.display = 'none';
-    }
-  });
+  // window.addEventListener('click', function (event) {
+  //   if (event.target === modal) {
+  //     modal.style.display = 'none';
+  //   }
+  // });
 });
