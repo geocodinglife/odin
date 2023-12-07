@@ -4,7 +4,7 @@
       <div class="imagen">
         <% if product.images.attached? %>
           <% product.images.each do |image| %>
-          <%= image_tag image, class: "product-image", alt: product.name, loading: "lazy", style: "max-width: 100%; height: auto;", loading: "lazy" %>
+            <%= image_tag image, class: "product-image", alt: product.name, loading: "lazy", style: "max-width: 100%; height: auto;", loading: "lazy" %>
           <% end %>
         <% else %>
           <img src="https://falabella.scene7.com/is/image/FalabellaCO/881653694_1?wid=800&hei=800&qlt=70" alt="Default Image">
@@ -12,44 +12,14 @@
       </div>
       <div class="header-item">
         <h4><%= product.name %></h4>
-        <p>Medellin Colombia</p>
-        <p><%= truncate(product.description.body.to_s, length: 150) %></p>
+        <p style="color: #888;">Medellin Colombia</p>
+        <p style="color: #888;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
       </div>
       <div class="precio-info">
         <div class="price-information">
-          <span style="color: #000; background-color: #fff;">$ <%= product.price %></span>
+          <span style="color: #000; background-color: #fff;">$ <%= product.price %> COP</span>
         </div>
-        <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
-          <%= render "welcome/lead", locals: { product_id: product.id }  %>
       </div>
     </div>
   <% end %>
 </div>
-
-<section id="elegirnos" class="seccion-por-que-elegirnos">
-  <h2>¿Por qué comprar en Odín?</h2>
-  <div class="por-que-elegirnos-content">
-    <div class="item-razones-para-comprar">
-      <%= image_tag "Contenido/Odin/Precios bajos.svg", alt: "precios bajos", loading: "lazy" %>
-      <h3>Precios más bajos</h3>
-      <p>
-        Encuentra productos con los precios más bajos que puedas imaginar
-      </p>
-    </div>
-    <div class="item-razones-para-comprar">
-      <%= image_tag "Contenido/Odin/Sostenibilidad.svg", alt: "sostenibilidad", loading: "lazy" %>
-      <h3>Sostenibilidad</h3>
-      <p>Comprar de segunda mano contribuye a la sostenibilidad ambiental</p>
-    </div>
-    <div class="item-razones-para-comprar">
-      <%= image_tag "Contenido/Odin/Seguridad.svg", alt: "seguridad", loading: "lazy" %>
-      <h3>Seguridad</h3>
-      <p>Los números de los vendedores son verificados para mayor seguridad</p>
-    </div>
-    <div class="item-razones-para-comprar">
-      <%= image_tag "Contenido/Odin/Variedad.svg", alt: "variedad", loading: "lazy" %>
-      <h3>Variedad</h3>
-      <p>Encuentra desde una casa hasta un empleo. Aquí tenemos de todo</p>
-    </div>
-  </div>
-</section>

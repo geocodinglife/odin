@@ -2,6 +2,6 @@
 
 class WelcomeController < ApplicationController
   def index
-    @products = Product.last(40)
+    @products = Product.includes(:images_attachments).last(40)
   end
 end
