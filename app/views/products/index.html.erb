@@ -15,16 +15,13 @@
       <div class="header-item">
         <h4><%= product.name %></h4>
         <h5>Medellin Colombia</h5>
-        <p><%= truncate(product.description.body.to_s, length: 150) %></p>
+        <p><%#= truncate(product.description.body.to_s, length: 150) %></p>
       </div>
       <div class="precio-info">
         <div class="price-information">
           <span style="color: #000; background-color: #fff;">$ <%= product.price %></span>
         </div>
         <p><%= link_to "Show this product", product %></p>
-
-        <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
-          <%= render "welcome/lead", locals: { product_id: product.id }  %>
       </div>
     </div>
   <% end %>
