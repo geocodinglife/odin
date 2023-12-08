@@ -13,6 +13,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    render turbo_stream: turbo_stream.replace("frame1", partial: "products/product", locals: {product: @product})
   end
 
   def new

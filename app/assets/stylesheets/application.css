@@ -543,4 +543,9 @@ a {
   .mobile-list-icon {
     margin-top: 5px;
   }
+
+  .product-link {
+    text-decoration: none;
+    color: inherit;
+  }
 }
