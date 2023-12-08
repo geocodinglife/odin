@@ -512,8 +512,6 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow-x: auto;
-    white-space: nowrap;
   }
 
   .content-container {
@@ -544,5 +542,10 @@ a {
 
   .mobile-list-icon {
     margin-top: 5px;
+  }
+
+  .product-link {
+    text-decoration: none;
+    color: inherit;
   }
 }
