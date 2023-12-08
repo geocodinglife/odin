@@ -4,13 +4,18 @@
     <%= product.name %>
   </p>
 
-  <% product.images.each do |image| %>
-      <%= image_tag image, class: "product-image" %>
+  <% if product.images.attached? %>
+    <% product.images.each do |image| %>
+      <%= image_tag image, class: "product-image", alt: product.name, loading: "lazy", style: "max-width: 100%; height: auto;", loading: "lazy" %>
+    <% end %>
+  <% else %>
+    <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=960
+" alt="Default Image">
   <% end %>
 
   <p>
     <strong>Description:</strong>
-    <%= product.description.body %>
+    <%= product.descriptions.body %>
   </p>
 
   <p>
