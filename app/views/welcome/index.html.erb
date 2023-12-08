@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "frame1" do %>
+
   <div class="productos" id="productos">
     <% @products.each do |product| %>
         <div class="producto-item">
@@ -14,7 +14,7 @@
               <% end %>
             </div>
             <div class="header-item">
-              <h4><%= product.name %></h4>
+              <h4 style="color: #000; background-color: #fff;"><%= product.name %></h4>
               <p style="color: #333;">Medellin Colombia</p>
               <p style="color: #888;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
             </div>
@@ -27,4 +27,3 @@
         </div>
     <% end %>
   </div>
-<% end %>

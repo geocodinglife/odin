@@ -10,6 +10,8 @@ class ProductsController < ApplicationController
     else
       category.products.order(created_at: :desc)
     end
+
+    render turbo_stream: turbo_stream.prepend("frame1", inline: render_to_string("products/index", layout: false, locals: {products: @products}))
   end
 
   def show

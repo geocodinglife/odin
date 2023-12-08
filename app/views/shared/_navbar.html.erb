@@ -1,20 +1,21 @@
 <%
-@icons = {
-  'vehículos' => 'Contenido/Odin/Vehículos.svg',
-  'inmuebles' => 'Contenido/Odin/Inmuebles.svg',
-  'alquiler' => 'Contenido/Odin/Alquiler.svg',
-  'servicios' => 'Contenido/Odin/Servicios.svg',
-  'Electrónica' => 'Contenido/Odin/Electrónica.svg',
-  'tecnología' => 'Contenido/Odin/Tecnología.svg',
-  'muebles' => 'Contenido/Odin/Muebles.svg',
-  'deportes' => 'Contenido/Odin/Deportes.svg',
-  'belleza' => 'Contenido/Odin/Belleza.svg',
-  'niños' => 'Contenido/Odin/Niños.svg',
-  'libros' => 'Contenido/Odin/Libros.svg',
-  'mascotas' => 'Contenido/Odin/Mascotas.svg',
-  'empleos' => 'Contenido/Odin/Empleos.svg'
-}
+  @icons = {
+    'vehículos' => 'Contenido/Odin/Vehículos.svg',
+    'inmuebles' => 'Contenido/Odin/Inmuebles.svg',
+    'alquiler' => 'Contenido/Odin/Alquiler.svg',
+    'servicios' => 'Contenido/Odin/Servicios.svg',
+    'Electrónica' => 'Contenido/Odin/Electrónica.svg',
+    'tecnología' => 'Contenido/Odin/Tecnología.svg',
+    'muebles' => 'Contenido/Odin/Muebles.svg',
+    'deportes' => 'Contenido/Odin/Deportes.svg',
+    'belleza' => 'Contenido/Odin/Belleza.svg',
+    'niños' => 'Contenido/Odin/Niños.svg',
+    'libros' => 'Contenido/Odin/Libros.svg',
+    'mascotas' => 'Contenido/Odin/Mascotas.svg',
+    'empleos' => 'Contenido/Odin/Empleos.svg'
+  }
 %>
+
 <section id="busqueda" class="seccion-busqueda">
   <div class="search-section">
     <div class="logo">
@@ -49,17 +50,17 @@
     </header>
   </div>
 
-  <article id="categorias" class="categorias">
-    <div id="categorias-box" class="categorias-box">
-      <% @icons.each do |icon| %>
-        <div class="categorias-item-box">
-          <div class="categorias-item">
-            <%= link_to products_path(category_name: icon.first) do %>
-              <%= image_tag icon.second, alt: icon.first %>
-            <% end %>
+    <article id="categorias" class="categorias">
+      <div id="categorias-box" class="categorias-box">
+        <% @icons.each do |icon| %>
+          <div class="categorias-item-box">
+            <div class="categorias-item">
+              <%= link_to products_path(category_name: icon.first) do %>
+                <%= image_tag icon.second, alt: icon.first, data: { turbo_frame: "frame1"} %>
+              <% end %>
+            </div>
           </div>
-        </div>
-      <% end %>
-    </div>
-  </article>
+        <% end %>
+      </div>
+    </article>
 </section>
