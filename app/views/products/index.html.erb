@@ -1,28 +1,29 @@
 <p style="color: green"><%= notice %></p>
-
 <div class="productos" id="productos">
   <% @products.each do |product| %>
     <div class="producto-item">
-      <div class="imagen">
-        <% if product.images.attached? %>
-          <% product.images.each do |image| %>
-            <%= image_tag image, class: "product-image", alt: product.name, loading: "lazy", style: "max-width: 100%; height: auto;", loading: "lazy" %>
+      <%= link_to product_path(product), class: "product-link" do %>
+        <div class="imagen">
+          <% if product.images.attached? %>
+            <% product.images.each do |image| %>
+              <%= image_tag image, class: "product-image", alt: product.name, style: "max-width: 100%; height: auto;", loading: "lazy" %>
+            <% end %>
+          <% else %>
+            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=960" alt="Default Image" loading="lazy">
           <% end %>
-        <% else %>
-          <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=960" alt="Default Image" loading="lazy">
-        <% end %>
-      </div>
-      <div class="header-item">
-        <h4><%= product.name %></h4>
-        <p style="color: #333;">Medellin Colombia</p>
-        <p><%#= truncate(product.description.body.to_s, length: 150) %></p>
-      </div>
-      <div class="precio-info">
-        <div class="price-information">
-          <span style="color: #000; background-color: #fff;">$ <%= product.price %></span>
         </div>
-        <p><%= link_to "Show this product", product %></p>
-      </div>
+        <div class="header-item">
+          <h4 style="color: #000; background-color: #fff;"><%= product.name %></h4>
+          <p style="color: #333;">Medellin Colombia</p>
+          <p><%#= truncate(product.description.body.to_s, length: 150) %></p>
+        </div>
+        <div class="precio-info">
+          <div class="price-information">
+            <span style="color: #000; background-color: #fff;">$ <%= product.price %></span>
+          </div>
+          <p><%= link_to "Show this product", product %></p>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
