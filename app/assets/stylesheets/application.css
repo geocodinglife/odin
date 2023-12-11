@@ -670,4 +670,8 @@ img {
     text-decoration: none;
     color: inherit;
   }
+
+  .product-page {
+    padding: 0.05rem;
+  }
 }

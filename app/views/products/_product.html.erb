@@ -1,22 +1,6 @@
 <div id="<%= dom_id product %>" class="product-page">
   <h1><%= product.name %></h1>
 
-  <div class="product-about d-flex">
-    <div class="d-flex align-center">
-        <iconify-icon icon="material-symbols:star"></iconify-icon>
-        <p>4.88</p>
-        <p>193 reviews</p>
-    </div>
-
-    <div>
-        <p>Superhost</p>
-    </div>
-
-    <div>
-        <p>Austin, Texas, United States</p>
-    </div>
-  </div>
-
   <div class="images d-flex">
     <div class="px-05 full-img">
         <%= product.images.first %>
@@ -42,20 +26,21 @@
 
   <div class="house-by">
     <div>
-      <h2>Tiny home hosted by Kerthy</h2>
+      <p style="color: #333;"><%= product.description.body %></p>
+      <h2></h2>
       <div class="d-flex">
         <p class="m-0">2 guest</p>
         <p>1 bedroom</p>
         <p>1 bed</p>
         <p>1 bath</p>
-        <p><%= product.description.body %></p>
+        <p></p>
       </div>
     </div>
   </div>
 
   <div class="price d-flex">
     <div class="price-info">
-      <p>310-310-3102</p>
+      <p style="color: #888;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
       <p><%= product.price %></p>
     </div>
 
