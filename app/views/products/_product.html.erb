@@ -29,19 +29,14 @@
       <p style="color: #333;"><%= product.description.body %></p>
       <h2></h2>
       <div class="d-flex">
-        <p class="m-0">2 guest</p>
-        <p>1 bedroom</p>
-        <p>1 bed</p>
-        <p>1 bath</p>
-        <p></p>
+       <p style="color: #888;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
       </div>
     </div>
   </div>
 
   <div class="price d-flex">
     <div class="price-info">
-      <p style="color: #888;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
-      <p><%= product.price %></p>
+      <h3>$ <%= product.price %> COP</h3>
     </div>
 
     <button>
