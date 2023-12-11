@@ -28,9 +28,13 @@
           <p class="texto-demas-chats">Chats</p>
           <div class="dropdown-toggle" id="abrir-lista-clientes">
           <% @rooms.each do |room| %>
+            <p id="abrir-lista-clientes">
+              <%= room.name %>
+            </p>
+
           <% room.user_rooms.each do |product_chat| %>
             <p id="abrir-lista-clientes">
-              <%= product_chat.room.name %>
+              <%#= product_chat.room.name %>
             </p>
 
             <div class="lista-clientes" id="lista-clientes">

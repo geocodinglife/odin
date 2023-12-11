@@ -5,27 +5,27 @@ Product.delete_all
 Category.delete_all
 
 User.create!(
-  first_name: 'John',
-  last_name: 'Doe',
+  first_name: "John",
+  last_name: "Doe",
   auth_secret: ROTP::Base32.random(16),
-  phone: '1234567893',
-  email: 'john@example.com'
+  phone: "1234567893",
+  email: "john@example.com"
 )
 
 User.create!(
-  first_name: 'Jane',
-  last_name: 'Doe',
+  first_name: "Jane",
+  last_name: "Doe",
   auth_secret: ROTP::Base32.random(16),
-  phone: '9876543211',
-  email: 'jane@example.com'
+  phone: "9876543211",
+  email: "jane@example.com"
 )
 
 user_three = User.create!(
-  first_name: 'geo',
-  last_name: 'test',
+  first_name: "geo",
+  last_name: "test",
   auth_secret: ROTP::Base32.random(16),
-  phone: '9876543210',
-  email: 'geo@geo.com'
+  phone: "9876543210",
+  email: "geo@geo.com"
 )
 
 categories = %w[
@@ -36,21 +36,21 @@ categories = %w[
 
 category_objects = categories.map { |name| Category.create!(name:) }
 
-# Define related product names, descriptions, and image
+# Define related product names, description, and image
 category_product_data = {
-  'vehículos' => ['Coche', 'Este coche es ideal para tus aventuras diarias.'],
-  'inmuebles' => ['Casa', 'Acogedora casa con todas las comodidades.'],
-  'alquiler' => ['Piso en alquiler', 'Amplio piso disponible para alquiler a largo plazo.'],
-  'servicios' => ['Servicios de limpieza', 'Ofrecemos servicios de limpieza de alta calidad.'],
-  'Electrónica' => ['Teléfono inteligente', 'El último modelo de teléfono con funciones avanzadas.'],
-  'tecnología' => ['Dispositivo IoT', 'Innovador dispositivo IoT para automatizar tu hogar.'],
-  'muebles' => ['Sofá', 'Sofá cómodo y elegante para tu sala de estar.'],
-  'deportes' => ['Bicicleta de montaña', 'Bicicleta resistente para tus aventuras al aire libre.'],
-  'belleza' => ['Secador de pelo', 'Potente secador de pelo para un secado rápido y eficiente.'],
-  'niños' => ['Juguetes educativos', 'Juguetes educativos para el aprendizaje divertido de tus hijos.'],
-  'libros' => ['Novela', 'Emocionante novela que te atrapará desde la primera página.'],
-  'mascotas' => ['Collar para perros', 'Collar cómodo y elegante para tu mejor amigo peludo.'],
-  'empleos' => ['Oferta laboral', 'Oportunidad emocionante para un nuevo empleo.']
+  "vehículos" => ["Coche", "Este coche es ideal para tus aventuras diarias."],
+  "inmuebles" => ["Casa", "Acogedora casa con todas las comodidades."],
+  "alquiler" => ["Piso en alquiler", "Amplio piso disponible para alquiler a largo plazo."],
+  "servicios" => ["Servicios de limpieza", "Ofrecemos servicios de limpieza de alta calidad."],
+  "Electrónica" => ["Teléfono inteligente", "El último modelo de teléfono con funciones avanzadas."],
+  "tecnología" => ["Dispositivo IoT", "Innovador dispositivo IoT para automatizar tu hogar."],
+  "muebles" => ["Sofá", "Sofá cómodo y elegante para tu sala de estar."],
+  "deportes" => ["Bicicleta de montaña", "Bicicleta resistente para tus aventuras al aire libre."],
+  "belleza" => ["Secador de pelo", "Potente secador de pelo para un secado rápido y eficiente."],
+  "niños" => ["Juguetes educativos", "Juguetes educativos para el aprendizaje divertido de tus hijos."],
+  "libros" => ["Novela", "Emocionante novela que te atrapará desde la primera página."],
+  "mascotas" => ["Collar para perros", "Collar cómodo y elegante para tu mejor amigo peludo."],
+  "empleos" => ["Oferta laboral", "Oportunidad emocionante para un nuevo empleo."]
 }
 
 20.times do
