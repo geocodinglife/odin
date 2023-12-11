@@ -481,7 +481,7 @@ img {
   bottom: 0;
   background: white;
   border-top: 1px solid gray;
-  width: 20rem;
+  /* width: 20rem; */
   justify-content: space-between;
   font-weight: bold;
   align-items: center;
@@ -673,5 +673,15 @@ img {
 
   .product-page {
     padding: 0.05rem;
+  }
+
+  .price {
+    position: sticky;
+    bottom: 0;
+    background: white;
+    border-top: 1px solid gray;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
   }
 }
