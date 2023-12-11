@@ -5,16 +5,18 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rooms = current_user.rooms.all
+    @rooms = current_user.rooms.includes(:user_rooms).all
   end
 
-  def show; end
+  def show
+  end
 
   def new
     @room = Room.new
   end
 
-  def edit; end
+  def edit
+  end
 
   def create
     @room = Room.new(room_params)
@@ -23,13 +25,13 @@ class RoomsController < ApplicationController
       if @room.save
         UserRoom.create(room: @room, user: current_user)
         format.turbo_stream do
-          render turbo_stream: turbo_stream.append("user_#{current_user.id}_rooms", partial: 'shared/room',
-                                                                                    locals: { room: @room })
+          render turbo_stream: turbo_stream.append("user_#{current_user.id}_rooms", partial: "shared/room",
+            locals: {room: @room})
         end
       else
         format.turbo_stream do
-          render turbo_stream: turbo_stream.replace('room_form', partial: 'rooms/form',
-                                                                 locals: { room: @room, title: 'Create new room' })
+          render turbo_stream: turbo_stream.replace("room_form", partial: "rooms/form",
+            locals: {room: @room, title: "Create new room"})
         end
       end
     end
@@ -39,7 +41,7 @@ class RoomsController < ApplicationController
     respond_to do |format|
       if @room.update(room_params)
         format.turbo_stream do
-          render turbo_stream: turbo_stream.replace("room_#{@room.id}", partial: 'shared/room', locals: { room: @room })
+          render turbo_stream: turbo_stream.replace("room_#{@room.id}", partial: "shared/room", locals: {room: @room})
         end
       else
         format.html { render :edit }
@@ -52,7 +54,7 @@ class RoomsController < ApplicationController
     @room.destroy
 
     respond_to do |format|
-      format.html { redirect_to rooms_url, notice: 'Room was successfully destroyed.' }
+      format.html { redirect_to rooms_url, notice: "Room was successfully destroyed." }
     end
   end
 

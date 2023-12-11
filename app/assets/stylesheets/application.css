@@ -393,6 +393,116 @@ a {
   padding: 8px;
 }
 
+
+/* ============================ PRODUCT ================================= */
+
+.product-page {
+  padding: 1rem 5rem;
+}
+
+.product-page h1 {
+  margin: 0;
+  padding: 0;
+}
+
+.product-about {
+  margin: .5rem 0 1.5rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.radius-50 {
+  border-radius: 50%;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.px-05 {
+  padding: 0 .5rem;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+
+.full-img {
+  width: 100%;
+  min-width: 50vw;
+}
+
+.img-flex-divided {
+  width: 45%;
+  margin: .3rem;
+}
+
+.house-by {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.house-by h2,
+p {
+  padding: .5rem 0;
+  margin: 0;
+}
+
+
+.house-by img {
+  width: 4rem;
+  height: 4rem;
+}
+
+p {
+  padding: 0;
+  margin: 0 .4rem;
+}
+
+img {
+  width: 100%;
+}
+
+.price {
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid gray;
+  width: 20rem;
+  justify-content: space-between;
+  font-weight: bold;
+  align-items: center;
+}
+
+.price-info p {
+  margin: .4rem 0;
+}
+
+.price button {
+  border: 0;
+  width: 8rem;
+  border-radius: .4rem;
+  min-height: 2.5rem;
+  color: white;
+  font-weight: bold;
+  background: linear-gradient(to right, rgb(204, 22, 159), rgb(196, 4, 132));
+}
+
+
+
 @media(max-width:1024px) {
   .hamburger {
     display: block;
@@ -485,6 +595,18 @@ a {
   .seccion-busqueda .categorias .categorias-box .categorias-item-box .categorias-item {
     min-width: 40px;
     min-height: 40px;
+  }
+
+  .principal {
+    padding: 1rem;
+  }
+
+  .four-images {
+    display: none;
+  }
+
+  .full-img {
+    min-width: 16rem;
   }
 }
 
