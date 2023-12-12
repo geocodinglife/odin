@@ -17,37 +17,37 @@
 
           <div>
             <%= form.label :first_name, style: "display: block" %>
-            <%= form.text_field :first_name, multiple: true %>
+            <%= form.text_field :first_name, multiple: true, required: true %>
           </div>
 
             <div>
             <%= form.label :email, style: "display: block" %>
-            <%= form.text_field :email, multiple: true %>
+            <%= form.text_field :email, multiple: true, required: true %>
           </div>
 
             <div>
             <%= form.label :phone, style: "display: block" %>
-            <%= form.text_field :phone, multiple: true %>
+            <%= form.text_field :phone, multiple: true, required: true %>
           </div>
 
           <div>
             <%= form.label :category_id, "Select Category", style: "display: block" %>
-            <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Select a category' %>
+            <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Select a category', required: true %>
           </div>
           <div>
             <%= form.label :product_name, style: "display: block" %>
-            <%= form.text_field :name %>
+            <%= form.text_field :name, required: true %>
           </div>
 
           <div>
             <%= form.label :price, style: "display: block" %>
-            <%= form.text_field :price %>
+            <%= form.text_field :price, required: true %>
           </div>
 
           <div style="display: flex; align-items: center; justify-content: space-between;">
             <%= form.label :images, "Adjuntar imagenes", style: "cursor: pointer;" %>
 
-            <%= form.file_field :images, multiple: true, id: "image-upload", style: "display: none;" %>
+            <%= form.file_field :images, multiple: true, id: "image-upload", style: "display: none;", required: true %>
 
             <label for="image-upload">
               <%= image_tag("Contenido/Adjuntar.svg") %>
@@ -56,7 +56,7 @@
 
           <div>
             <%= form.label :description, style: "display: block-inline" %>
-            <%= form.rich_text_area :description %>
+            <%= form.rich_text_area :description, required: true %>
           </div>
 
           <div>
@@ -80,26 +80,26 @@
           <h2>Please Add The Product information</h2>
           <div>
             <%= form.label :category_id, "Select Category", style: "display: block" %>
-            <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Select a category' %>
+            <%= form.collection_select :category_id, @categories, :id, :name, prompt: 'Select a category', required: true %>
           </div>
           <div>
             <%= form.label :product_name, style: "display: block" %>
-            <%= form.text_field :name %>
+            <%= form.text_field :name, required: true %>
           </div>
 
           <div>
             <%= form.label :price, style: "display: block" %>
-            <%= form.text_field :price %>
+            <%= form.text_field :price, required: true %>
           </div>
 
           <div>
             <%= form.label :images, style: "display: block" %>
-            <%= form.file_field :images, multiple: true %>
+            <%= form.file_field :images, multiple: true, required: true %>
           </div>
 
           <div>
             <%= form.label :description, style: "display: block-inline" %>
-            <%= form.rich_text_area :description %>
+            <%= form.rich_text_area :description, required: true %>
           </div>
 
           <div class="create-product-button">
