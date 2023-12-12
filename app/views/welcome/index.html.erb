@@ -5,10 +5,10 @@
         <div class="imagen">
           <% if product.images.attached? %>
             <% product.images.each do |image| %>
-              <%= image_tag image, class: "product-image", alt: product.name, style: "width: 100%; height: auto; max-width: 100%; height: auto;", loading: "lazy", width: "300", height: "200" %>
+              <%= image_tag image, class: "product-image", alt: product.name, width: "300", height: "200" %>
             <% end %>
           <% else %>
-            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=960" alt="Default Image" width="300" height="200" loading="lazy">
+            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=960" alt="Default Image" width="300" height="200">
           <% end %>
         </div>
         <div class="header-item">
