@@ -2,19 +2,19 @@
   <div class="modal-content">
     <%= image_tag "Contenido/Cerrar.svg", id: "x-cerrar-alerta", id: "closeModal", class: "close" %>
 
-    <form id="leadForm" class="form" action="<%= leads_path %>" method="post">
-      <label for="name">Name:</label>
-      <input type="text" id="first_name" name="lead[first_name]" required><br>
+    <%= form_with(url: leads_path, method: :post, id: 'leadForm', class: 'form') do |f| %>
+      <%= f.label :first_name, 'Name:' %>
+      <%= f.text_field :first_name, required: true %><br>
 
-      <label for="cell">Cell:</label>
-      <input type="text" id="cell" name="lead[phone]" required><br>
+      <%= f.label :phone, 'Cell:' %>
+      <%= f.text_field :phone, required: true %><br>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="lead[email]" required><br>
+      <%= f.label :email, 'Email:' %>
+      <%= f.email_field :email, required: true %><br>
 
-      <input type="hidden" name="product_id" id="product">
+      <%= f.hidden_field :product_id, id: 'product' %>
 
-      <input type="submit" value="Post" class="button-popup">
-    </form>
+      <%= f.button 'Post', class: 'button-popup' %>
+    <% end %>
   </div>
 </div>

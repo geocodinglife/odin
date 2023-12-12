@@ -36,9 +36,17 @@
     <div class="price-info">
       <h3>$ <%= product.price %> COP</h3>
     </div>
-
-    <button>
-      Reservar
-    </button>
+    <% if user_signed_in? %>
+      <%= form_with(url: leads_path, method: :post) do |f| %>
+      <%= f.hidden_field :first_name, value: current_user.first_name %><br>
+      <%= f.hidden_field :phone, value: current_user.phone %><br>
+      <%= f.hidden_field :email, value: current_user.email %><br>
+      <%= f.hidden_field :product_id, id: 'product', value: product.id %>
+      <%= f.button 'Post', class: 'button-popup' %>
+    <% end %>
+    <% else %>
+      <button class="btn showModalButton" data-product-id="<%= product.id %>">Más información</button>
+        <%= render "welcome/lead", locals: { product_id: product.id }  %>
+    <% end %>
   </div>
 </div>
