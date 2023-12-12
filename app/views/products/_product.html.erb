@@ -38,9 +38,9 @@
     </div>
     <% if user_signed_in? %>
       <%= form_with(url: leads_path, method: :post) do |f| %>
-      <%= f.hidden_field :first_name, value: current_user.first_name %><br>
-      <%= f.hidden_field :phone, value: current_user.phone %><br>
-      <%= f.hidden_field :email, value: current_user.email %><br>
+      <%= f.hidden_field :first_name, value: current_user.first_name %>
+      <%= f.hidden_field :phone, value: current_user.phone %>
+      <%= f.hidden_field :email, value: current_user.email %>
       <%= f.hidden_field :product_id, id: 'product', value: product.id %>
       <%= f.button 'Post', class: 'button-popup' %>
     <% end %>
