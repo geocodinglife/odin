@@ -407,7 +407,7 @@ a {
 }
 
 .product-page h1 {
-  margin: 0;
+  margin: 10px;
   padding: 0;
 }
 
@@ -432,7 +432,7 @@ a {
 }
 
 .px-05 {
-  padding: 0 .5rem;
+  padding: 0;
 }
 
 .align-center {
@@ -458,7 +458,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
 }
 
 .house-by h2,
@@ -488,6 +488,7 @@ img {
   justify-content: space-between;
   font-weight: bold;
   align-items: center;
+  padding: 10px;
 }
 
 .price-info p {

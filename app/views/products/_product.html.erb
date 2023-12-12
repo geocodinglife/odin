@@ -1,6 +1,4 @@
 <div id="<%= dom_id product %>" class="product-page">
-  <h1><%= product.name %></h1>
-
   <div class="images d-flex">
     <div class="px-05 full-img">
         <%= product.images.first %>
@@ -25,6 +23,8 @@
 
   <div class="house-by">
     <div>
+  <h1><%= product.name %></h1>
+
       <p style="color: #333;"><%= product.description.body %></p>
       <div class="d-flex">
        <p style="color: #888;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
