@@ -12,7 +12,7 @@ class LeadsController < ApplicationController
     # TODO leands and products has a similar way of create a new user
     # I have to create the create of user in the users_controller.rb
     product = Product.find_by(id: params[:product_id])
-    binding.break
+    # binding.break
 
     Lead.transaction do
       user = User.find_or_create_by(email: params[:email]) do |user|

@@ -239,6 +239,7 @@
 
 /* Style the modal */
 .modal {
+  margin-top: 100px;
   display: none;
   position: fixed;
   z-index: 1;
@@ -294,7 +295,6 @@
 }
 
 .modal form {
-
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -326,7 +326,6 @@
   float: right;
   font-weight: bold;
 }
-
 
 
 @media (max-width: 992px) {
