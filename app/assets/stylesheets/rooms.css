@@ -1,3 +1,7 @@
+.main-chat {
+  margin-top: 30px;
+}
+
 .buy-or-sale {
   width: 25%;
   box-shadow: 1px 1px 8px 4px #bbbbbb;
@@ -370,7 +374,8 @@
 }
 
 @media (max-width: 992px) {
-  .container {
+  .main-chat {
+    margin-top: 30px;
     display: flex;
     flex-direction: column;
   }
@@ -423,6 +428,10 @@
 
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
+  .main-chat {
+    margin-top: 1px;
+  }
+
   .content-container {
     width: auto;
   }

@@ -1,93 +1,64 @@
-<div class="main-chat">
-  <div class="container">
-    <article class="buy-or-sale">
-      <div class="botones">
-        <button class="ventas">Ventas</button>
-        <button class="compras">Compras</button>
-      </div>
-    <!-------------Pigned Chats ----------------->
-      <div class="fijados">
-        <p class="texto-fijados">Fijados</p>
-        <div class="chat-fijado prev-abrir-chat-cliente">
-          <div class="contenedor-izq">
-            <%#= image_tag "Contenido/Imágen.svg" %>
-              <div class="nombre-msj">
-                <p>Cristina</p>
-                <p>Pasame tu número</p>
-              </div>
-          </div>
-            <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
-        </div>
-      </div>
+<section class="main-chat">
+  <article class="buy-or-sale">
+    <div class="botones">
+      <button class="ventas">Ventas</button>
+      <button class="compras">Compras</button>
+    </div>
     
-    <h1><%= current_user.first_name %></h1>
     <!-------------Chats Rooms ----------------->
-      <div class="user-rooms" id="user_<%= current_user.id %>_rooms">
+    <div class="user-rooms" id="user_<%= current_user.id %>_rooms">
+      <div class="demas-chats">
+        <p class="texto-demas-chats">Chats</p>
 
-        <div class="demas-chats">
-          <p class="texto-demas-chats">Chats</p>
-          <div class="dropdown-toggle" id="abrir-lista-clientes">
+        <div class="dropdown-toggle">
           <% @rooms.each do |room| %>
-            <p id="abrir-lista-clientes">
-              <%= room.name %>
-            </p>
+            <% room.user_rooms.each do |product_chat| %>
+              <p id="abrir-lista-clientes"><%= product_chat.room.name %></p>
 
-          <% room.user_rooms.each do |product_chat| %>
-            <p id="abrir-lista-clientes">
-              <%= product_chat.room.name %>
-            </p>
-
-            <div class="lista-clientes" id="lista-clientes">
-              <div class="cliente prev-abrir-chat-cliente">
-                <div class="caja-izq">
-                  <%#= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
-                  <div class="nombre-y-msj">
-                    <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
-                      <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
-                        <% room.users.each do |room_user| %>
-                        <% next if room_user.id == current_user.id %> 
-                          <%= room_user.first_name %>
+              <div class="lista-clientes" id="lista-clientes">
+                <div class="cliente prev-abrir-chat-cliente">
+                  <div class="caja-izq">
+                    <div class="nombre-y-msj">
+                      <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
+                        <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
+                          <% room.users.each do |room_user| %>
+                            <% next if room_user.id == current_user.id %> 
+                              <%= room_user.first_name %>
+                            <% end %>
+                          <% end %>
                         <% end %>
-                      <% end %>
 
-                    <% end %>
-
-                      <p class="mensaje-cliente">
-                      <% if product_chat.room.messages.empty? %>
-                        p> No message.</p>
-                      <% else %>
-                      <%= product_chat.room.messages.first.text %>
-                      <% end %>
-                      </p>
+                        <% unless product_chat.room.messages.empty? %>
+                          <p class="mensaje-cliente"><%= product_chat.room.messages.first.text %></p>
+                        <% end %>
+                    </div>
                   </div>
                 </div>
-                  <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
-                </div>
               </div>
-            </div>
             <% end %>
-        <% end %>
-    </article>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </article>
 
-    <!--------------------------- Chat ---------------------->
-    <%= turbo_frame_tag 'rooms_controller' do %>
-    <% end %>
-  </div>
-</div>
+  <!--------------------------- Chat ---------------------->
+  <%= turbo_frame_tag 'rooms_controller' do %><% end %>
+</section>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    var dropdownToggle = document.getElementById('abrir-lista-clientes');
-    var dropdownMenu = document.getElementById('lista-clientes');
+  document.addEventListener('DOMContentLoaded', function() {
+      var dropdownToggle = document.getElementById('abrir-lista-clientes');
+      var dropdownMenu = document.getElementById('lista-clientes');
 
-    function toggleDropdown() {
-        dropdownMenu.classList.toggle('show');
-    }
+      function toggleDropdown() {
+          dropdownMenu.classList.toggle('show');
+      }
 
-    if (dropdownToggle) {
-        dropdownToggle.addEventListener('click', function() {
-            toggleDropdown();
-        });
-    }
-});
+      if (dropdownToggle) {
+          dropdownToggle.addEventListener('click', function() {
+              toggleDropdown();
+          });
+      }
+  });
 </script>
