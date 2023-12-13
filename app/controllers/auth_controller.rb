@@ -13,6 +13,9 @@ class AuthController < ApplicationController
     render :show
   end
 
+  def new_account
+  end
+
   def destroy
     session.delete(:user_id)
     redirect_to auth_path, notice: "You are signed out"

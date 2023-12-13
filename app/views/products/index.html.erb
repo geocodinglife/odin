@@ -6,7 +6,7 @@
         <div class="imagen">
           <% if product.images.attached? %>
             <% product.images.each do |image| %>
-              <%= image_tag image, class: "product-image", alt: product.name, style: "max-width: 100%; height: auto;" %>
+              <%= image_tag image, class: "product-image", alt: product.name, width: "300", height: "200" %>
             <% end %>
           <% else %>
             <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=960" alt="Default Image">
@@ -15,7 +15,6 @@
         <div class="header-item">
           <h4 style="color: #000; background-color: #fff;"><%= product.name %></h4>
           <p style="color: #333;">Medellin Colombia</p>
-          <p><%#= truncate(product.description.body.to_s, length: 150) %></p>
         </div>
         <div class="precio-info">
           <div class="price-information">

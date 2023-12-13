@@ -1,0 +1,17 @@
+<div class="alert-box signin-box">
+  <div>
+    <%= image_tag "maple-leaf.jpg" %>
+  </div>
+
+  <div class="signin-box-form">
+    <p class="text-2xl text-gray-900 font-medium mb-3">Crea tu Cuenta!</p>
+    <%= form_with(url: auth_path, html: { data: { turbo: false } }) do |f| %>
+      <%= f.text_field :first_name, placeholder: "Primer Nombre", require: true %>
+      <%= f.email_field :email, placeholder: "email", require: true %>
+      <%= f.phone_field :phone, placeholder: "Telefono", require: true %>
+      <div class="signin-button">
+        <%= f.submit "Continue" %>
+      </div>
+    <% end %>
+  </div>
+</div>

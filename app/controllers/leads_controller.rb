@@ -1,5 +1,5 @@
 class LeadsController < ApplicationController
-  before_action :authenticate_user!, only: :index
+  before_action :authenticate_user!
   def index
     @leads = current_user.products.map do |product|
       product.leads.map do |lead|
@@ -9,25 +9,16 @@ class LeadsController < ApplicationController
   end
 
   def create
-    # TODO leands and products has a similar way of create a new user
-    # I have to create the create of user in the users_controller.rb
     product = Product.find_by(id: params[:product_id])
-    # binding.break
 
     Lead.transaction do
-      user = User.find_or_create_by(email: params[:email]) do |user|
-        user.first_name = params[:first_name]
-        user.phone = params[:phone]
-        user.auth_secret = ROTP::Base32.random(16)
-      end
+      lead = Lead.create!(product_id: params[:product_id], user_id: current_user.id)
+      room = Room.create!(name: "#{product.name} - #{current_user.first_name}")
+      UserRoom.create!([{room: room, user: current_user}, {room: room, user: product.user}])
+      Message.create!(text: "Holas estoy interesado en el #{product.name}", user_id: current_user.id, room_id: room.id)
 
-      lead = Lead.create!(product_id: params[:product_id], user_id: user.id)
-      room = Room.create!(name: "#{product.name} - #{params[:first_name]}")
-
-      UserRoom.create!([{room: room, user: user}, {room: room, user: product.user}])
       if lead.save!
-        # TODO I need to un comment this code when the phone service for send message is the production one.
-        # Lead.send_message_to_seller(product.user)
+        Lead.send_message_to_seller(product.user)
         flash[:notice] = "Lead was successfully created."
         redirect_to lead_path(lead.id)
       else

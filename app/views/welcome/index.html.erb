@@ -4,9 +4,7 @@
       <%= link_to product_path(product), class: "product-link" do %>
         <div class="imagen">
           <% if product.images.attached? %>
-            <% product.images.each do |image| %>
-              <%= image_tag image, class: "product-image", alt: product.name, width: "300", height: "200" %>
-            <% end %>
+              <%= image_tag product.images.first, class: "product-image", alt: product.name, width: "300", height: "200" %>
           <% else %>
             <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=960" alt="Default Image" width="300" height="200">
           <% end %>

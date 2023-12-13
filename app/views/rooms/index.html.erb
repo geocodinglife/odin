@@ -12,8 +12,9 @@
 
         <div class="dropdown-toggle">
           <% @rooms.each do |room| %>
+              <p id="abrir-lista-clientes"><%= room.name %></p>
+
             <% room.user_rooms.each do |product_chat| %>
-              <p id="abrir-lista-clientes"><%= product_chat.room.name %></p>
 
               <div class="lista-clientes" id="lista-clientes">
                 <div class="cliente prev-abrir-chat-cliente">
@@ -23,14 +24,11 @@
                         <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
                           <% room.users.each do |room_user| %>
                             <% next if room_user.id == current_user.id %> 
-                              <%= room_user.first_name %>
-                            <% end %>
+
+                            <p style="color: green;"><%= room_user.first_name %></p>
                           <% end %>
                         <% end %>
-
-                        <% unless product_chat.room.messages.empty? %>
-                          <p class="mensaje-cliente"><%= product_chat.room.messages.first.text %></p>
-                        <% end %>
+                      <% end %>
                     </div>
                   </div>
                 </div>

@@ -11,7 +11,12 @@ Rails.application.routes.draw do
 
   post "add/user", to: "rooms#add_user"
 
-  resource :auth, only: %i[show create destroy], controller: :auth
+  resource :auth, only: %i[show create destroy], controller: :auth do
+    member do
+      get "new_account", action: "new_account"
+    end
+  end
+
   resource :auth_verifications, only: %i[show create]
   resources :sessions, only: [:new, :create, :destroy]
 

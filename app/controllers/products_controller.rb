@@ -25,30 +25,12 @@ class ProductsController < ApplicationController
   end
 
   def create
-    if user_signed_in?
-      email = current_user.email
-      user_first_name = current_user.first_name
-      user_phone = current_user.phone
+    @product = current_user.products.build(product_params)
+
+    if @product.save
+      redirect_to products_path, notice: "Product was successfully created."
     else
-      email = params[:product][:email].first
-      user_first_name = params[:product][:first_name].first
-      user_phone = params[:product][:phone].first
-    end
-
-    Product.transaction do
-      user = User.find_or_create_by(email: email) do |user|
-        user.first_name = user_first_name
-        user.phone = user_phone
-        user.auth_secret = ROTP::Base32.random(16)
-      end
-
-      @product = user.products.build(product_params)
-
-      if @product.save
-        redirect_to products_path, notice: "Product was successfully created."
-      else
-        render :new, status: :unprocessable_entity
-      end
+      render :new, status: :unprocessable_entity
     end
   end
 
