@@ -12,7 +12,7 @@
 
         <div class="dropdown-toggle">
           <% @rooms.each do |room| %>
-              <p id="abrir-lista-clientes"><%= room.name %></p>
+            <p id="abrir-lista-clientes"><%= room.name %></p>
 
             <% room.user_rooms.each do |product_chat| %>
 
@@ -45,7 +45,7 @@
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("turbo:load", function() {
       var dropdownToggle = document.getElementById('abrir-lista-clientes');
       var dropdownMenu = document.getElementById('lista-clientes');
 

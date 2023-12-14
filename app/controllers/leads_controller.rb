@@ -12,7 +12,7 @@ class LeadsController < ApplicationController
     product = Product.find_by(id: params[:product_id])
 
     Lead.transaction do
-      lead = Lead.create!(product_id: params[:product_id], user_id: current_user.id)
+      lead = Lead.create!(product_id: product.id, user_id: current_user.id)
       room = Room.create!(name: "#{product.name} - #{current_user.first_name}")
       UserRoom.create!([{room: room, user: current_user}, {room: room, user: product.user}])
       Message.create!(text: "Holas estoy interesado en el #{product.name}", user_id: current_user.id, room_id: room.id)

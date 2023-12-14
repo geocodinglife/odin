@@ -21,11 +21,11 @@ User.create!(
 )
 
 user_three = User.create!(
-  first_name: "geo",
+  first_name: "tito",
   last_name: "test",
   auth_secret: ROTP::Base32.random(16),
   phone: "9876543210",
-  email: "geo@geo.com"
+  email: "tito@tito.com"
 )
 
 categories = %w[
