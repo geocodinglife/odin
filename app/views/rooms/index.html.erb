@@ -5,20 +5,35 @@
       <button class="compras">Compras</button>
     </div>
     
+        <!-------------Pigned Chats ----------------->
+    <div class="fijados">
+      <p class="texto-fijados">Fijados</p>
+      <div class="chat-fijado prev-abrir-chat-cliente">
+        <div class="contenedor-izq">
+          <%= image_tag "Contenido/Imágen.svg" %>
+            <div class="nombre-msj">
+              <p>Cristina</p>
+              <p>Pasame tu número</p>
+            </div>
+        </div>
+          <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
+      </div>
+    </div>
+
+    <h1><%= current_user.first_name %></h1>
     <!-------------Chats Rooms ----------------->
     <div class="user-rooms" id="user_<%= current_user.id %>_rooms">
       <div class="demas-chats">
         <p class="texto-demas-chats">Chats</p>
 
         <div class="dropdown-toggle">
-          <% @rooms.each do |room| %>
+          <% @buyer_rooms.each do |room| %>
             <p id="abrir-lista-clientes"><%= room.name %></p>
-
             <% room.user_rooms.each do |product_chat| %>
-
               <div class="lista-clientes" id="lista-clientes">
                 <div class="cliente prev-abrir-chat-cliente">
                   <div class="caja-izq">
+                   <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
                     <div class="nombre-y-msj">
                       <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                         <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>

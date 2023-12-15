@@ -5,7 +5,13 @@ class RoomsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @rooms = current_user.rooms.includes(:user_rooms).all
+    @buyer_rooms = current_user.rooms.includes(:user_rooms).all
+
+    @seller_rooms = current_user.products.map do |product|
+      product.leads.map do |lead|
+        lead
+      end
+    end
   end
 
   def show
