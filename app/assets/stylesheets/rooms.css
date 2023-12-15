@@ -8,7 +8,6 @@
   width: 25%;
   box-shadow: 1px 1px 8px 4px #bbbbbb;
   border-radius: 16px;
-  height: 70vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -424,6 +423,7 @@
   }
 
   .buy-or-sale {
+    height: 10;
     width: 100%;
     box-shadow: none;
   }

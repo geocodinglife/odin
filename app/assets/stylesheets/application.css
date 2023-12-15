@@ -89,9 +89,6 @@ a {
   border-bottom: 2px solid #cccccc;
 }
 
-.content-container {
-  margin-top: 150px;
-}
 
 .navbar {
   min-height: 50px;
@@ -582,9 +579,6 @@ img {
     justify-content: center;
   }
 
-  .content-container {
-    margin-top: 150px;
-  }
 
   .navbar {
     min-height: 50px;
