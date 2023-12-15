@@ -1,12 +1,13 @@
 .main-chat {
   margin-top: 30px;
+  display: flex;
+  flex-direction: row;
 }
 
 .buy-or-sale {
   width: 25%;
   box-shadow: 1px 1px 8px 4px #bbbbbb;
   border-radius: 16px;
-  height: 70vh;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
@@ -201,7 +202,6 @@
   box-shadow: 1px 1px 8px 4px #bbbbbb;
   border-radius: 16px;
   height: 70vh;
-  /* overflow: hidden; */
   background: rgba(236, 192, 199, 0.507);
 }
 
@@ -352,10 +352,6 @@
   width: 1100px;
 }
 
-.container {
-  display: flex;
-}
-
 #lista-clientes {
   display: none;
 }
@@ -383,18 +379,15 @@
   .buy-or-sale {
     width: 100%;
     box-shadow: none;
-    height: 85vh;
   }
 
   .chat {
     box-shadow: none;
-    height: 85vh;
     width: 100%;
     display: none;
   }
 
   .chat .cliente-chat {
-    width: 100%;
     display: flex;
     justify-content: center;
   }
@@ -424,22 +417,15 @@
   }
 }
 
-/* Existing styles for larger screens... */
-
-/* Media Query for Mobile Devices */
 @media (max-width: 768px) {
-  .main-chat {
-    margin-top: 1px;
-  }
-
   .content-container {
     width: auto;
   }
 
   .buy-or-sale {
+    height: 10;
     width: 100%;
     box-shadow: none;
-    height: auto;
   }
 
   .chat {

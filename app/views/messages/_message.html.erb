@@ -1,7 +1,7 @@
 <div class="cuerpo-chat">
   <h4 class="fecha">24 de Julio</h4>
   
-  <% if message.user.first_name == current_user.first_name || current_user.nil? %>
+  <% if message.user.first_name == current_user.nil? %>
   <div class="tus-mensajes">
     <%= current_user.first_name %>
     <p class="tu-mensaje"><%= message.text %></p>
