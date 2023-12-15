@@ -1,15 +1,4 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
-
  *= require_tree .
  *= require_self
  */
@@ -24,10 +13,7 @@
 
 body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  height: 100vh;
-  max-width: 100vw;
 }
-
 
 :root {
   --verde-principal: #00b473;
@@ -50,10 +36,6 @@ button {
 
 button:hover {
   opacity: 0.8;
-}
-
-a {
-  text-decoration: none;
 }
 
 input {
@@ -80,6 +62,15 @@ strong {
 
 i {
   cursor: pointer;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 .seccion-busqueda {
@@ -157,22 +148,6 @@ i {
   display: flex;
 }
 
-footer {
-  background: var(--verde-principal);
-  padding: 8px;
-  text-align: center;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: center;
-}
-
-footer p {
-  font-family: 'Cross-normal';
-  margin: 0;
-  color: white;
-}
-
 .seccion-busqueda {
   top: 0;
   left: 0;
@@ -183,12 +158,6 @@ footer p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.main-banner,
-.productos,
-.seccion-por-que-elegirnos {
-  z-index: 500;
 }
 
 .seccion-busqueda img {
@@ -314,15 +283,6 @@ footer p {
 
 .burger {
   display: none;
-}
-
-li {
-  list-style: none;
-}
-
-a {
-  color: white;
-  text-decoration: none;
 }
 
 .container {
@@ -570,7 +530,6 @@ img {
     width: 90%;
     overflow-x: scroll;
     overflow-y: hidden;
-    /* height: calc(80px + 1.5rem); */
     flex-wrap: nowrap;
     justify-content: flex-start;
   }
