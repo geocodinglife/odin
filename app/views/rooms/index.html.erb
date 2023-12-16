@@ -37,6 +37,7 @@
                   <div class="caja-izq">
                    <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
                     <div class="nombre-y-msj">
+                    <%= render "rooms/payment" %>
                       <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                         <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
                           <% room.users.each do |room_user| %>

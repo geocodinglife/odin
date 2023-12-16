@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resource :events
+  get "pagos/respuesta"
   get "sessions/new"
   get "sessions/create"
   get "sessions/destroy"
