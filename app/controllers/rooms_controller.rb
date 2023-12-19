@@ -12,7 +12,6 @@ class RoomsController < ApplicationController
     @amount = "2490000"
     @currency = "COP"
     @wompi_integrity = ENV["WOMPI_INTEGRITY"]
-    @signature = Digest::SHA2.hexdigest(@reference + @amount + @currency + @wompi_integrity)
 
     @buyer_rooms = current_user.rooms.includes(:user_rooms).all
 

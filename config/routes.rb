@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :payments
   resource :events
   get "pagos/respuesta"
   get "sessions/new"
