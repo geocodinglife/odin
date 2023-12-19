@@ -30,13 +30,14 @@
 
         <div class="dropdown-toggle">
           <% @buyer_rooms.each do |room| %>
-            <p id="abrir-lista-clientes"><%= room.name %></p>
+            <p id="abrir-lista-clientes"><%= room.product.name %></p>
             <% room.user_rooms.each do |product_chat| %>
               <div class="lista-clientes" id="lista-clientes">
                 <div class="cliente prev-abrir-chat-cliente">
                   <div class="caja-izq">
                    <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
                     <div class="nombre-y-msj">
+                    <%= render "rooms/payment", room_id: room.id  %>
                       <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                         <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
                           <% room.users.each do |room_user| %>
