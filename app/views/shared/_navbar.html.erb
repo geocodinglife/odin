@@ -37,8 +37,8 @@
               <li class="nav-item "><%= link_to "Chat", rooms_path, class: "boton-verde" %></li>
               <li class="nav-item boton-azul"><%= link_to "¡Quiero vender!", new_product_path, class: " nav-link"%></li>
             <% else %>
-              <li class="nav-item "><%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde nav-link", id: "registrarse-boton" %></li>
-              <li class="nav-item "><%= button_to "Crear Cuenta", new_account_auth_path, method: :get, class: "boton-azul nav-link", id: "registrarse-boton" %></li>
+              <li class="nav-item "><%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde nav-link" %></li>
+              <li class="nav-item "><%= button_to "Crear Cuenta", new_account_auth_path, method: :get, class: "boton-azul nav-link" %></li>
             <% end %>
           </ul>
 
