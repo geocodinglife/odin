@@ -12,11 +12,8 @@ class RoomsController < ApplicationController
     @amount = "2490000"
     @currency = "COP"
     @wompi_integrity = ENV["WOMPI_INTEGRITY"]
-    @signature = (@reference + @amount + @currency + @wompi_integrity)
-    @signature = Digest::SHA2.hexdigest(@signature)
-    # binding.break
+    @signature = Digest::SHA2.hexdigest(@reference + @amount + @currency + @wompi_integrity)
 
-    # from here on we are going to hell.
     @buyer_rooms = current_user.rooms.includes(:user_rooms).all
 
     @seller_rooms = current_user.products.map do |product|

@@ -4,6 +4,10 @@
   <%= hidden_field_tag "amount-in-cents", @amount %>
   <%= hidden_field_tag "reference", @reference %>
   <%= hidden_field_tag "signature:integrity", @signature %>
-  <%= hidden_field_tag "redirect-url", "https://09be-181-204-210-58.ngrok-free.app/pagos/respuesta" %>
+  <%= hidden_field_tag "redirect-url", "https://be0a-181-204-210-58.ngrok-free.app/pagos/respuesta" %>
+  <%= hidden_field_tag 'customer-data:email', current_user.email %>
+  <%= hidden_field_tag 'customer-data:full-name', current_user.first_name %>
+  <%= hidden_field_tag 'customer-data:phone-number', current_user.phone %>
+
   <%= submit_tag "Pagar con Wompi" %>
 <% end %>
