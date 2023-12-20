@@ -24,8 +24,10 @@
     </div>
     
     <div class="input-box">
-      <%= text_field_tag :search, nil, placeholder: "Buscar", id: "search-bar" %>
-      <i class="icon-search"></i>
+      <%= form_tag(products_path, method: :get) do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Buscar", id: "search-bar" %>
+        <button type="submit" class="icon-search"></button>
+      <% end %>
     </div>
     
     <header>

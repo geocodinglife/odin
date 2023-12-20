@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
   def index
     category = Category.find_by(name: params[:category_name]) || Category.find_by(id: params[:category_id])
 
-    @products = if category.nil?
+    @products = if params[:search].present?
+      search_products(params[:search], category)
+    elsif category.nil?
       Product.order(created_at: :desc)
     else
       category.products.order(created_at: :desc)
@@ -55,5 +57,13 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :price, :category_id, :description, images: [])
+  end
+
+  def search_products(query, category)
+    if category.nil?
+      Product.where("name ILIKE ?", "%#{query}%").order(created_at: :desc)
+    else
+      category.products.where("name ILIKE ?", "%#{query}%").order(created_at: :desc)
+    end
   end
 end

@@ -174,8 +174,6 @@ a {
 
 
 .seccion-busqueda .input-box {
-  display: flex;
-  justify-content: center;
   align-items: center;
   width: 60%;
   margin: 1rem 0;
@@ -197,6 +195,11 @@ a {
   font-size: 24px;
 }
 
+.seccion-busqueda .input-box button {
+  margin-top: 10px;
+  color:#9a0505;
+  box-shadow: none;
+}
 .seccion-busqueda .categorias .categorias-box {
   display: flex;
   justify-content: center;
