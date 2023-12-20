@@ -65,11 +65,8 @@
 
 <script>
 document.addEventListener("turbo:load", function() {
-  var paymentForm = document.getElementById('payment-form');
   var roomDropdownToggle = document.getElementById('abrir-lista-clientes');
   var roomDropdownMenu = document.getElementById('lista-clientes');
-  var roomIdInput = document.getElementById('room-id');
-  var paymentButton = document.getElementById('payment-button');
 
   function toggleDropdown() {
     roomDropdownMenu.classList.toggle('show');
@@ -78,30 +75,6 @@ document.addEventListener("turbo:load", function() {
   if (roomDropdownToggle) {
     roomDropdownToggle.addEventListener('click', function() {
       toggleDropdown();
-    });
-  }
-
-  if (paymentForm && roomIdInput && paymentButton) {
-    paymentButton.addEventListener('click', function() {
-      // Get the selected room ID and update the hidden field
-      var selectedRoomId = "1111";
-      roomIdInput.value = selectedRoomId;
-
-      // Update the @reference value with the room ID
-      var reference = "3b4393bafed398ba1"; // replace with your original logic
-      reference = `${reference}-${selectedRoomId}`
-
-      // Recalculate the @signature value
-      var amount = "<%= @amount %>";
-      var currency = "<%= @currency %>";
-      var wompiIntegrity = "<%= @wompi_integrity %>";
-      var signature = CryptoJS.SHA256(reference + amount + currency + wompiIntegrity).toString();
-      
-      // Update the hidden field with the new signature value
-      document.getElementById('signature-integrity').value = signature;
-
-      // Submit the form
-      paymentForm.submit();
     });
   }
 });
