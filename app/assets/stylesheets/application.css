@@ -628,3 +628,10 @@ img {
     align-items: center;
   }
 }
+
+/* Safari-specific styles */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  img {
+    width: auto;
+  }
+}
