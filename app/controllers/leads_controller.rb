@@ -11,19 +11,23 @@ class LeadsController < ApplicationController
   def create
     product = Product.find_by(id: params[:product_id])
 
-    Lead.transaction do
-      lead = Lead.create!(product_id: product.id, user_id: current_user.id)
-      room = Room.create!(name: "#{product.name} - #{current_user.first_name}", product: product)
-      UserRoom.create!([{room: room, user: current_user}, {room: room, user: product.user}])
-      Message.create!(text: "Holas estoy interesado en el #{product.name}", user_id: current_user.id, room_id: room.id)
+    if product.user.id == current_user.id
+      redirect_to root_path
+    else
+      Lead.transaction do
+        lead = Lead.create!(product_id: product.id, user_id: current_user.id)
+        room = Room.create!(name: "#{product.name} - #{current_user.first_name}", product: product)
+        UserRoom.create!([{room: room, user: current_user}, {room: room, user: product.user}])
+        Message.create!(text: "Holas estoy interesado en el #{product.name}", user_id: current_user.id, room_id: room.id)
 
-      if lead.save!
-        Lead.send_message_to_seller(product.user)
-        flash[:notice] = "Lead was successfully created."
-        redirect_to lead_path(lead.id)
-      else
-        flash[:notice] = "We can create you Lead."
-        redirect_to root
+        if lead.save!
+          Lead.send_message_to_seller(product.user)
+          flash[:notice] = "Lead was successfully created."
+          redirect_to lead_path(lead.id)
+        else
+          flash[:notice] = "We can create you Lead."
+          redirect_to root
+        end
       end
     end
   end

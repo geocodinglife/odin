@@ -5,27 +5,27 @@ Product.delete_all
 Category.delete_all
 
 User.create!(
-  first_name: "John",
+  first_name: "jonatan",
   last_name: "Doe",
   auth_secret: ROTP::Base32.random(16),
-  phone: "1234567893",
-  email: "john@example.com"
+  phone: "3004443348",
+  email: "jonatan@jonatan.com"
 )
 
 User.create!(
-  first_name: "Jane",
+  first_name: "fabi",
   last_name: "Doe",
   auth_secret: ROTP::Base32.random(16),
-  phone: "9876543211",
-  email: "jane@example.com"
+  phone: "3165759724",
+  email: "fabi@fabi.com"
 )
 
 user_three = User.create!(
-  first_name: "tito",
+  first_name: "geo",
   last_name: "test",
   auth_secret: ROTP::Base32.random(16),
-  phone: "9876543210",
-  email: "tito@tito.com"
+  phone: "3203850750",
+  email: "geo@geo.com"
 )
 
 categories = %w[
