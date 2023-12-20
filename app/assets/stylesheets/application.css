@@ -419,10 +419,6 @@ p {
   margin: 0 .4rem;
 }
 
-img {
-  width: 100%;
-}
-
 .price {
   position: sticky;
   bottom: 0;
