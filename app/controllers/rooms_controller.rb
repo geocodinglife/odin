@@ -2,7 +2,6 @@
 
 class RoomsController < ApplicationController
   require "digest"
-  include RoomsHelper
 
   before_action :set_room, only: %i[show edit update destroy]
   before_action :authenticate_user!
@@ -14,7 +13,7 @@ class RoomsController < ApplicationController
     @currency = "COP"
     @wompi_integrity = ENV["WOMPI_INTEGRITY"]
     # @signature = Digest::SHA2.hexdigest(@reference + @amount + @currency + @wompi_integrity)
-    @signature = generate_wompi_signature(@reference, @amount, @currency, @wompi_integrity)
+    # @signature = generate_wompi_signature(@reference, @amount, @currency, @wompi_integrity)
 
     @buyer_rooms = current_user.rooms.includes(:user_rooms).all
 
