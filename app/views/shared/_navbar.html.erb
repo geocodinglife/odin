@@ -25,7 +25,9 @@
     <div class="input-box">
       <%= form_tag(products_path, method: :get) do %>
         <%= text_field_tag :search, params[:search], placeholder: "Buscar", id: "search-bar" %>
-        <button type="submit" class="icon-search"></button>
+        <button type="submit" class="icon-search">
+        <span style="font-size: 20px;">🔍</span>
+        </button>
       <% end %>
     </div>
     
