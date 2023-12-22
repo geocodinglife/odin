@@ -67,7 +67,7 @@
   margin-bottom: 10px;
 }
 
-.alert-box>div {
+.alert-box > div {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -75,7 +75,7 @@
   align-items: center;
 }
 
-.alert-box>div>img {
+.alert-box > div > img {
   width: 100%;
   object-fit: cover;
 }
