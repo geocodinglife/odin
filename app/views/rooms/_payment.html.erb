@@ -1,6 +1,6 @@
 <% @integrity = generate_wompi_signature("#{room_id}-#{current_user.id}", @amount, @currency, @wompi_integrity) %>
 
-<%= form_tag("https://checkout.wompi.co/p/", method: "GET", id: "payment-form") do %>
+<%= form_tag("https://checkout.wompi.co/p/", method: "GET", id: "payment-form", style: "padding-left: 10px;") do %>
   <%= hidden_field_tag "room-id", "", id: "room-id" %>
   <%= hidden_field_tag "public-key", ENV["WOMPI_PUBLIC_KEY"] %>
   <%= hidden_field_tag "currency", @currency %>
@@ -12,5 +12,5 @@
   <%= hidden_field_tag 'customer-data:full-name', current_user.first_name %>
   <%= hidden_field_tag 'customer-data:phone-number', current_user.phone %>
 
-  <%= submit_tag "Pagar con Wompi" %>
+  <%= submit_tag "Pagar" %>
 <% end %>

@@ -13,12 +13,6 @@ class RoomsController < ApplicationController
     # @signature = Digest::SHA2.hexdigest(@reference + @amount + @currency + @wompi_integrity)
 
     @buyer_rooms = current_user.rooms.includes(:user_rooms).all
-
-    @seller_rooms = current_user.products.map do |product|
-      product.leads.map do |lead|
-        lead
-      end
-    end
   end
 
   def show

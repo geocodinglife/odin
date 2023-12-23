@@ -85,19 +85,6 @@
   justify-content: space-between;
 }
 
-.buy-or-sale .user-rooms,
-.buy-or-sale .demas-chats {
-  flex-grow: 1;
-  overflow-y: auto;
-  max-height: 50%;
-}
-
-.buy-or-sale .demas-chats {
-  margin-top: 8px;
-  width: 100%;
-  overflow-y: auto;
-}
-
 .buy-or-sale .demas-chats .texto-demas-chats {
   text-align: start;
   border-bottom: 1px solid #bbbbbb;
@@ -148,17 +135,7 @@
   font-family: "Cross-normal";
 }
 
-.buy-or-sale .lista-clientes {
-  position: relative;
-  display: none;
-  width: 100%;
-  padding: 4px 0;
-  border-bottom: 1px solid #bbbbbb;
-  overflow-y: auto;
-}
-
 .buy-or-sale .cliente {
-  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -318,7 +295,6 @@
   position: absolute;
   bottom: 8px;
   left: 14px;
-  width: 98%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -327,7 +303,6 @@
 .mensajes input {
   font-family: "Cross-normal";
   border: 1px solid #bbbbbb;
-  width: 92%;
   padding: 12px;
 }
 
@@ -335,23 +310,6 @@
   position: absolute;
   right: 8%;
   height: 30px;
-}
-
-.mensajes img {
-  height: 40px;
-  margin-right: 8px;
-}
-
-.content-container {
-  width: 1100px;
-}
-
-#lista-clientes {
-  display: none;
-}
-
-#lista-clientes.show {
-  display: block;
 }
 
 .chat-text {
@@ -395,10 +353,6 @@
   }
 
   .chat .cuerpo-chat .mensajes-vendedor {
-    width: 80%;
-  }
-
-  .mensajes input {
     width: 80%;
   }
 

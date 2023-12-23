@@ -9,6 +9,8 @@
                   <%= image_tag "Contenido/Vendedor.png" %>
                   <p class="nombre-vendedor"><%#= message.user.first_name %></p>
                 </div>
+                  <%= link_to "chats", rooms_path, style: "color: green;"%>
+
                 <p class="producto-chat"><%= @room.name %></p>
               </div>
               <div class="chat-text">

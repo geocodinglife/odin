@@ -1,27 +1,8 @@
+  <!--------------------------- Chat ---------------------->
+  <%= turbo_frame_tag 'rooms_controller' do %>
 <section class="main-chat">
-  <article class="buy-or-sale">
-    <div class="botones">
-      <button class="ventas">Ventas</button>
-      <button class="compras">Compras</button>
-    </div>
-    
-    <!---------------------- Pigned Chats ------------------------>
-    <div class="fijados">
-      <p class="texto-fijados">Fijados</p>
-      <div class="chat-fijado prev-abrir-chat-cliente">
-        <div class="contenedor-izq">
-          <%= image_tag "Contenido/Imágen.svg" %>
-            <div class="nombre-msj">
-              <p>Cristina</p>
-              <p>Pasame tu número</p>
-            </div>
-        </div>
-          <%= image_tag "Contenido/Odin/No fijar.svg", class: "fijado" %>
-      </div>
-    </div>
 
-    <h1><%= current_user.first_name %></h1>
-    <!------------- De aca para ARRIBA NO INPORTA ----------------->
+  <article class="buy-or-sale">
 
     <!-------------Chats Rooms ----------------->
     <div class="user-rooms" id="user_<%= current_user.id %>_rooms">
@@ -58,10 +39,9 @@
     </div>
   </article>
 
-  <!--------------------------- Chat ---------------------->
-  <%= turbo_frame_tag 'rooms_controller' do %>
-  <% end %>
+
 </section>
+  <% end %>
 
 <script>
 document.addEventListener("turbo:load", function() {
