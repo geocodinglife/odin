@@ -3,8 +3,6 @@
  *= require_self
  */
 
-/* from here we start the css for the page */
-
 * {
   box-sizing: border-box;
   padding: 0;
@@ -16,11 +14,11 @@ body {
 }
 
 :root {
-  --verde-principal: #00b473;
-  --verde-secundario: green;
-  --azul-principal: #033771;
-  --padding-secciones: 1rem 4rem;
-  --rojo-principal: #9a0505;
+  --primary-green: #00b473;
+  --secondary-green: green;
+  --primary-blue: #033771;
+  --sections-padding: 1rem 4rem;
+  --primary-red: #9a0505;
 }
 
 button {
@@ -34,19 +32,8 @@ button {
   box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
 }
 
-button:hover {
+.button:hover {
   opacity: 0.8;
-}
-
-input {
-  border-radius: 1rem;
-}
-
-h1,
-h2,
-h3 {
-  font-family: "Cross-bold";
-  font-weight: bolder;
 }
 
 div,
@@ -77,62 +64,15 @@ a {
   padding-top: 180px;
 }
 
-.boton-verde {
+.green-button {
   box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
-  background: var(--verde-principal);
+  background: var(--primary-green);
   color: #fff;
   font-weight: 100;
 }
 
-.alerta-anuncio {
-  font-family: 'Cross-normal';
-  background: var(--verde-principal);
-  text-align: center;
-  color: white;
-  font-size: 22px;
-  padding: 4px 0;
-  letter-spacing: 1px;
-}
-
-.nav-home {
-  display: flex;
-  align-items: center;
-  background: #fff;
-  padding: 1rem 1.5rem;
-}
-
-.nav-home img {
-  height: 30px;
-}
-
-.nav-home .usuario-acceso {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-.nav-home .usuario-acceso button {
-  border-radius: 8px;
-  padding: 0.4rem 0.6rem;
-  color: black;
-  font-size: 16px;
-  font-family: "Cross-bold";
-  box-shadow: none;
-}
-
 .nav-link-buttons {
   display: flex;
-}
-
-.nav-home .usuario-acceso .boton-azul {
-  border-radius: 2rem;
-  background: var(--azul-principal);
-  margin: 0;
-  font-size: 1.2rem;
-  padding: 8px 2rem;
-  font-family: "Cross-bold";
-  font-weight: bolder;
-  color: white;
 }
 
 .seccion-busqueda {
@@ -285,7 +225,7 @@ a {
 
 .boton-azul {
   box-shadow: 1px 1px 5px 2px rgb(228, 228, 228);
-  background: var(--azul-principal);
+  background: var(--primary-blue);
   color: #fff;
   font-weight: 100;
   border-radius: 0.25rem;
@@ -373,8 +313,6 @@ p {
   background: linear-gradient(to right, rgb(204, 22, 159), rgb(196, 4, 132));
 }
 
-
-
 @media(max-width:1024px) {
   .hamburger {
     display: block;
@@ -410,10 +348,6 @@ p {
     padding-bottom: 100%;
   }
 
-  .nav-item {
-    margin: 16px 0;
-  }
-
   .nav-menu.active {
     left: 0;
   }
@@ -424,7 +358,7 @@ p {
 
 @media (max-width: 992px) {
   :root {
-    --padding-secciones: 2rem;
+    --sections-padding: 2rem;
   }
 
   .main-container {

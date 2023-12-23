@@ -1,32 +1,27 @@
 <%= turbo_frame_tag 'rooms_controller' do %>
   <%= turbo_stream_from 'room_messages_channel' %>
 
-    <section class="content-container">
+    <section>
       <div id="room_messages_div" class="room_messages_div">
-            <article class="chat">
-              <div class="header-chat">
-                <div class="cliente-chat">
-                  <%= image_tag "Contenido/Vendedor.png" %>
-                  <p class="nombre-vendedor"><%#= message.user.first_name %></p>
-                </div>
-                  <%= link_to "chats", rooms_path, style: "color: green;"%>
-
-                <p class="producto-chat"><%= @room.name %></p>
+          <article class="chat">
+            <div class="header-chat">
+              <div class="client-chat">
+                <%= image_tag "Contenido/Vendedor.png" %>
               </div>
-              <div class="chat-text">
-                <% @room.messages.order(:id).each do |message| %>
-                  <%= render 'messages/message', message: message %>
-                <% end %>
-              <div>
-              <div class="mensajes">
-               <!-- <input type="text" class="escribir-mensaje-chat" placeholder="Escribir mensaje"> -->
-                <%#= image_tag "Contenido/Adjuntar.svg", class: "adjuntar" %>
-                <%#= image_tag "Contenido/Telegram.svg" %>
-                <%= render 'messages/form', { room: @room, message: Message.new } %>
-              </div>
-            </article>
+                <%= link_to "chats", rooms_path, style: "color: green;"%>
 
-          </div>
+              <p><%= @room.name %></p>
+            </div>
+            <div class="chat-text">
+              <% @room.messages.order(:id).each do |message| %>
+                <%= render 'messages/message', message: message %>
+              <% end %>
+            <div>
+            <div class="messages">
+              <%= render 'messages/form', { room: @room, message: Message.new } %>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 <% end %>

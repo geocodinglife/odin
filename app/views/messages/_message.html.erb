@@ -1,22 +1,22 @@
-<div class="cuerpo-chat">
-  <h4 class="fecha">24 de Julio</h4>
+<div class="body-chat">
+  <h4 class="chat-date">24 de Julio</h4>
   
   <% if message.user.first_name == current_user.nil? %>
-  <div class="tus-mensajes">
+  <div class="your-messages">
     <%= current_user.first_name %>
-    <p class="tu-mensaje"><%= message.text %></p>
+    <p class="your-message"><%= message.text %></p>
 
-    <div class="foto-hora-mensaje">
+    <div class="image-time-message">
       <%= image_tag "Contenido/Imágen.svg" %>
-      <p class="hora-mensaje"><%= time_ago_in_words message.created_at %></p>
+      <p class="message-time"><%= time_ago_in_words message.created_at %></p>
     </div>
   </div>
   <% else %>
-  <div class="mensajes-vendedor">
+  <div class="seller-messages">
   <%= message.user.first_name %>
-    <div class="foto-hora-mensaje-vendedor">
-      <%= image_tag "Contenido/Imágen.svg" %>
-      <p class="hora-mensaje"><%= time_ago_in_words message.created_at %></p>
+    <div>
+      <%= image_tag "Contenido/Imágen.svg", class: "icon-image"%>
+      <p class="message-time"><%= time_ago_in_words message.created_at %></p>
     </div>
     <p ><%= message.text %></p>
   </div>

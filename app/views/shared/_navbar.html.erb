@@ -25,7 +25,7 @@
     <div class="input-box">
       <%= form_tag(products_path, method: :get) do %>
         <%= text_field_tag :search, params[:search], placeholder: "Buscar", id: "search-bar" %>
-        <button type="submit" class="icon-search">
+        <button type="submit" class="icon-search primary_button">
         <span style="font-size: 20px;">🔍</span>
         </button>
       <% end %>
@@ -36,12 +36,12 @@
         <nav class="navbar">
           <ul class="nav-menu ">
           <% if user_signed_in? %>
-              <li class="nav-item "><%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;" %></li>
-              <li class="nav-item "><%= link_to "Chat", rooms_path, class: "boton-verde" %></li>
-              <li class="nav-item boton-azul"><%= link_to "¡Quiero vender!", new_product_path, class: " nav-link"%></li>
+              <li><%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;" %></li>
+              <li><%= link_to "Chat", rooms_path, class: "green-button" %></li>
+              <li><%= link_to "¡Quiero vender!", new_product_path, class: "boton-azul"%></li>
             <% else %>
-              <li class="nav-item "><%= button_to "Iniciar sesión", auth_path, method: :get, class: "boton-verde nav-link" %></li>
-              <li class="nav-item "><%= button_to "Crear Cuenta", new_account_auth_path, method: :get, class: "boton-azul nav-link" %></li>
+              <li><%= button_to "Iniciar sesión", auth_path, method: :get, class: "green-button" %></li>
+              <li><%= button_to "Crear Cuenta", new_account_auth_path, method: :get, class: "boton-azul" %></li>
             <% end %>
           </ul>
 

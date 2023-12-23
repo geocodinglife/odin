@@ -1,197 +1,23 @@
-.main-chat {
-  margin-top: 30px;
-  display: flex;
-  flex-direction: row;
-}
-
-.buy-or-sale {
-  width: 25%;
-  box-shadow: 1px 1px 8px 4px #bbbbbb;
-  border-radius: 16px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-}
-
-.buy-or-sale .botones {
-  width: 80%;
-  display: flex;
-  justify-content: center;
-}
-
-.buy-or-sale .botones .ventas {
-  border-radius: 0.6rem 0px 0px 0.6rem/0.6rem 0px 0px 0.6rem;
-  background: var(--azul-principal);
-}
-
-.buy-or-sale .botones .compras {
-  border-radius: 0px 0.6rem 0.6rem 0px/0px 0.6rem 0.6rem 0px;
-  color: black;
-  background: #dadada;
-}
-
-.buy-or-sale .botones button {
-  width: 50%;
-  margin: 0;
-  box-shadow: none;
-}
-
-.buy-or-sale .fijados {
-  margin-top: 8px;
-  width: 100%;
-  overflow-y: auto;
-}
-
-.buy-or-sale .fijados .texto-fijados {
-  text-align: start;
-  border-bottom: 1px solid #bbbbbb;
-}
-
-.buy-or-sale .fijados .contenedor-izq {
-  padding: 0.5rem 0;
-  display: flex;
-  align-items: center;
-}
-
-.buy-or-sale .fijados .contenedor-izq img {
-  height: 30px;
-}
-
-.buy-or-sale .fijados .contenedor-izq p {
-  font-size: 12px;
-}
-
-.buy-or-sale .fijados .contenedor-izq .nombre-msj {
-  margin-left: 6px;
-  max-width: 70%;
-}
-
-.buy-or-sale .fijados .contenedor-izq .nombre-msj p {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.buy-or-sale .fijados .fijado {
-  height: 20px;
-}
-
-.buy-or-sale .fijados .chat-fijado {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.buy-or-sale .demas-chats .texto-demas-chats {
-  text-align: start;
-  border-bottom: 1px solid #bbbbbb;
-}
-
-.buy-or-sale .demas-chats .contenedor-izq {
-  padding: 0.5rem 0;
-  display: flex;
-  align-items: center;
-}
-
-.buy-or-sale .demas-chats .contenedor-izq img {
-  height: 30px;
-}
-
-.buy-or-sale .demas-chats .contenedor-izq p {
-  font-size: 12px;
-}
-
-.buy-or-sale .demas-chats .contenedor-izq .nombre-msj {
-  margin-left: 6px;
-  background: red;
-}
-
-.buy-or-sale .demas-chats .fijado {
-  height: 20px;
-}
-
-.buy-or-sale .demas-chats .chat-fijado {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.buy-or-sale .dropdown-clientes {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  border-bottom: 1px solid #bbbbbb;
-}
-
-.buy-or-sale .dropdown-clientes p {
-  margin: 8px 0;
-  font-family: "Cross-normal";
-}
-
-.buy-or-sale .cliente {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.buy-or-sale .cliente .caja-izq {
-  display: flex;
-  padding: 4px 0;
-}
-
-.buy-or-sale .cliente .nombre-y-msj {
-  max-width: 40%;
-  overflow: hidden;
-}
-
-.buy-or-sale .cliente .nombre-y-msj .mensaje-cliente {
-  font-family: "Cross-normal";
-  color: #bbbbbb;
-  font-size: 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-.buy-or-sale .cliente-img {
-  height: 35px;
-}
-
-.buy-or-sale .fijado {
-  height: 20px;
-  position: absolute;
-  right: 0.7rem;
-}
-
-.buy-or-sale .cliente p {
-  margin-left: 6px;
-  font-family: "Cross-bold";
+.buy-or-sale .client-image {
+  height: 60px;
 }
 
 .chat {
   position: relative;
   box-shadow: 1px 1px 8px 4px #bbbbbb;
   border-radius: 16px;
-  height: 70vh;
   background: rgba(236, 192, 199, 0.507);
 }
 
 .chat .header-chat {
-  padding: 0.5rem 1rem;
+  padding: 1.rem 1rem;
   display: flex;
-  width: 100%;
   background: white;
   align-items: center;
   justify-content: space-between;
 }
 
-.chat .header-chat .cliente-chat {
+.chat .header-chat .client-chat {
   display: flex;
   align-items: center;
 }
@@ -202,184 +28,29 @@
   height: 40px;
 }
 
-.chat .header-chat p {
-  font-family: "Cross-bold";
-}
-
-.chat .cuerpo-chat {
-  height: 70%;
+.chat .body-chat {
   overflow-y: auto;
 }
 
-.chat .cuerpo-chat .fecha {
-  text-align: center;
-  margin: 8px 0 12px;
-}
-
-.chat .cuerpo-chat .tus-mensajes {
-  position: relative;
-  padding-right: 1rem;
-  float: right;
-  display: flex;
-  width: 70%;
-  margin-bottom: 8px;
-}
-
-.chat .cuerpo-chat .tus-mensajes .foto-hora-mensaje {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  margin-left: 8px;
-}
-
-.chat .cuerpo-chat .tus-mensajes .foto-hora-mensaje img {
+.icon-image {
   height: 30px;
 }
 
-.chat .cuerpo-chat .tus-mensajes .foto-hora-mensaje .hora-mensaje {
-  font-size: 12px;
-  display: flex;
-}
-
-.chat .cuerpo-chat .tus-mensajes .tu-mensaje {
-  font-size: 14px;
-  text-align: left;
-  max-width: 90%;
-  background: rgba(255, 0, 0, 0.479);
-  border-radius: 1rem;
-  padding: 0.4rem 1rem;
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-
-.chat .cuerpo-chat .mensajes-vendedor {
-  padding-left: 1rem;
-  float: left;
-  display: flex;
-  width: 70%;
-  margin-bottom: 8px;
-}
-
-.chat .cuerpo-chat .mensajes-vendedor .foto-hora-mensaje-vendedor {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  margin-right: 8px;
-}
-
-.chat .cuerpo-chat .mensajes-vendedor .foto-hora-mensaje-vendedor img {
-  height: 30px;
-}
-
-.chat .cuerpo-chat .mensajes-vendedor .foto-hora-mensaje-vendedor .hora-mensaje {
-  font-size: 12px;
-  display: flex;
-}
-
-.chat .cuerpo-chat .mensajes-vendedor .su-mensaje {
-  font-size: 14px;
-  text-align: left;
-  max-width: 90%;
-  background: rgb(255, 255, 255);
-  border-radius: 1rem;
-  padding: 0.4rem 1rem;
-  display: flex;
-  align-items: center;
-  margin: 0;
-}
-
-.mensajes {
+.messages {
   position: absolute;
-  bottom: 8px;
-  left: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  bottom: 0;
 }
 
-.mensajes input {
+.messages input {
   font-family: "Cross-normal";
   border: 1px solid #bbbbbb;
   padding: 12px;
 }
 
-.mensajes .adjuntar {
-  position: absolute;
-  right: 8%;
-  height: 30px;
+.chat-input-box {
+  display: flex;
 }
-
 .chat-text {
   height: 400px;
   overflow-y: auto;
-}
-
-.form-container {
-  display: flex;
-}
-
-@media (max-width: 992px) {
-  .main-chat {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .buy-or-sale {
-    width: 100%;
-    box-shadow: none;
-  }
-
-  .chat {
-    box-shadow: none;
-    width: 100%;
-    display: none;
-  }
-
-  .chat .cliente-chat {
-    display: flex;
-    justify-content: center;
-  }
-
-  .chat .producto-chat {
-    display: none;
-  }
-
-  .chat .cuerpo-chat .tus-mensajes {
-    width: 80%;
-  }
-
-  .chat .cuerpo-chat .mensajes-vendedor {
-    width: 80%;
-  }
-
-  .mensajes .adjuntar {
-    right: 18%;
-  }
-
-  .mensajes img {
-    margin-right: 16px;
-  }
-}
-
-@media (max-width: 768px) {
-  .content-container {
-    width: auto;
-  }
-
-  .buy-or-sale {
-    height: 10;
-    width: 100%;
-    box-shadow: none;
-  }
-
-  .chat {
-    display: block;
-    width: 100%;
-    box-shadow: none;
-    height: auto;
-  }
 }

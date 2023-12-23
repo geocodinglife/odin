@@ -6,18 +6,18 @@
 
     <!-------------Chats Rooms ----------------->
     <div class="user-rooms" id="user_<%= current_user.id %>_rooms">
-      <div class="demas-chats">
-        <p class="texto-demas-chats">Chats</p>
+      <div class="more-chats">
+        <p class="more-chats-text">Chats</p>
 
         <div class="dropdown-toggle">
           <% @buyer_rooms.each do |room| %>
-            <p id="abrir-lista-clientes"><%= room.product.name %></p>
+            <p id="client-list-open"><%= room.product.name %></p>
             <% room.user_rooms.each do |product_chat| %>
-              <div class="lista-clientes" id="lista-clientes">
-                <div class="cliente prev-abrir-chat-cliente">
-                  <div class="caja-izq">
-                   <%= image_tag "Contenido/Imágen.svg", class: "cliente-img" %>
-                    <div class="nombre-y-msj">
+              <div class="client-list" id="client-list">
+                <div class="client">
+                  <div class="left-box">
+                   <%= image_tag "Contenido/Imágen.svg", class: "client-image" %>
+                    <div class="name-and-message">
                     <%= render "rooms/payment", room_id: room.id  %>
                       <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                         <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
@@ -45,8 +45,8 @@
 
 <script>
 document.addEventListener("turbo:load", function() {
-  var roomDropdownToggle = document.getElementById('abrir-lista-clientes');
-  var roomDropdownMenu = document.getElementById('lista-clientes');
+  let roomDropdownToggle = document.getElementById('client-list-open');
+  let roomDropdownMenu = document.getElementById('client-list');
 
   function toggleDropdown() {
     roomDropdownMenu.classList.toggle('show');
