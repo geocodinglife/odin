@@ -1,20 +1,22 @@
-<div class="alert-box signin-box">
-  <div>
-    <%= image_tag "maple-leaf.jpg" %>
-  </div>
+<%= turbo_frame_tag "frame1" do %>
+  <div class="alert-box signin-box">
+    <div>
+      <%= image_tag "maple-leaf.jpg" %>
+    </div>
 
-  <div class="signin-box-form">
-  <%= link_to "Iniciar sesión", auth_path, method: :get, style: "color: green; t
-ext-decoration: underline 2px;" %></li>
+    <div class="signin-box-form">
+    <%= link_to "Iniciar sesión", auth_path, method: :get, style: "color: green; t
+  ext-decoration: underline 2px;" %></li>
 
-    <p class="text-2xl text-gray-900 font-medium mb-3">Crea tu Cuenta!</p>
-    <%= form_with(url: auth_path, html: { data: { turbo: false } }) do |f| %>
-      <%= f.text_field :first_name, placeholder: "Primer Nombre", require: true %>
-      <%= f.email_field :email, placeholder: "email", require: true %>
-      <%= f.phone_field :phone, placeholder: "Telefono", require: true %>
-      <div class="signin-button">
-        <%= f.submit "Continue" %>
-      </div>
-    <% end %>
+      <p class="text-2xl text-gray-900 font-medium mb-3">Crea tu Cuenta!</p>
+      <%= form_with(url: auth_path, html: { data: { turbo: false } }) do |f| %>
+        <%= f.text_field :first_name, placeholder: "Primer Nombre", require: true %>
+        <%= f.email_field :email, placeholder: "email", require: true %>
+        <%= f.phone_field :phone, placeholder: "Telefono", require: true %>
+        <div class="signin-button">
+          <%= f.submit "Continue", data: { turbo_frame: "frame1"} %>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
+<% end %>

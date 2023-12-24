@@ -16,8 +16,6 @@
   background-color: #fff;
   padding: 20px;
   border: 1px solid #888;
-  width: 90%;
-  max-width: 400px;
   padding-bottom: 20px;
 }
 
@@ -72,11 +70,6 @@
 
 @media (max-width: 600px) {
   .products {
-      justify-content: center;
-    }
-
-  .product-information {
-    width: 100%;
-    max-width: none;
+    justify-content: center;
   }
 }

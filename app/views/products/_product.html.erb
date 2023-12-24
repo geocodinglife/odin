@@ -47,7 +47,7 @@
           <%= f.button 'Post', class: 'button-popup' %>
           <% end %>
       <% else %>
-        <%= button_to "Iniciar sesión", auth_path, method: :get, class: "green-button", data: { turbo: false } %>
+        <%= button_to "Iniciar sesión", auth_path, method: :get, class: "green-button", data: { turbo_frame: "frame1"} %>
       <% end %>
     </div>
   </div>

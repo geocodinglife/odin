@@ -1,25 +1,27 @@
-<div class="alert-box signin-box">
-  <div><%= image_tag "maple-leaf.jpg" %></div>
+<%= turbo_frame_tag "frame1" do %>
+  <div class="alert-box signin-box">
+    <div><%= image_tag "maple-leaf.jpg" %></div>
 
-  <div class="signin-box-form">
-    <div class="leading-relaxed text-lg text-gray-600">
-      Acabamos de enviarte un código de seis dígitos a tu teléfono, por favor ingrésalo en la caja de abajo.
+    <div class="signin-box-form">
+      <div class="leading-relaxed text-lg text-gray-600">
+        Acabamos de enviarte un código de seis dígitos a tu teléfono, por favor ingrésalo en la caja de abajo.
+      </div>
+
+      <%= form_with(url: auth_verifications_path, local: true, data: { turbo: false }) do |f| %>
+        <%= f.label :phone do %>
+          Teléfono
+          <%= link_to "Cambio", auth_path %>
+        <% end %>
+        <%= f.telephone_field number_to_phone(@phone), placeholder: @phone, disabled: true %>
+
+        <%= f.label :phone do %>
+          Auth code
+          <%= link_to "Re-send code", auth_path(phone: @phone), method: :post, style: "color: green;" %>
+        <% end %>
+        <%= f.text_field :auth_code, class: "code-numbers", maxlength: 6 %>
+
+        <%= f.submit "Continue to your account", data: { turbo_frame: "frame1"} %>
+      <% end %>
     </div>
-
-    <%= form_with(url: auth_verifications_path, local: true, data: { turbo: false }) do |f| %>
-      <%= f.label :phone do %>
-        Teléfono
-        <%= link_to "Cambio", auth_path %>
-      <% end %>
-      <%= f.telephone_field number_to_phone(@phone), placeholder: @phone, disabled: true %>
-
-      <%= f.label :phone do %>
-        Auth code
-        <%= link_to "Re-send code", auth_path(phone: @phone), method: :post, style: "color: green;" %>
-      <% end %>
-      <%= f.text_field :auth_code, class: "code-numbers", maxlength: 6 %>
-
-      <%= f.submit "Continue to your account", data: { turbo_drive: false } %>
-    <% end %>
   </div>
-</div>
+<% end %>

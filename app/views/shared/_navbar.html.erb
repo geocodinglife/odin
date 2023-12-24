@@ -37,8 +37,8 @@
           <ul class="nav-menu ">
           <% if user_signed_in? %>
               <li><%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;" %></li>
+              <li><%= link_to "!vender!", new_product_path, class: "boton-azul"%></li>
               <li><%= link_to "Chat", rooms_path, class: "green-button" %></li>
-              <li><%= link_to "¡Quiero vender!", new_product_path, class: "boton-azul"%></li>
             <% else %>
               <li><%= button_to "Iniciar sesión", auth_path, method: :get, class: "green-button" %></li>
               <li><%= button_to "Crear Cuenta", new_account_auth_path, method: :get, class: "boton-azul" %></li>
