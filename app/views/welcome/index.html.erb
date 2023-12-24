@@ -11,12 +11,14 @@
             <% end %>
           </div>
           <div class="header-item">
-            <h4><%= product.name %></h4>
-            <p><%= product.user.first_name %></p>
-            <p><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
+            <h4 style="color: #000; background-color: #fff;"><%= product.name %></h4>
+            <p style="color: #333;"><%= product.user.first_name %></p>
+            <p style="color: #333;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
           </div>
-          <div class="price-information">
-            <span><%= number_to_currency(product.price) %> COP</span>
+          <div class="precio-info">
+            <div class="price-information">
+              <span style="color: #000; background-color: #fff;"><%= number_to_currency(product.price) %> COP</span>
+            </div>
           </div>
         <% end %>
       </div>
