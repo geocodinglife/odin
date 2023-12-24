@@ -7,9 +7,7 @@
             <% if product.images.attached? %>
                 <%= image_tag product.images.first, class: "product-image", alt: product.name, width: "300", height: "200" %>
             <% else %>
-              <div class="card-images">
-                <%= image_tag "main-home", class: "product-image", alt: product.name %>
-              </div>
+              <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=720" alt="Default Image" >
             <% end %>
           </div>
           <div class="header-item">
