@@ -1,35 +1,35 @@
-.buy-or-sale .client-image {
-  height: 60px;
-}
-
 .chat {
   position: relative;
   box-shadow: 1px 1px 8px 4px #bbbbbb;
   border-radius: 16px;
   background: rgba(236, 192, 199, 0.507);
+
+  .header-chat {
+    padding: 1.rem 1rem;
+    display: flex;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+
+    .client-chat {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 12px;
+        border-radius: 50%;
+        height: 40px;
+      }
+    }
+  }
+
+  .body-chat {
+    overflow-y: auto;
+  }
 }
 
-.chat .header-chat {
-  padding: 1.rem 1rem;
-  display: flex;
-  background: white;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.chat .header-chat .client-chat {
-  display: flex;
-  align-items: center;
-}
-
-.chat .header-chat img {
-  margin-right: 12px;
-  border-radius: 50%;
-  height: 40px;
-}
-
-.chat .body-chat {
-  overflow-y: auto;
+.buy-or-sale .client-image {
+  height: 60px;
 }
 
 .icon-image {
@@ -39,12 +39,12 @@
 .messages {
   position: absolute;
   bottom: 0;
-}
 
-.messages input {
-  font-family: "Cross-normal";
-  border: 1px solid #bbbbbb;
-  padding: 12px;
+  input {
+    font-family: "Cross-normal";
+    border: 1px solid #bbbbbb;
+    padding: 12px;
+  }
 }
 
 .chat-input-box {
