@@ -282,8 +282,8 @@ p {
 }
 
 .house-by img {
-  width: 3rem;
-  height: 3rem;
+  width: 4rem;
+  height: 4rem;
 }
 
 .house-by p {
@@ -315,6 +315,11 @@ p {
   font-weight: bold;
   background: linear-gradient(to right, rgb(204, 22, 159), rgb(196, 4, 132));
 }
+
+/* .card-images {
+  width: 200px;
+  height: 200px;
+} */
 
 @media(max-width:1024px) {
   .hamburger {
