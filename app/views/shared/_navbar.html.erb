@@ -25,7 +25,7 @@
     <div class="input-box">
       <%= form_tag(products_path, method: :get) do %>
         <%= text_field_tag :search, params[:search], placeholder: "Buscar", id: "search-bar" %>
-        <button type="submit" class="icon-search primary_button">
+        <button type="submit" class="icon-search primary-button">
         <span style="font-size: 20px;">🔍</span>
         </button>
       <% end %>
@@ -36,7 +36,7 @@
         <nav class="navbar">
           <ul class="nav-menu ">
           <% if user_signed_in? %>
-              <li><%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;" %></li>
+              <li><%= button_to "LOGOUT", sessions_destroy_path, method: :delete, data: { confirm: "¿Estás seguro de que deseas cerrar sesión?" }, style: "color: #9a0505;", class: "primary-button" %></li>
               <li><%= link_to "!vender!", new_product_path, class: "boton-azul"%></li>
               <li><%= link_to "Chat", rooms_path, class: "green-button" %></li>
             <% else %>
