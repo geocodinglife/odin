@@ -4,7 +4,6 @@ import "controllers"
 import "trix"
 import "@rails/actiontext"
 
-
 document.addEventListener("turbo:load", () => {
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".nav-menu");
