@@ -1,25 +1,27 @@
-<div class="productos" id="productos">
-  <% @products.each do |product| %>
-    <div class="producto-item">
-      <%= link_to product_path(product), class: "product-link" do %>
-        <div class="imagen">
-          <% if product.images.attached? %>
-              <%= image_tag product.images.first, class: "product-image", alt: product.name, width: "300", height: "200" %>
-          <% else %>
-            <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=720" alt="Default Image" width="300" height="200">
-          <% end %>
-        </div>
-        <div class="header-item">
-          <h4 style="color: #000; background-color: #fff;"><%= product.name %></h4>
-          <p style="color: #333;"><%= product.user.first_name %></p>
-          <p style="color: #333;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
-        </div>
-        <div class="precio-info">
-          <div class="price-information">
-            <span style="color: #000; background-color: #fff;"><%= number_to_currency(product.price) %> COP</span>
+<%= turbo_frame_tag "frame1" do %>
+  <div class="products" id="products">
+    <% @products.each do |product| %>
+      <div class="product-item">
+        <%= link_to product_path(product), class: "product-link" do %>
+          <div class="image">
+            <% if product.images.attached? %>
+                <%= image_tag product.images.first, class: "product-image", alt: product.name, width: "300", height: "200" %>
+            <% else %>
+              <img src="https://a0.muscache.com/im/pictures/miso/Hosting-839082319949828593/original/b239acdd-8dbf-403e-bad4-fa8e05b94b44.jpeg?im_w=720" alt="Default Image" width="300" height="200">
+            <% end %>
           </div>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
+          <div class="header-item">
+            <h4 style="color: #000; background-color: #fff;"><%= product.name %></h4>
+            <p style="color: #333;"><%= product.user.first_name %></p>
+            <p style="color: #333;"><%= product.created_at.strftime("%B %e, %Y %l:%M %p") %></p>
+          </div>
+          <div class="precio-info">
+            <div class="price-information">
+              <span style="color: #000; background-color: #fff;"><%= number_to_currency(product.price) %> COP</span>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
