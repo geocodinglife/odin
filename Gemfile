@@ -25,5 +25,4 @@ group :development do
   gem "web-console"
   gem "standard"
   gem "awesome_print"
-  gem "rack-mini-profiler"
 end
