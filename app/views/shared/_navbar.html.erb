@@ -16,7 +16,7 @@
   }
 %>
 
-<section id="busqueda" class="seccion-busqueda">
+<section id="busqueda" class="main-search-section">
   <div class="search-section">
     <div class="logo">
     <%= link_to image_tag("buhologo.webp", alt: "odin-logo", width: "30", height: "30"), root_path %>
@@ -55,17 +55,17 @@
     </header>
   </div>
 
-    <article id="categorias" class="categorias">
-      <div id="categorias-box" class="categorias-box">
-        <% @icons.each do |icon| %>
-          <div class="categorias-item-box">
-            <div class="categorias-item">
-              <%= link_to products_path(category_name: icon.first), data: { turbo_frame: "frame1"} do %>
-                <%= image_tag icon.second, alt: icon.first%>
-              <% end %>
-            </div>
+  <article id="categorias" class="categorias">
+    <div id="categorias-box" class="categorias-box">
+      <% @icons.each do |icon| %>
+        <div class="categorias-item-box">
+          <div class="categorias-item">
+            <%= link_to products_path(category_name: icon.first), data: { turbo_frame: "frame1"} do %>
+              <%= image_tag icon.second, alt: icon.first%>
+            <% end %>
           </div>
-        <% end %>
-      </div>
-    </article>
+        </div>
+      <% end %>
+    </div>
+  </article>
 </section>
