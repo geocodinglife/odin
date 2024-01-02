@@ -1,17 +1,15 @@
 # frozen_string_literal: true
 
 class RoomsController < ApplicationController
-  # require "digest"
-
   before_action :set_room, only: %i[show edit update destroy]
   before_action :authenticate_user!
 
   def index
+    original_data = "3b4393bafed398ba1"
+    @first_reference = original_data.chars.shuffle.join
     @amount = "2490000"
     @currency = "COP"
     @wompi_integrity = ENV["WOMPI_INTEGRITY"]
-    # @signature = Digest::SHA2.hexdigest(@reference + @amount + @currency + @wompi_integrity)
-
     @buyer_rooms = current_user.rooms.includes(:user_rooms).all
   end
 
