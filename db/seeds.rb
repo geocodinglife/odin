@@ -4,7 +4,7 @@ User.delete_all
 Product.delete_all
 Category.delete_all
 
-User.create!(
+user_one = User.create!(
   first_name: "jonatan",
   last_name: "Doe",
   auth_secret: ROTP::Base32.random(16),
@@ -12,7 +12,7 @@ User.create!(
   email: "jonatan@jonatan.com"
 )
 
-User.create!(
+user_two = User.create!(
   first_name: "fabi",
   last_name: "Doe",
   auth_secret: ROTP::Base32.random(16),
@@ -53,7 +53,33 @@ category_product_data = {
   "empleos" => ["Oferta laboral", "Oportunidad emocionante para un nuevo empleo."]
 }
 
-20.times do
+10.times do
+  random_category = category_objects.sample
+  product_data = category_product_data[random_category.name]
+
+  Product.create!(
+    name: product_data[0],
+    description: product_data[1],
+    price: rand(50.0..500.0).round(2),
+    user_id: user_one.id,
+    category_id: random_category.id
+  )
+end
+
+10.times do
+  random_category = category_objects.sample
+  product_data = category_product_data[random_category.name]
+
+  Product.create!(
+    name: product_data[0],
+    description: product_data[1],
+    price: rand(50.0..500.0).round(2),
+    user_id: user_two.id,
+    category_id: random_category.id
+  )
+end
+
+10.times do
   random_category = category_objects.sample
   product_data = category_product_data[random_category.name]
 

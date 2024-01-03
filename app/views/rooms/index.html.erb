@@ -10,11 +10,11 @@
             <% @buyer_rooms.each do |room| %>
               <p id="client-list-open"><%= room.product.name %></p>
               <% room.user_rooms.each do |product_chat| %>
+
                 <div class="client-list" id="client-list">
                   <div class="client">
                     <div class="left-box">
-                      <%= image_tag "Contenido/Imágen.svg", class: "client-image" %>
-
+                      <%#= image_tag "Contenido/Imágen.svg", class: "client-image" %>
                       <div class="name-and-message">
                       <%= render "rooms/payment", room_id: room.id  %>
                         <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
