@@ -9,14 +9,13 @@
           <div class="dropdown-toggle">
             <% @buyer_rooms.each do |room| %>
               <p id="client-list-open"><%= room.product.name %></p>
-                      <%= render "rooms/payment", room_id: room.id, style: "display: none;" %>
-
               <% room.user_rooms.each do |product_chat| %>
 
                 <div class="client-list" id="client-list">
                   <div class="client">
                     <div class="left-box">
                       <%#= image_tag "Contenido/Imágen.svg", class: "client-image" %>
+                      <%= render "rooms/payment", room_id: room.id, style: "display: none;" %>
 
                       <%#= button_tag "Click Me", class: "payment-button", data: { room_id: room.id } %>
 
