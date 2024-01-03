@@ -14,11 +14,8 @@
                 <div class="client-list" id="client-list">
                   <div class="client">
                     <div class="left-box">
-                      <%#= image_tag "Contenido/Imágen.svg", class: "client-image" %>
+                      <%= image_tag "Contenido/Imágen.svg", class: "client-image" %>
                       <%= render "rooms/payment", room_id: room.id, style: "display: none;" %>
-
-                      <%#= button_tag "Click Me", class: "payment-button", data: { room_id: room.id } %>
-
                       <div class="name-and-message">
                         <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                           <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
