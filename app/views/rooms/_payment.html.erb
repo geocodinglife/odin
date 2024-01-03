@@ -2,8 +2,9 @@
 
 <% @integrity = generate_wompi_signature(@reference, @amount, @currency, @wompi_integrity) %>
 
-<%= form_tag("https://checkout.wompi.co/p/", method: "GET", id: "payment-form", style: "padding-left: 10px;") do %>
-  <%= hidden_field_tag "room-id", "", id: "room-id" %>
+<%= form_tag("https://checkout.wompi.co/p/", method: "GET", id: "payment-form-#{room_id}", style: "padding-left: 10px;") do %>
+  <!-- Your form fields go here -->
+  <%= hidden_field_tag "room-id", room_id, id: "room-id" %>
   <%= hidden_field_tag "public-key", ENV["WOMPI_PUBLIC_KEY"] %>
   <%= hidden_field_tag "currency", @currency %>
   <%= hidden_field_tag "amount-in-cents", @amount %>

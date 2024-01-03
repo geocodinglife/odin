@@ -15,8 +15,10 @@
                   <div class="client">
                     <div class="left-box">
                       <%#= image_tag "Contenido/Imágen.svg", class: "client-image" %>
-                      <div class="name-and-message">
                       <%= render "rooms/payment", room_id: room.id  %>
+                      <%#= button_tag "Click Me", class: "payment-button", data: { room_id: room.id } %>
+
+                      <div class="name-and-message">
                         <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                           <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
                             <% room.users.each do |room_user| %>
@@ -40,18 +42,21 @@
 <% end %>
 
 <script>
-document.addEventListener("turbo:load", function() {
-  let roomDropdownToggle = document.getElementById('client-list-open');
-  let roomDropdownMenu = document.getElementById('client-list');
+  document.addEventListener("turbo:load", function() {
+    document.addEventListener('click', function(event) {
+      if (event.target.matches('.payment-button')) {
+        event.preventDefault();
+        const room_id = event.target.getAttribute('data-room-id');
+        console.log(`Button clicked for room_id ${room_id}`);
 
-  function toggleDropdown() {
-    roomDropdownMenu.classList.toggle('show');
-  }
+        const form = document.querySelector(`#payment-form-${room_id}`);
 
-  if (roomDropdownToggle) {
-    roomDropdownToggle.addEventListener('click', function() {
-      toggleDropdown();
+        if (form) {
+          form.submit();
+        } else {
+          console.error(`Form with ID payment-form-${room_id} not found.`);
+        }
+      }
     });
-  }
-});
+  });
 </script>
