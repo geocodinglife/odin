@@ -1,4 +1,4 @@
-<% unless @first_reference.nil? %>
+<% unless room_id.nil? %>
   <% @reference = "#{@first_reference}-#{room_id}-#{current_user.id}" %>
 
   <% @integrity = generate_wompi_signature(@reference, @amount, @currency, @wompi_integrity) %>
