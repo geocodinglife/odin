@@ -10,6 +10,7 @@ class EventsController < ApplicationController
       end
 
       Payment.create!(
+        status: params["data"]["transaction"]["status"],
         room_id: match_data[2].to_i,
         user_id: match_data[3].to_i,
         transaction_id: params["data"]["transaction"]["id"],

@@ -78,6 +78,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_19_205851) do
   end
 
   create_table "payments", force: :cascade do |t|
+    t.string "status"
     t.string "amount"
     t.string "currency"
     t.string "transaction_id"
