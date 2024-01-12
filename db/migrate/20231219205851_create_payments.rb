@@ -8,6 +8,7 @@ class CreatePayments < ActiveRecord::Migration[7.1]
       t.string :reference
       t.references :room, null: false, foreign_key: true
       t.references :user, null: false, foreign_key: true
+      t.references :lead, null: false, foreign_key: true
 
       t.timestamps
     end

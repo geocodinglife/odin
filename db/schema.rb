@@ -85,8 +85,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_19_205851) do
     t.string "reference"
     t.bigint "room_id", null: false
     t.bigint "user_id", null: false
+    t.bigint "lead_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["lead_id"], name: "index_payments_on_lead_id"
     t.index ["room_id"], name: "index_payments_on_room_id"
     t.index ["user_id"], name: "index_payments_on_user_id"
   end
@@ -151,6 +153,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_19_205851) do
   add_foreign_key "leads", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "messages", "users"
+  add_foreign_key "payments", "leads"
   add_foreign_key "payments", "rooms"
   add_foreign_key "payments", "users"
   add_foreign_key "products", "categories"

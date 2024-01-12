@@ -10,26 +10,32 @@
             <% @buyer_rooms.each do |room| %>
               <p id="client-list-open"><%= room.product.name %></p>
               <% room.user_rooms.each do |product_chat| %>
+                <% unless current_user.first_name == product_chat.user.first_name %>
 
-                <div class="client-list" id="client-list">
-                  <div class="client">
-                    <div class="left-box">
-                      <%= image_tag "Contenido/Imágen.svg", class: "client-image" %>
-                      <%= render "rooms/payment", room_id: room.id, style: "display: none;" %>
-                      <div class="name-and-message">
-                        <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
-                          <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
-                            <% room.users.each do |room_user| %>
-                              <% next if room_user.id == current_user.id %> 
+                  <div class="client-list" id="client-list">
+                    <div class="client">
+                      <div class="left-box">
+                        <%= image_tag "Contenido/Imágen.svg", class: "client-image" %>
 
-                              <p style="color: green;"><%= room_user.first_name %></p>
+                        <div class="name-and-message">
+                          <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
+                            <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
+                              <% room.users.each do |room_user| %>
+
+                                <% next if room_user.id == current_user.id %>
+                                <% if room.payments.first.status == "APPROVED" %>
+                                  <p style="color: green;"><%= room_user.first_name %></p>
+                                <% else %>
+                                  <%= render "rooms/payment", data: {room_id: room.id, product_id: room.product_id}, style: "display: none;" %>
+                                <% end %>
+                              <% end %>
                             <% end %>
                           <% end %>
-                        <% end %>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
+                <% end %>
               <% end %>
             <% end %>
           </div>

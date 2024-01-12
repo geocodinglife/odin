@@ -1,9 +1,10 @@
 class Lead < ApplicationRecord
-  belongs_to :product
-  belongs_to :user
-
   require "uri"
   require "net/http"
+
+  belongs_to :product
+  belongs_to :user
+  has_many :payments
 
   def self.send_message_to_seller(user)
     url = URI("https://api103.hablame.co/api/sms/v3/send/priority")
