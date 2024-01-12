@@ -16,14 +16,18 @@
                     <div class="client">
                       <div class="left-box">
                         <%= image_tag "Contenido/Imágen.svg", class: "client-image" %>
-                        <%= render "rooms/payment", room_id: room.id, style: "display: none;" %>
+
                         <div class="name-and-message">
                           <%= turbo_frame_tag "room_#{room.id}", class: 'room-container' do %>
                             <%= link_to room_path(room), class:"room-name", data: { turbo_frame: 'rooms_controller' } do %>
                               <% room.users.each do |room_user| %>
-                                <% next if room_user.id == current_user.id %> 
 
-                                <p style="color: green;"><%= room_user.first_name %></p>
+                                <% next if room_user.id == current_user.id %>
+                                <% if room.payments.first.status == "APPROVED" %>
+                                  <p style="color: green;"><%= room_user.first_name %></p>
+                                <% else %>
+                                  <%= render "rooms/payment", data: {room_id: room.id, product_id: room.product_id}, style: "display: none;" %>
+                                <% end %>
                               <% end %>
                             <% end %>
                           <% end %>
