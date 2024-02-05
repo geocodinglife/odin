@@ -23,7 +23,7 @@
                               <% room.users.each do |room_user| %>
 
                                 <% next if room_user.id == current_user.id %>
-                                <% if room.payments.first.status == "APPROVED" %>
+                                <% if room.payments.first.nil? %>
                                   <p style="color: green;"><%= room_user.first_name %></p>
                                 <% else %>
                                   <%= render "rooms/payment", data: {room_id: room.id, product_id: room.product_id}, style: "display: none;" %>
